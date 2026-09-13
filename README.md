@@ -76,6 +76,12 @@ agentvm-native-host wasmtime run agentvm-core.wasm guest.elf guest-arg
 
 ## Release philosophy
 
+The private AgentVM repository has one release source: a clean, validated,
+pushed `main` with local `HEAD == origin/main`. Feature branches, research
+branches, detached worktrees, and dirty working trees are never publication
+sources. The private build emits one exact Core Wasm artifact; this public
+repository consumes that byte identity only.
+
 Private controlled machines decide semantic and micro-performance admission.
 Public GitHub Actions independently verify the exact released bytes across
 engines, operating systems, and architectures, and may build public Host

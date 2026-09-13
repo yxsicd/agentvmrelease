@@ -1,5 +1,23 @@
 # Release channels
 
+## dev — generation 2
+
+Generation 2 is the first `dev` generation produced under the canonical
+single-main publication rule. Private AgentVM source authority is clean pushed
+`main@e1683ef606ea5ccadb3390f9ab8568b7b20c6271`; the resulting zero-import ABI-v5
+Core is 903,550 bytes at SHA-256
+`a6a9bcad38ae88cc9f845483dd59eec585d1af1d492ca4b8b871c35f21a6bf97`.
+
+Private qualification passed the five Host tests and revalidated the exact
+digest as the accepted whole-tool baseline at 3,261,655 guest steps / 537 run
+calls for deterministic 1 MiB ripgrep. Public source-free qualification and
+cross-platform Host packaging are intentionally reset to pending whenever the
+`dev` Core digest changes. Old native Host packages must be removed before a new
+generation is published so one release can never mix package generations.
+
+Generation 1 is superseded because it was built before the clean-main-only
+release-source rule was established. Its history remains below for provenance.
+
 ## dev — generation 1
 
 The first public `dev` core is a clean rebuild of private semantic authority

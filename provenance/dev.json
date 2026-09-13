@@ -1,12 +1,16 @@
 {
   "schema": "agentvm.release-provenance/v1",
   "channel": "dev",
-  "generation": 1,
+  "generation": 2,
   "built_from_private_source": true,
-  "semantic_authority_commit": "d8e4d986a6622ce978a0a7749c3e50a75cbb5e59",
+  "source_available": false,
+  "release_authority_commit": "e1683ef606ea5ccadb3390f9ab8568b7b20c6271",
+  "release_authority_branch": "main",
+  "release_authority_clean": true,
+  "release_authority_upstream": "origin/main 0/0",
   "core": {
-    "bytes": 903758,
-    "sha256": "d2538b0811dee9f9478418bea24a3a1bab92ac011d113b95cd10cdfc783d6d04",
+    "bytes": 903550,
+    "sha256": "a6a9bcad38ae88cc9f845483dd59eec585d1af1d492ca4b8b871c35f21a6bf97",
     "abi": 5,
     "imports": 0,
     "target": "wasm32-unknown-unknown"
@@ -18,30 +22,21 @@
     "wasm_tools": "1.255.0",
     "host": "aarch64-apple-darwin"
   },
-  "historical_performance_authority": {
-    "bytes": 903774,
-    "sha256": "778495b1106e3fbddbfcb586e98cb07658f2d5c2fd2e055e1f4ef6500e377096",
-    "same_semantic_source_commit": true,
-    "inherited_by_this_rebuild": false
+  "private_qualification": {
+    "host_tests": "5/5 PASS",
+    "whole_tool_baseline": "deterministic ripgrep-1m",
+    "guest_steps": 3261655,
+    "run_calls": 537,
+    "exact_digest_revalidated": true
+  },
+  "previous_dev_generation": {
+    "generation": 1,
+    "sha256": "d2538b0811dee9f9478418bea24a3a1bab92ac011d113b95cd10cdfc783d6d04",
+    "superseded": true,
+    "reason": "generation-1 predated the clean-main-only release-source rule"
   },
   "public_qualification": {
-    "source_free_run": 34745221390,
-    "source_free_head": "4ec55d0cf8f99f6ea0b242dab1a0960dc9d7dea6",
-    "source_free_result": "pass",
-    "package_run": 34745564513,
-    "package_head": "acf5544633afab4e19898000e3410445a632569d",
-    "package_result": "pass",
-    "matrix": {
-      "javascript": ["node-26.5.1", "bun-1.3.14", "deno-2.9.4"],
-      "native_platforms": ["linux-x64", "linux-arm64", "macos-arm64", "windows-x64"],
-      "native_engines": ["wasmi-2.0.0", "wasmtime-49.0.0-rc.1"]
-    },
-    "host_package_sha256": {
-      "linux-arm64": "b4d709f0cc56657aee46de1ef30f43a343112ff2688ad344b479f2dc1224ae4d",
-      "linux-x64": "38d0151c108faa5fca876ee964ecf33604d1cf0dabc50e5c27a5007cc36ecbf0",
-      "macos-arm64": "1c689eb99f0933c6ae9ed49caf0147e419663ec52692c7bac8d3cebc44b803c4",
-      "windows-x64": "b641e25bcbf042ec7cde257157d1518db9e4525fddd902fae577dcd7fee60ccf"
-    }
+    "result": "pending"
   },
-  "policy": "Artifact SHA-256 is publication authority. Source commit identity alone never permits performance or promotion claims."
+  "policy": "Only a clean pushed private AgentVM main may produce a core. Artifact SHA-256 is publication authority. Promotion reuses exact bytes; no core rebuild."
 }
