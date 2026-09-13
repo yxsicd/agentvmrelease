@@ -1,0 +1,26 @@
+{
+  "schema": "agentvm.release-channel/v1",
+  "channel": "dev",
+  "mutable": true,
+  "state": "candidate",
+  "generation": 1,
+  "core": {
+    "asset": "agentvm-core.wasm",
+    "target": "wasm32-unknown-unknown",
+    "abi": 5,
+    "imports": 0,
+    "bytes": 903758,
+    "sha256": "d2538b0811dee9f9478418bea24a3a1bab92ac011d113b95cd10cdfc783d6d04",
+    "download": "https://github.com/yxsicd/agentvmrelease/releases/download/dev/agentvm-core.wasm"
+  },
+  "source": {
+    "available": false,
+    "private_repository": "yxsicd/agentvm",
+    "semantic_authority_commit": "d8e4d986a6622ce978a0a7749c3e50a75cbb5e59"
+  },
+  "promotion": {
+    "performance_qualified_exact_digest": false,
+    "public_source_free_qualified": false,
+    "eligible_for_main": false
+  }
+}

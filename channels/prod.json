@@ -1,0 +1,8 @@
+{
+  "schema": "agentvm.release-channel/v1",
+  "channel": "prod",
+  "mutable": true,
+  "state": "unpublished",
+  "promotion_from": "main",
+  "rule": "byte-for-byte promotion only; no rebuild"
+}

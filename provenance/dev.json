@@ -1,0 +1,28 @@
+{
+  "schema": "agentvm.release-provenance/v1",
+  "channel": "dev",
+  "generation": 1,
+  "built_from_private_source": true,
+  "semantic_authority_commit": "d8e4d986a6622ce978a0a7749c3e50a75cbb5e59",
+  "core": {
+    "bytes": 903758,
+    "sha256": "d2538b0811dee9f9478418bea24a3a1bab92ac011d113b95cd10cdfc783d6d04",
+    "abi": 5,
+    "imports": 0,
+    "target": "wasm32-unknown-unknown"
+  },
+  "build_toolchain": {
+    "rustc": "1.96.0 (ac68faa20 2026-05-25)",
+    "cargo": "1.96.0 (30a34c682 2026-05-25)",
+    "llvm": "22.1.2",
+    "wasm_tools": "1.255.0",
+    "host": "aarch64-apple-darwin"
+  },
+  "historical_performance_authority": {
+    "bytes": 903774,
+    "sha256": "778495b1106e3fbddbfcb586e98cb07658f2d5c2fd2e055e1f4ef6500e377096",
+    "same_semantic_source_commit": true,
+    "inherited_by_this_rebuild": false
+  },
+  "policy": "Artifact SHA-256 is publication authority. Source commit identity alone never permits performance or promotion claims."
+}
