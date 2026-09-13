@@ -19,11 +19,12 @@ permissions:
   contents: read
 
 concurrency:
-  group: agentvm-source-free-${{ github.workflow }}-${{ github.ref }}-${{ inputs.channel || 'dev' }}
+  group: agentvm-source-free-${{ github.workflow }}-${{ github.ref }}-${{ github.event_name == 'schedule' && 'main' || inputs.channel || 'dev' }}
   cancel-in-progress: true
 
 env:
-  AGENTVM_CHANNEL: ${{ inputs.channel || 'dev' }}
+  # Push/PR is fast DEV feedback; the daily schedule is MAIN soak evidence.
+  AGENTVM_CHANNEL: ${{ github.event_name == 'schedule' && 'main' || inputs.channel || 'dev' }}
 
 jobs:
   javascript:
