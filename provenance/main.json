@@ -36,7 +36,27 @@
     "reason": "generation-1 predated the clean-main-only release-source rule"
   },
   "public_qualification": {
-    "result": "pending"
+    "result": "pass",
+    "source_free_run": 34751273959,
+    "source_free_head": "2e1ee24519eb40b9b466d3017af8035c1f5b18b3",
+    "verification_report_sha256": "49e1753db0ab2d5746d1b3e9534d548c054f08743a1f9a21d4779a802d3f1c2d",
+    "matrix": {
+      "javascript": [
+        "node-26.5.1",
+        "bun-1.3.14",
+        "deno-2.9.4"
+      ],
+      "native_platforms": [
+        "linux-x64",
+        "linux-arm64",
+        "macos-arm64",
+        "windows-x64"
+      ],
+      "native_engines": [
+        "wasmi-2.0.0",
+        "wasmtime-49.0.0-rc.1"
+      ]
+    }
   },
   "policy": "Only a clean pushed private AgentVM main may produce a core. Artifact SHA-256 is publication authority. Promotion reuses exact bytes; no core rebuild.",
   "promotion": {
@@ -45,5 +65,9 @@
     "core_rebuilt": false,
     "host_packages_rebuilt": false,
     "identity_check": "all five promoted binary assets SHA-256-equal to qualified dev assets"
+  },
+  "prod_gate": {
+    "eligible": false,
+    "reason": "main must accumulate repeated/scheduled soak evidence before prod promotion"
   }
 }

@@ -2,7 +2,7 @@
   "schema": "agentvm.release-channel/v1",
   "channel": "main",
   "mutable": true,
-  "state": "candidate",
+  "state": "qualified-preview",
   "generation": 2,
   "core": {
     "asset": "agentvm-core.wasm",
@@ -24,12 +24,30 @@
     "source_generation": 2,
     "byte_for_byte_core": true,
     "byte_for_byte_host_packages": true,
-    "public_source_free_qualified": false,
-    "eligible_for_prod": false
+    "public_source_free_qualified": true,
+    "eligible_for_prod": false,
+    "prod_gate": "scheduled soak / repeated regression verification not yet closed"
   },
   "public_qualification": {
-    "result": "pending",
-    "reason": "main channel must independently consume the promoted Release URL"
+    "result": "pass",
+    "source_free_run": 34751273959,
+    "source_free_head": "2e1ee24519eb40b9b466d3017af8035c1f5b18b3",
+    "verification_report_sha256": "49e1753db0ab2d5746d1b3e9534d548c054f08743a1f9a21d4779a802d3f1c2d",
+    "javascript_runtimes": [
+      "node-26.5.1",
+      "bun-1.3.14",
+      "deno-2.9.4"
+    ],
+    "native_platforms": [
+      "linux-x64",
+      "linux-arm64",
+      "macos-arm64",
+      "windows-x64"
+    ],
+    "native_engines": [
+      "wasmi-2.0.0",
+      "wasmtime-49.0.0-rc.1"
+    ]
   },
   "host_packages": [
     {
