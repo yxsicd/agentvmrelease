@@ -1,0 +1,103 @@
+name: Build DEV public Host packages
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: agentvm-build-dev
+  cancel-in-progress: false
+
+jobs:
+  build:
+    name: Package ${{ matrix.platform }}
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - platform: linux-x64
+            os: ubuntu-24.04
+            binary: agentvm-native-host
+          - platform: linux-arm64
+            os: ubuntu-24.04-arm
+            binary: agentvm-native-host
+          - platform: macos-arm64
+            os: macos-15
+            binary: agentvm-native-host
+          - platform: windows-x64
+            os: windows-2025
+            binary: agentvm-native-host.exe
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020
+        with:
+          node-version: '26.5.1'
+      - name: Select stable Rust
+        shell: bash
+        run: |
+          set -euo pipefail
+          rustup toolchain install stable --profile minimal --no-self-update
+          rustup default stable
+      - name: Download and verify exact DEV Core
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p target/release-input
+          curl -fL --retry 3 \
+            -o target/release-input/agentvm-core.wasm \
+            "https://github.com/${GITHUB_REPOSITORY}/releases/download/dev/agentvm-core.wasm"
+          node scripts/verify-manifest.mjs channels/dev.json target/release-input/agentvm-core.wasm
+      - name: Build and verify public Host
+        shell: bash
+        run: |
+          set -euo pipefail
+          cargo build --release --locked \
+            --manifest-path glue/rust/agentvm-native-host/Cargo.toml
+          node scripts/verify-native.mjs \
+            "glue/rust/agentvm-native-host/target/release/${{ matrix.binary }}" \
+            target/release-input/agentvm-core.wasm \
+            fixtures/exit43.elf
+      - name: Create platform package
+        shell: bash
+        run: |
+          set -euo pipefail
+          pkg="target/package/agentvm-dev-${{ matrix.platform }}"
+          mkdir -p "$pkg"
+          cp "glue/rust/agentvm-native-host/target/release/${{ matrix.binary }}" "$pkg/"
+          cp target/release-input/agentvm-core.wasm "$pkg/"
+          cp channels/dev.json "$pkg/agentvm-dev.json"
+          cp README.md "$pkg/README.md"
+          tar -C target/package -czf "target/agentvm-dev-${{ matrix.platform }}.tar.gz" \
+            "agentvm-dev-${{ matrix.platform }}"
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: package-${{ matrix.platform }}
+          path: target/agentvm-dev-${{ matrix.platform }}.tar.gz
+          retention-days: 14
+          if-no-files-found: error
+
+  publish:
+    name: Attach exact packages to DEV Release
+    needs: [build]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          pattern: package-*
+          path: target/packages
+      - name: Upload packages without rebuilding Core
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          mapfile -t files < <(find target/packages -type f -name 'agentvm-dev-*.tar.gz' -print | sort)
+          test "${#files[@]}" -eq 4
+          gh release upload dev --repo "$GITHUB_REPOSITORY" --clobber "${files[@]}"
