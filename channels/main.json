@@ -2,7 +2,69 @@
   "schema": "agentvm.release-channel/v1",
   "channel": "main",
   "mutable": true,
-  "state": "unpublished",
-  "promotion_from": "dev",
-  "rule": "byte-for-byte promotion only; no rebuild"
+  "state": "candidate",
+  "generation": 2,
+  "core": {
+    "asset": "agentvm-core.wasm",
+    "target": "wasm32-unknown-unknown",
+    "abi": 5,
+    "imports": 0,
+    "bytes": 903550,
+    "sha256": "a6a9bcad38ae88cc9f845483dd59eec585d1af1d492ca4b8b871c35f21a6bf97",
+    "download": "https://github.com/yxsicd/agentvmrelease/releases/download/main/agentvm-core.wasm"
+  },
+  "source": {
+    "available": false,
+    "private_repository": "yxsicd/agentvm",
+    "release_authority_commit": "e1683ef606ea5ccadb3390f9ab8568b7b20c6271",
+    "release_rule": "clean pushed main only"
+  },
+  "promotion": {
+    "promoted_from": "dev",
+    "source_generation": 2,
+    "byte_for_byte_core": true,
+    "byte_for_byte_host_packages": true,
+    "public_source_free_qualified": false,
+    "eligible_for_prod": false
+  },
+  "public_qualification": {
+    "result": "pending",
+    "reason": "main channel must independently consume the promoted Release URL"
+  },
+  "host_packages": [
+    {
+      "asset": "agentvm-host-linux-x64.tar.gz",
+      "bytes": 4973931,
+      "sha256": "f74b1f29e55464e50662b2878fc7f77cff282b7cbf397634fa7f5015be529925"
+    },
+    {
+      "asset": "agentvm-host-linux-arm64.tar.gz",
+      "bytes": 4551267,
+      "sha256": "678bf701292a0138b8040f39f982a1a2a19c6b6c74218146d3ede8d72ae90607"
+    },
+    {
+      "asset": "agentvm-host-macos-arm64.tar.gz",
+      "bytes": 3936727,
+      "sha256": "4062bcb3e6f4096babde1a625bddef410cd7e90db8d1fcb73030f009efb924ea"
+    },
+    {
+      "asset": "agentvm-host-windows-x64.tar.gz",
+      "bytes": 3943428,
+      "sha256": "aa3575659b8cf6affe49f994e78716c92890f3776be06c2e0224bc20a1c0b3d8"
+    }
+  ],
+  "private_qualification": {
+    "result": "pass",
+    "host_tests": "5/5",
+    "exact_digest_reused_as_accepted_baseline": true,
+    "evidence": "private AgentVM main evidence/rejected-rbit-clz-walk-region-20260913 baseline",
+    "guest_steps": 3261655,
+    "run_calls": 537
+  },
+  "promotion_evidence": {
+    "dev_channel_commit": "04537ed18ace5ea7aa43c1dcf42ddc4ca4bafca5",
+    "dev_source_free_run": 34750697861,
+    "dev_package_run": 34750995147,
+    "identity_check": "5/5 exact SHA-256 matches after GitHub Release re-download"
+  }
 }

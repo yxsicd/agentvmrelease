@@ -1,0 +1,49 @@
+{
+  "schema": "agentvm.release-provenance/v1",
+  "channel": "main",
+  "generation": 2,
+  "built_from_private_source": true,
+  "source_available": false,
+  "release_authority_commit": "e1683ef606ea5ccadb3390f9ab8568b7b20c6271",
+  "release_authority_branch": "main",
+  "release_authority_clean": true,
+  "release_authority_upstream": "origin/main 0/0",
+  "core": {
+    "bytes": 903550,
+    "sha256": "a6a9bcad38ae88cc9f845483dd59eec585d1af1d492ca4b8b871c35f21a6bf97",
+    "abi": 5,
+    "imports": 0,
+    "target": "wasm32-unknown-unknown"
+  },
+  "build_toolchain": {
+    "rustc": "1.96.0 (ac68faa20 2026-05-25)",
+    "cargo": "1.96.0 (30a34c682 2026-05-25)",
+    "llvm": "22.1.2",
+    "wasm_tools": "1.255.0",
+    "host": "aarch64-apple-darwin"
+  },
+  "private_qualification": {
+    "host_tests": "5/5 PASS",
+    "whole_tool_baseline": "deterministic ripgrep-1m",
+    "guest_steps": 3261655,
+    "run_calls": 537,
+    "exact_digest_revalidated": true
+  },
+  "previous_dev_generation": {
+    "generation": 1,
+    "sha256": "d2538b0811dee9f9478418bea24a3a1bab92ac011d113b95cd10cdfc783d6d04",
+    "superseded": true,
+    "reason": "generation-1 predated the clean-main-only release-source rule"
+  },
+  "public_qualification": {
+    "result": "pending"
+  },
+  "policy": "Only a clean pushed private AgentVM main may produce a core. Artifact SHA-256 is publication authority. Promotion reuses exact bytes; no core rebuild.",
+  "promotion": {
+    "from_channel": "dev",
+    "from_generation": 2,
+    "core_rebuilt": false,
+    "host_packages_rebuilt": false,
+    "identity_check": "all five promoted binary assets SHA-256-equal to qualified dev assets"
+  }
+}
