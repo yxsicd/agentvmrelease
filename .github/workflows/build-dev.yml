@@ -65,18 +65,21 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          pkg="target/package/agentvm-dev-${{ matrix.platform }}"
+          pkg="target/package/agentvm"
           mkdir -p "$pkg"
           cp "glue/rust/agentvm-native-host/target/release/${{ matrix.binary }}" "$pkg/"
           cp target/release-input/agentvm-core.wasm "$pkg/"
-          cp channels/dev.json "$pkg/agentvm-dev.json"
           cp README.md "$pkg/README.md"
-          tar -C target/package -czf "target/agentvm-dev-${{ matrix.platform }}.tar.gz" \
-            "agentvm-dev-${{ matrix.platform }}"
+          node scripts/write-package-manifest.mjs \
+            "${{ matrix.platform }}" \
+            "glue/rust/agentvm-native-host/target/release/${{ matrix.binary }}" \
+            target/release-input/agentvm-core.wasm \
+            "$pkg/HOST-ARTIFACT.json"
+          tar -C target/package -czf "target/agentvm-host-${{ matrix.platform }}.tar.gz" agentvm
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         with:
           name: package-${{ matrix.platform }}
-          path: target/agentvm-dev-${{ matrix.platform }}.tar.gz
+          path: target/agentvm-host-${{ matrix.platform }}.tar.gz
           retention-days: 14
           if-no-files-found: error
 
@@ -98,6 +101,13 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          mapfile -t files < <(find target/packages -type f -name 'agentvm-dev-*.tar.gz' -print | sort)
+          mapfile -t files < <(find target/packages -type f -name 'agentvm-host-*.tar.gz' -print | sort)
           test "${#files[@]}" -eq 4
           gh release upload dev --repo "$GITHUB_REPOSITORY" --clobber "${files[@]}"
+          for legacy in \
+            agentvm-dev-linux-x64.tar.gz \
+            agentvm-dev-linux-arm64.tar.gz \
+            agentvm-dev-macos-arm64.tar.gz \
+            agentvm-dev-windows-x64.tar.gz; do
+            gh release delete-asset dev "$legacy" --repo "$GITHUB_REPOSITORY" --yes 2>/dev/null || true
+          done

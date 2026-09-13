@@ -35,6 +35,12 @@ Promotion means **byte-for-byte promotion**. `main` and `prod` must not rebuild
 the core or native packages. Every channel manifest records exact sizes and
 SHA-256 identities.
 
+Native package artifacts are deliberately channel-neutral, for example
+`agentvm-host-linux-x64.tar.gz` and `agentvm-host-macos-arm64.tar.gz`. Their
+contents carry an immutable `HOST-ARTIFACT.json` bound to the exact Core and
+public-Glue commit. Only the release channel pointer/manifest changes during
+promotion.
+
 The first active generation is described in [`channels/dev.json`](channels/dev.json).
 `main` and `prod` start unpublished and become valid only after their promotion
 gates close.
