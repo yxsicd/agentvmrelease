@@ -21,9 +21,11 @@
     "release_rule": "clean pushed main only"
   },
   "promotion": {
-    "performance_qualified_exact_digest": false,
+    "performance_qualified_exact_digest": true,
     "public_source_free_qualified": true,
-    "eligible_for_main": false
+    "eligible_for_main": true,
+    "performance_evidence": "provenance/promotion-performance-20261003.json",
+    "scope": "bounded static rg 1MiB short-line workload only; 28-52 percent slower than generation2, no speedup/parity/full Agent/network claim"
   },
   "host_packages": [
     {

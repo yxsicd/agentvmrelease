@@ -1,73 +1,129 @@
 {
   "schema": "agentvm.release-provenance/v1",
   "channel": "main",
-  "generation": 2,
+  "generation": 3,
   "built_from_private_source": true,
   "source_available": false,
-  "release_authority_commit": "e1683ef606ea5ccadb3390f9ab8568b7b20c6271",
+  "release_authority_commit": "df6676eb355a4c250dea7ae74a8a3e5f0af69264",
   "release_authority_branch": "main",
   "release_authority_clean": true,
   "release_authority_upstream": "origin/main 0/0",
   "core": {
-    "bytes": 903550,
-    "sha256": "a6a9bcad38ae88cc9f845483dd59eec585d1af1d492ca4b8b871c35f21a6bf97",
+    "asset": "agentvm-core.wasm",
+    "target": "wasm32-unknown-unknown",
     "abi": 5,
     "imports": 0,
-    "target": "wasm32-unknown-unknown"
+    "bytes": 1704601,
+    "sha256": "f6da81a808447212f0dd607eca94126b36eb7119055842320a833c5b2045f20b",
+    "download": "https://github.com/yxsicd/agentvmrelease/releases/download/main-20261003-g3/agentvm-core.wasm"
   },
   "build_toolchain": {
     "rustc": "1.96.0 (ac68faa20 2026-05-25)",
     "cargo": "1.96.0 (30a34c682 2026-05-25)",
-    "llvm": "22.1.2",
     "wasm_tools": "1.255.0",
     "host": "aarch64-apple-darwin"
   },
   "private_qualification": {
-    "host_tests": "5/5 PASS",
-    "whole_tool_baseline": "deterministic ripgrep-1m",
-    "guest_steps": 3261655,
-    "run_calls": 537,
-    "exact_digest_revalidated": true
+    "result": "pass",
+    "host_tests": "6/6",
+    "local_engines": [
+      "node-26.5.1",
+      "bun-1.3.14",
+      "deno-2.9.4",
+      "wasmi",
+      "wasmtime"
+    ],
+    "guest_exit": 43,
+    "guest_stdout": "agentvm-real-elf-pass\n",
+    "guest_stderr": "",
+    "guest_steps": 9,
+    "run_calls": 3,
+    "scope": "bounded real static ELF; no native Alpine networking or performance inheritance"
   },
   "previous_dev_generation": {
-    "generation": 1,
-    "sha256": "d2538b0811dee9f9478418bea24a3a1bab92ac011d113b95cd10cdfc783d6d04",
-    "superseded": true,
-    "reason": "generation-1 predated the clean-main-only release-source rule"
+    "generation": 2,
+    "sha256": "a6a9bcad38ae88cc9f845483dd59eec585d1af1d492ca4b8b871c35f21a6bf97",
+    "retained_tag": "dev",
+    "retained_main": true
   },
+  "build_boundaries": [
+    "initial --locked build failed: stale libc dependency edge",
+    "initial Host build failed: interpreter initializer and AwaitingInput adapter missing",
+    "source adapters corrected without ABI bump; unsupported streaming stdin fails explicitly",
+    "precommit continuity validation initially failed missing dirty-path names; postcommit clean validation PASS"
+  ],
   "public_qualification": {
     "result": "pass",
-    "source_free_run": 34751273959,
-    "source_free_head": "2e1ee24519eb40b9b466d3017af8035c1f5b18b3",
-    "verification_report_sha256": "49e1753db0ab2d5746d1b3e9534d548c054f08743a1f9a21d4779a802d3f1c2d",
-    "matrix": {
-      "javascript": [
-        "node-26.5.1",
-        "bun-1.3.14",
-        "deno-2.9.4"
-      ],
-      "native_platforms": [
-        "linux-x64",
-        "linux-arm64",
-        "macos-arm64",
-        "windows-x64"
-      ],
-      "native_engines": [
-        "wasmi-2.0.0",
-        "wasmtime-49.0.0-rc.1"
-      ]
+    "source_free_run": 37117072016,
+    "source_free_aggregate_sha256": "1998ae2073174eb60161f948366bf15bed8613200c6496788f82c030c99702de",
+    "source_free_head": "4b33199bab7870aba17562837acd7ac7469f0217",
+    "package_run": 37117071978,
+    "package_head": "4b33199bab7870aba17562837acd7ac7469f0217",
+    "package_build_jobs": "4/4 PASS",
+    "package_workflow_result": "failure: attachment job missing checkout",
+    "publication_recovery": "exact CI artifacts internally verified and manually uploaded; no rebuild",
+    "javascript_runtimes": [
+      "node-26.5.1",
+      "bun-1.3.14",
+      "deno-2.9.4"
+    ],
+    "native_platforms": [
+      "linux-x64",
+      "linux-arm64",
+      "macos-arm64",
+      "windows-x64"
+    ],
+    "native_engines": [
+      "wasmi-2.0.0",
+      "wasmtime-49.0.0-rc.1"
+    ]
+  },
+  "policy": "Only clean pushed main produces Core; exact SHA identifies bytes. MAIN/PROD promotion requires independent exact-digest gates.",
+  "host_packages": [
+    {
+      "asset": "agentvm-host-linux-x64.tar.gz",
+      "bytes": 5229427,
+      "sha256": "61be5441df90a44ff81157f4cc7b536d421fa392b7c5b0672c9dc42427fd23ab"
+    },
+    {
+      "asset": "agentvm-host-linux-arm64.tar.gz",
+      "bytes": 4819245,
+      "sha256": "7f0f0df159ea243a81cca0a2a777c0d0e3d5c7ab7e5e4085d0ed98972fbedf4c"
+    },
+    {
+      "asset": "agentvm-host-macos-arm64.tar.gz",
+      "bytes": 4225206,
+      "sha256": "fa3180b4ddbac3d6c67c20f58b2811022c9c20c8a3ad34fdb37a0f0340118ad7"
+    },
+    {
+      "asset": "agentvm-host-windows-x64.tar.gz",
+      "bytes": 4222549,
+      "sha256": "415445c55a46125bb160f874690705ade21dcb32dcccaf45ca12fa3c103ec8e6"
     }
+  ],
+  "skill_artifact": {
+    "asset": "agentvm-wasm-skill.tar.gz",
+    "sha256": "c24a7510cfb0c8eb53dec80e881c10ed5af4836ed80451ca2dac32a0318f2a58",
+    "download": "https://github.com/yxsicd/agentvmrelease/releases/download/main-20261003-g3/agentvm-wasm-skill.tar.gz"
   },
-  "policy": "Only a clean pushed private AgentVM main may produce a core. Artifact SHA-256 is publication authority. Promotion reuses exact bytes; no core rebuild.",
   "promotion": {
-    "from_channel": "dev",
-    "from_generation": 2,
-    "core_rebuilt": false,
-    "host_packages_rebuilt": false,
-    "identity_check": "all five promoted binary assets SHA-256-equal to qualified dev assets"
+    "performance_qualified_exact_digest": true,
+    "public_source_free_qualified": true,
+    "eligible_for_main": true,
+    "performance_evidence": "provenance/promotion-performance-20261003.json",
+    "scope": "bounded static rg 1MiB short-line workload only; 28-52 percent slower than generation2, no speedup/parity/full Agent/network claim",
+    "promoted_from": "dev",
+    "source_generation": 3,
+    "byte_for_byte_core": true,
+    "byte_for_byte_host_packages": true,
+    "eligible_for_prod": false,
+    "prod_gate": "two fresh published MAIN full matrix regressions pending; no overnight soak claim"
   },
-  "prod_gate": {
-    "eligible": false,
-    "reason": "main must accumulate repeated/scheduled soak evidence before prod promotion"
+  "performance_admission": {
+    "performance_qualified_exact_digest": true,
+    "public_source_free_qualified": true,
+    "eligible_for_main": true,
+    "performance_evidence": "provenance/promotion-performance-20261003.json",
+    "scope": "bounded static rg 1MiB short-line workload only; 28-52 percent slower than generation2, no speedup/parity/full Agent/network claim"
   }
 }

@@ -3,36 +3,86 @@
   "channel": "main",
   "mutable": true,
   "state": "qualified-preview",
-  "generation": 2,
+  "generation": 3,
+  "release_tag": "main-20261003-g3",
   "core": {
     "asset": "agentvm-core.wasm",
     "target": "wasm32-unknown-unknown",
     "abi": 5,
     "imports": 0,
-    "bytes": 903550,
-    "sha256": "a6a9bcad38ae88cc9f845483dd59eec585d1af1d492ca4b8b871c35f21a6bf97",
-    "download": "https://github.com/yxsicd/agentvmrelease/releases/download/main/agentvm-core.wasm"
+    "bytes": 1704601,
+    "sha256": "f6da81a808447212f0dd607eca94126b36eb7119055842320a833c5b2045f20b",
+    "download": "https://github.com/yxsicd/agentvmrelease/releases/download/main-20261003-g3/agentvm-core.wasm"
   },
   "source": {
     "available": false,
     "private_repository": "yxsicd/agentvm",
-    "release_authority_commit": "e1683ef606ea5ccadb3390f9ab8568b7b20c6271",
+    "release_authority_commit": "df6676eb355a4c250dea7ae74a8a3e5f0af69264",
     "release_rule": "clean pushed main only"
   },
   "promotion": {
+    "performance_qualified_exact_digest": true,
+    "public_source_free_qualified": true,
+    "eligible_for_main": true,
+    "performance_evidence": "provenance/promotion-performance-20261003.json",
+    "scope": "bounded static rg 1MiB short-line workload only; 28-52 percent slower than generation2, no speedup/parity/full Agent/network claim",
     "promoted_from": "dev",
-    "source_generation": 2,
+    "source_generation": 3,
     "byte_for_byte_core": true,
     "byte_for_byte_host_packages": true,
-    "public_source_free_qualified": true,
     "eligible_for_prod": false,
-    "prod_gate": "scheduled soak / repeated regression verification not yet closed"
+    "prod_gate": "two fresh published MAIN full matrix regressions pending; no overnight soak claim"
   },
+  "host_packages": [
+    {
+      "asset": "agentvm-host-linux-x64.tar.gz",
+      "bytes": 5229427,
+      "sha256": "61be5441df90a44ff81157f4cc7b536d421fa392b7c5b0672c9dc42427fd23ab"
+    },
+    {
+      "asset": "agentvm-host-linux-arm64.tar.gz",
+      "bytes": 4819245,
+      "sha256": "7f0f0df159ea243a81cca0a2a777c0d0e3d5c7ab7e5e4085d0ed98972fbedf4c"
+    },
+    {
+      "asset": "agentvm-host-macos-arm64.tar.gz",
+      "bytes": 4225206,
+      "sha256": "fa3180b4ddbac3d6c67c20f58b2811022c9c20c8a3ad34fdb37a0f0340118ad7"
+    },
+    {
+      "asset": "agentvm-host-windows-x64.tar.gz",
+      "bytes": 4222549,
+      "sha256": "415445c55a46125bb160f874690705ade21dcb32dcccaf45ca12fa3c103ec8e6"
+    }
+  ],
+  "private_qualification": {
+    "result": "pass",
+    "host_tests": "6/6",
+    "local_engines": [
+      "node-26.5.1",
+      "bun-1.3.14",
+      "deno-2.9.4",
+      "wasmi",
+      "wasmtime"
+    ],
+    "guest_exit": 43,
+    "guest_stdout": "agentvm-real-elf-pass\n",
+    "guest_stderr": "",
+    "guest_steps": 9,
+    "run_calls": 3,
+    "scope": "bounded real static ELF; no native Alpine networking or performance inheritance"
+  },
+  "usage_skill": "skills/agentvm-wasm/SKILL.md",
   "public_qualification": {
     "result": "pass",
-    "source_free_run": 34751273959,
-    "source_free_head": "2e1ee24519eb40b9b466d3017af8035c1f5b18b3",
-    "verification_report_sha256": "49e1753db0ab2d5746d1b3e9534d548c054f08743a1f9a21d4779a802d3f1c2d",
+    "source_free_run": 37117072016,
+    "source_free_aggregate_sha256": "1998ae2073174eb60161f948366bf15bed8613200c6496788f82c030c99702de",
+    "source_free_head": "4b33199bab7870aba17562837acd7ac7469f0217",
+    "package_run": 37117071978,
+    "package_head": "4b33199bab7870aba17562837acd7ac7469f0217",
+    "package_build_jobs": "4/4 PASS",
+    "package_workflow_result": "failure: attachment job missing checkout",
+    "publication_recovery": "exact CI artifacts internally verified and manually uploaded; no rebuild",
     "javascript_runtimes": [
       "node-26.5.1",
       "bun-1.3.14",
@@ -49,40 +99,9 @@
       "wasmtime-49.0.0-rc.1"
     ]
   },
-  "host_packages": [
-    {
-      "asset": "agentvm-host-linux-x64.tar.gz",
-      "bytes": 4973931,
-      "sha256": "f74b1f29e55464e50662b2878fc7f77cff282b7cbf397634fa7f5015be529925"
-    },
-    {
-      "asset": "agentvm-host-linux-arm64.tar.gz",
-      "bytes": 4551267,
-      "sha256": "678bf701292a0138b8040f39f982a1a2a19c6b6c74218146d3ede8d72ae90607"
-    },
-    {
-      "asset": "agentvm-host-macos-arm64.tar.gz",
-      "bytes": 3936727,
-      "sha256": "4062bcb3e6f4096babde1a625bddef410cd7e90db8d1fcb73030f009efb924ea"
-    },
-    {
-      "asset": "agentvm-host-windows-x64.tar.gz",
-      "bytes": 3943428,
-      "sha256": "aa3575659b8cf6affe49f994e78716c92890f3776be06c2e0224bc20a1c0b3d8"
-    }
-  ],
-  "private_qualification": {
-    "result": "pass",
-    "host_tests": "5/5",
-    "exact_digest_reused_as_accepted_baseline": true,
-    "evidence": "private AgentVM main evidence/rejected-rbit-clz-walk-region-20260913 baseline",
-    "guest_steps": 3261655,
-    "run_calls": 537
-  },
-  "promotion_evidence": {
-    "dev_channel_commit": "04537ed18ace5ea7aa43c1dcf42ddc4ca4bafca5",
-    "dev_source_free_run": 34750697861,
-    "dev_package_run": 34750995147,
-    "identity_check": "5/5 exact SHA-256 matches after GitHub Release re-download"
+  "skill_artifact": {
+    "asset": "agentvm-wasm-skill.tar.gz",
+    "sha256": "c24a7510cfb0c8eb53dec80e881c10ed5af4836ed80451ca2dac32a0318f2a58",
+    "download": "https://github.com/yxsicd/agentvmrelease/releases/download/main-20261003-g3/agentvm-wasm-skill.tar.gz"
   }
 }

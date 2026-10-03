@@ -1,0 +1,682 @@
+{
+  "schema": "agentvm.promotion-admission/v1",
+  "controlled_machine": "macOS arm64 same host / serial alternating old,new",
+  "performance": [
+    {
+      "schema": "agentvm.promotion-performance/v1",
+      "ok": true,
+      "runtime": "node-26.5.1",
+      "fixture_sha256": "c14cdb389f34e504d69e386cfc67d5c5d9a730a990de03ca6910b2a15e30386a",
+      "input_sha256": "a15a4ece33b6ccb944709c0d408a584f7db420ba806b51ce1491f1f416bd0164",
+      "input_bytes": 1048576,
+      "warmups": 3,
+      "iterations": 7,
+      "alternating_order": true,
+      "limits": {
+        "median_ratio": 2,
+        "total_ms": 5000,
+        "linear_memory_bytes": 134217728
+      },
+      "ratios": {
+        "run_ms": 1.3157010294226057,
+        "total_ms": 1.305119690839678
+      },
+      "lanes": [
+        {
+          "core_sha256": "a6a9bcad38ae88cc9f845483dd59eec585d1af1d492ca4b8b871c35f21a6bf97",
+          "core_bytes": 903550,
+          "compile_ms": 3.4322079999999993,
+          "samples": [
+            {
+              "instantiate_ms": 0.13720900000004121,
+              "setup_ms": 1.5442499999999768,
+              "run_ms": 22.342416000000014,
+              "total_ms": 24.023875000000032,
+              "steps": 3259945,
+              "calls": 54,
+              "linear_memory_bytes": 16056320,
+              "stdout": "1:needle one\n2:beta needle two\n",
+              "exit": 0
+            },
+            {
+              "instantiate_ms": 0.1286670000000072,
+              "setup_ms": 1.4207499999999982,
+              "run_ms": 22.580457999999965,
+              "total_ms": 24.12987499999997,
+              "steps": 3259945,
+              "calls": 54,
+              "linear_memory_bytes": 16056320,
+              "stdout": "1:needle one\n2:beta needle two\n",
+              "exit": 0
+            },
+            {
+              "instantiate_ms": 0.13554200000004357,
+              "setup_ms": 1.619874999999979,
+              "run_ms": 22.705791999999974,
+              "total_ms": 24.461208999999997,
+              "steps": 3259945,
+              "calls": 54,
+              "linear_memory_bytes": 16056320,
+              "stdout": "1:needle one\n2:beta needle two\n",
+              "exit": 0
+            },
+            {
+              "instantiate_ms": 0.13937500000002956,
+              "setup_ms": 1.6455829999999878,
+              "run_ms": 22.803417000000024,
+              "total_ms": 24.588375000000042,
+              "steps": 3259945,
+              "calls": 54,
+              "linear_memory_bytes": 16056320,
+              "stdout": "1:needle one\n2:beta needle two\n",
+              "exit": 0
+            },
+            {
+              "instantiate_ms": 0.13670799999999872,
+              "setup_ms": 1.6458750000000464,
+              "run_ms": 22.539916999999946,
+              "total_ms": 24.32249999999999,
+              "steps": 3259945,
+              "calls": 54,
+              "linear_memory_bytes": 16056320,
+              "stdout": "1:needle one\n2:beta needle two\n",
+              "exit": 0
+            },
+            {
+              "instantiate_ms": 0.11679099999992104,
+              "setup_ms": 1.579417000000035,
+              "run_ms": 22.08366699999999,
+              "total_ms": 23.779874999999947,
+              "steps": 3259945,
+              "calls": 54,
+              "linear_memory_bytes": 16056320,
+              "stdout": "1:needle one\n2:beta needle two\n",
+              "exit": 0
+            },
+            {
+              "instantiate_ms": 0.155791000000022,
+              "setup_ms": 1.2899590000000671,
+              "run_ms": 22.129249999999956,
+              "total_ms": 23.575000000000045,
+              "steps": 3259945,
+              "calls": 54,
+              "linear_memory_bytes": 16056320,
+              "stdout": "1:needle one\n2:beta needle two\n",
+              "exit": 0
+            }
+          ]
+        },
+        {
+          "core_sha256": "f6da81a808447212f0dd607eca94126b36eb7119055842320a833c5b2045f20b",
+          "core_bytes": 1704601,
+          "compile_ms": 2.4389160000000025,
+          "samples": [
+            {
+              "instantiate_ms": 0.15970799999999485,
+              "setup_ms": 1.6427500000000066,
+              "run_ms": 29.718500000000006,
+              "total_ms": 31.520958000000007,
+              "steps": 3362591,
+              "calls": 55,
+              "linear_memory_bytes": 15007744,
+              "stdout": "1:needle one\n2:beta needle two\n",
+              "exit": 0
+            },
+            {
+              "instantiate_ms": 0.175707999999986,
+              "setup_ms": 1.4524999999999864,
+              "run_ms": 29.591875000000016,
+              "total_ms": 31.22008299999999,
+              "steps": 3362591,
+              "calls": 55,
+              "linear_memory_bytes": 15007744,
+              "stdout": "1:needle one\n2:beta needle two\n",
+              "exit": 0
+            },
+            {
+              "instantiate_ms": 0.15962500000000546,
+              "setup_ms": 1.4292919999999754,
+              "run_ms": 29.447000000000003,
+              "total_ms": 31.035916999999984,
+              "steps": 3362591,
+              "calls": 55,
+              "linear_memory_bytes": 15007744,
+              "stdout": "1:needle one\n2:beta needle two\n",
+              "exit": 0
+            },
+            {
+              "instantiate_ms": 0.16079200000001492,
+              "setup_ms": 1.678875000000005,
+              "run_ms": 30.677542000000017,
+              "total_ms": 32.51720900000004,
+              "steps": 3362591,
+              "calls": 55,
+              "linear_memory_bytes": 15007744,
+              "stdout": "1:needle one\n2:beta needle two\n",
+              "exit": 0
+            },
+            {
+              "instantiate_ms": 0.15737500000000182,
+              "setup_ms": 1.7026250000000118,
+              "run_ms": 29.65579200000002,
+              "total_ms": 31.515792000000033,
+              "steps": 3362591,
+              "calls": 55,
+              "linear_memory_bytes": 15007744,
+              "stdout": "1:needle one\n2:beta needle two\n",
+              "exit": 0
+            },
+            {
+              "instantiate_ms": 0.16708300000004783,
+              "setup_ms": 1.5720420000000104,
+              "run_ms": 29.75324999999998,
+              "total_ms": 31.492375000000038,
+              "steps": 3362591,
+              "calls": 55,
+              "linear_memory_bytes": 15007744,
+              "stdout": "1:needle one\n2:beta needle two\n",
+              "exit": 0
+            },
+            {
+              "instantiate_ms": 0.13229100000000926,
+              "setup_ms": 1.6044590000000198,
+              "run_ms": 29.482624999999985,
+              "total_ms": 31.219375000000014,
+              "steps": 3362591,
+              "calls": 55,
+              "linear_memory_bytes": 15007744,
+              "stdout": "1:needle one\n2:beta needle two\n",
+              "exit": 0
+            }
+          ]
+        }
+      ],
+      "scope": "same-machine static rg 1MiB workspace, no Guest compilation; linear memory is not peak RSS; no full Agent/network performance claim"
+    },
+    {
+      "schema": "agentvm.promotion-performance/v1",
+      "ok": true,
+      "runtime": "bun-1.3.14",
+      "fixture_sha256": "c14cdb389f34e504d69e386cfc67d5c5d9a730a990de03ca6910b2a15e30386a",
+      "input_sha256": "a15a4ece33b6ccb944709c0d408a584f7db420ba806b51ce1491f1f416bd0164",
+      "input_bytes": 1048576,
+      "warmups": 3,
+      "iterations": 7,
+      "alternating_order": true,
+      "limits": {
+        "median_ratio": 2,
+        "total_ms": 5000,
+        "linear_memory_bytes": 134217728
+      },
+      "ratios": {
+        "run_ms": 1.5230598205027794,
+        "total_ms": 1.4995989356351096
+      },
+      "lanes": [
+        {
+          "core_sha256": "a6a9bcad38ae88cc9f845483dd59eec585d1af1d492ca4b8b871c35f21a6bf97",
+          "core_bytes": 903550,
+          "compile_ms": 7.747917000000001,
+          "samples": [
+            {
+              "instantiate_ms": 0.5189579999999978,
+              "setup_ms": 1.331542000000013,
+              "run_ms": 22.092040999999995,
+              "total_ms": 23.942541000000006,
+              "steps": 3259945,
+              "calls": 54,
+              "linear_memory_bytes": 16056320,
+              "stdout": "1:needle one\n2:beta needle two\n",
+              "exit": 0
+            },
+            {
+              "instantiate_ms": 0.41958300000004556,
+              "setup_ms": 1.7032089999999585,
+              "run_ms": 21.212500000000034,
+              "total_ms": 23.335292000000038,
+              "steps": 3259945,
+              "calls": 54,
+              "linear_memory_bytes": 16056320,
+              "stdout": "1:needle one\n2:beta needle two\n",
+              "exit": 0
+            },
+            {
+              "instantiate_ms": 0.42037500000003547,
+              "setup_ms": 1.2884159999999838,
+              "run_ms": 21.110792000000004,
+              "total_ms": 22.819583000000023,
+              "steps": 3259945,
+              "calls": 54,
+              "linear_memory_bytes": 16056320,
+              "stdout": "1:needle one\n2:beta needle two\n",
+              "exit": 0
+            },
+            {
+              "instantiate_ms": 0.7703750000000582,
+              "setup_ms": 1.3977499999999736,
+              "run_ms": 23.115374999999972,
+              "total_ms": 25.283500000000004,
+              "steps": 3259945,
+              "calls": 54,
+              "linear_memory_bytes": 16056320,
+              "stdout": "1:needle one\n2:beta needle two\n",
+              "exit": 0
+            },
+            {
+              "instantiate_ms": 0.4577080000000251,
+              "setup_ms": 1.4263750000000073,
+              "run_ms": 22.80620799999997,
+              "total_ms": 24.690291000000002,
+              "steps": 3259945,
+              "calls": 54,
+              "linear_memory_bytes": 16056320,
+              "stdout": "1:needle one\n2:beta needle two\n",
+              "exit": 0
+            },
+            {
+              "instantiate_ms": 0.39162499999997635,
+              "setup_ms": 1.3102499999999964,
+              "run_ms": 21.598125000000095,
+              "total_ms": 23.300000000000068,
+              "steps": 3259945,
+              "calls": 54,
+              "linear_memory_bytes": 16056320,
+              "stdout": "1:needle one\n2:beta needle two\n",
+              "exit": 0
+            },
+            {
+              "instantiate_ms": 0.5750839999999471,
+              "setup_ms": 1.8242500000000064,
+              "run_ms": 25.856041000000005,
+              "total_ms": 28.255374999999958,
+              "steps": 3259945,
+              "calls": 54,
+              "linear_memory_bytes": 16056320,
+              "stdout": "1:needle one\n2:beta needle two\n",
+              "exit": 0
+            }
+          ]
+        },
+        {
+          "core_sha256": "f6da81a808447212f0dd607eca94126b36eb7119055842320a833c5b2045f20b",
+          "core_bytes": 1704601,
+          "compile_ms": 3.5172090000000082,
+          "samples": [
+            {
+              "instantiate_ms": 0.3871669999999767,
+              "setup_ms": 1.3646659999999997,
+              "run_ms": 33.40129200000001,
+              "total_ms": 35.15312499999999,
+              "steps": 3362591,
+              "calls": 55,
+              "linear_memory_bytes": 15007744,
+              "stdout": "1:needle one\n2:beta needle two\n",
+              "exit": 0
+            },
+            {
+              "instantiate_ms": 0.5980840000000285,
+              "setup_ms": 1.4401250000000232,
+              "run_ms": 33.22658299999995,
+              "total_ms": 35.264792,
+              "steps": 3362591,
+              "calls": 55,
+              "linear_memory_bytes": 15007744,
+              "stdout": "1:needle one\n2:beta needle two\n",
+              "exit": 0
+            },
+            {
+              "instantiate_ms": 0.5880419999999731,
+              "setup_ms": 1.9551250000000095,
+              "run_ms": 33.361042,
+              "total_ms": 35.90420899999998,
+              "steps": 3362591,
+              "calls": 55,
+              "linear_memory_bytes": 15007744,
+              "stdout": "1:needle one\n2:beta needle two\n",
+              "exit": 0
+            },
+            {
+              "instantiate_ms": 0.4683750000000373,
+              "setup_ms": 2.0509159999999156,
+              "run_ms": 36.238459000000034,
+              "total_ms": 38.75774999999999,
+              "steps": 3362591,
+              "calls": 55,
+              "linear_memory_bytes": 15007744,
+              "stdout": "1:needle one\n2:beta needle two\n",
+              "exit": 0
+            },
+            {
+              "instantiate_ms": 0.49116700000001856,
+              "setup_ms": 1.9720829999999978,
+              "run_ms": 35.43845799999997,
+              "total_ms": 37.901707999999985,
+              "steps": 3362591,
+              "calls": 55,
+              "linear_memory_bytes": 15007744,
+              "stdout": "1:needle one\n2:beta needle two\n",
+              "exit": 0
+            },
+            {
+              "instantiate_ms": 0.5007079999999178,
+              "setup_ms": 1.334292000000005,
+              "run_ms": 33.647500000000036,
+              "total_ms": 35.48249999999996,
+              "steps": 3362591,
+              "calls": 55,
+              "linear_memory_bytes": 15007744,
+              "stdout": "1:needle one\n2:beta needle two\n",
+              "exit": 0
+            },
+            {
+              "instantiate_ms": 0.521874999999909,
+              "setup_ms": 2.111167000000023,
+              "run_ms": 34.40633300000002,
+              "total_ms": 37.03937499999995,
+              "steps": 3362591,
+              "calls": 55,
+              "linear_memory_bytes": 15007744,
+              "stdout": "1:needle one\n2:beta needle two\n",
+              "exit": 0
+            }
+          ]
+        }
+      ],
+      "scope": "same-machine static rg 1MiB workspace, no Guest compilation; linear memory is not peak RSS; no full Agent/network performance claim"
+    },
+    {
+      "schema": "agentvm.promotion-performance/v1",
+      "ok": true,
+      "runtime": "deno-2.9.4",
+      "fixture_sha256": "c14cdb389f34e504d69e386cfc67d5c5d9a730a990de03ca6910b2a15e30386a",
+      "input_sha256": "a15a4ece33b6ccb944709c0d408a584f7db420ba806b51ce1491f1f416bd0164",
+      "input_bytes": 1048576,
+      "warmups": 3,
+      "iterations": 7,
+      "alternating_order": true,
+      "limits": {
+        "median_ratio": 2,
+        "total_ms": 5000,
+        "linear_memory_bytes": 134217728
+      },
+      "ratios": {
+        "run_ms": 1.2801623170542533,
+        "total_ms": 1.2565616454877166
+      },
+      "lanes": [
+        {
+          "core_sha256": "a6a9bcad38ae88cc9f845483dd59eec585d1af1d492ca4b8b871c35f21a6bf97",
+          "core_bytes": 903550,
+          "compile_ms": 4.068082999999998,
+          "samples": [
+            {
+              "instantiate_ms": 0.1984579999999596,
+              "setup_ms": 2.2070000000000505,
+              "run_ms": 26.130833999999993,
+              "total_ms": 28.536292000000003,
+              "steps": 3259945,
+              "calls": 54,
+              "linear_memory_bytes": 16056320,
+              "stdout": "1:needle one\n2:beta needle two\n",
+              "exit": 0
+            },
+            {
+              "instantiate_ms": 0.2386250000000132,
+              "setup_ms": 2.975416999999993,
+              "run_ms": 30.10945799999996,
+              "total_ms": 33.32349999999997,
+              "steps": 3259945,
+              "calls": 54,
+              "linear_memory_bytes": 16056320,
+              "stdout": "1:needle one\n2:beta needle two\n",
+              "exit": 0
+            },
+            {
+              "instantiate_ms": 0.18283300000001645,
+              "setup_ms": 1.7144999999999868,
+              "run_ms": 26.548249999999996,
+              "total_ms": 28.445583,
+              "steps": 3259945,
+              "calls": 54,
+              "linear_memory_bytes": 16056320,
+              "stdout": "1:needle one\n2:beta needle two\n",
+              "exit": 0
+            },
+            {
+              "instantiate_ms": 0.1822090000000003,
+              "setup_ms": 2.097082999999998,
+              "run_ms": 25.821166999999946,
+              "total_ms": 28.100458999999944,
+              "steps": 3259945,
+              "calls": 54,
+              "linear_memory_bytes": 16056320,
+              "stdout": "1:needle one\n2:beta needle two\n",
+              "exit": 0
+            },
+            {
+              "instantiate_ms": 0.17899999999997362,
+              "setup_ms": 1.4450830000000678,
+              "run_ms": 25.930791999999997,
+              "total_ms": 27.554875000000038,
+              "steps": 3259945,
+              "calls": 54,
+              "linear_memory_bytes": 16056320,
+              "stdout": "1:needle one\n2:beta needle two\n",
+              "exit": 0
+            },
+            {
+              "instantiate_ms": 0.17933300000004238,
+              "setup_ms": 1.8481249999999818,
+              "run_ms": 25.910292000000027,
+              "total_ms": 27.93775000000005,
+              "steps": 3259945,
+              "calls": 54,
+              "linear_memory_bytes": 16056320,
+              "stdout": "1:needle one\n2:beta needle two\n",
+              "exit": 0
+            },
+            {
+              "instantiate_ms": 0.18345799999997325,
+              "setup_ms": 1.5687500000000227,
+              "run_ms": 26.236458000000084,
+              "total_ms": 27.98866600000008,
+              "steps": 3259945,
+              "calls": 54,
+              "linear_memory_bytes": 16056320,
+              "stdout": "1:needle one\n2:beta needle two\n",
+              "exit": 0
+            }
+          ]
+        },
+        {
+          "core_sha256": "f6da81a808447212f0dd607eca94126b36eb7119055842320a833c5b2045f20b",
+          "core_bytes": 1704601,
+          "compile_ms": 2.1367090000000033,
+          "samples": [
+            {
+              "instantiate_ms": 0.2059590000000071,
+              "setup_ms": 1.5495829999999842,
+              "run_ms": 33.53008299999999,
+              "total_ms": 35.28562499999998,
+              "steps": 3362591,
+              "calls": 55,
+              "linear_memory_bytes": 15007744,
+              "stdout": "1:needle one\n2:beta needle two\n",
+              "exit": 0
+            },
+            {
+              "instantiate_ms": 0.196708000000001,
+              "setup_ms": 1.5926670000000058,
+              "run_ms": 34.85583300000002,
+              "total_ms": 36.645208000000025,
+              "steps": 3362591,
+              "calls": 55,
+              "linear_memory_bytes": 15007744,
+              "stdout": "1:needle one\n2:beta needle two\n",
+              "exit": 0
+            },
+            {
+              "instantiate_ms": 0.2000409999999988,
+              "setup_ms": 1.7081249999999955,
+              "run_ms": 34.378625,
+              "total_ms": 36.286790999999994,
+              "steps": 3362591,
+              "calls": 55,
+              "linear_memory_bytes": 15007744,
+              "stdout": "1:needle one\n2:beta needle two\n",
+              "exit": 0
+            },
+            {
+              "instantiate_ms": 0.17525000000000546,
+              "setup_ms": 1.6829999999999927,
+              "run_ms": 33.45170900000005,
+              "total_ms": 35.30995900000005,
+              "steps": 3362591,
+              "calls": 55,
+              "linear_memory_bytes": 15007744,
+              "stdout": "1:needle one\n2:beta needle two\n",
+              "exit": 0
+            },
+            {
+              "instantiate_ms": 0.17979200000002038,
+              "setup_ms": 2.4189580000000888,
+              "run_ms": 33.26129199999991,
+              "total_ms": 35.86004200000002,
+              "steps": 3362591,
+              "calls": 55,
+              "linear_memory_bytes": 15007744,
+              "stdout": "1:needle one\n2:beta needle two\n",
+              "exit": 0
+            },
+            {
+              "instantiate_ms": 0.17145800000002964,
+              "setup_ms": 1.5236670000000458,
+              "run_ms": 33.31070799999998,
+              "total_ms": 35.00583300000005,
+              "steps": 3362591,
+              "calls": 55,
+              "linear_memory_bytes": 15007744,
+              "stdout": "1:needle one\n2:beta needle two\n",
+              "exit": 0
+            },
+            {
+              "instantiate_ms": 0.1828339999999571,
+              "setup_ms": 1.5480000000000018,
+              "run_ms": 33.31925000000001,
+              "total_ms": 35.05008399999997,
+              "steps": 3362591,
+              "calls": 55,
+              "linear_memory_bytes": 15007744,
+              "stdout": "1:needle one\n2:beta needle two\n",
+              "exit": 0
+            }
+          ]
+        }
+      ],
+      "scope": "same-machine static rg 1MiB workspace, no Guest compilation; linear memory is not peak RSS; no full Agent/network performance claim"
+    }
+  ],
+  "functional": [
+    {
+      "ok": true,
+      "schema": "agentvm.quality/v1",
+      "runtime": "node-26.5.1",
+      "core_sha256": "f6da81a808447212f0dd607eca94126b36eb7119055842320a833c5b2045f20b",
+      "core_bytes": 1704601,
+      "checks": [
+        "ABI5-zero-imports",
+        "invalid-ELF-rejected",
+        "empty-argv-rejected",
+        "NUL-argv-rejected",
+        "oversized-argv-rejected",
+        "invalid-create-no-session-leak",
+        "independent-live-sessions",
+        "exact-exit-output",
+        "no-cross-session-state",
+        "exact-exit-output",
+        "stale-handle-rejected",
+        "exact-exit-output",
+        "error-recovery-cleanup",
+        "fresh-instance-restart-and-replay",
+        "workspace-snapshot-fresh-instance",
+        "exact-exit-output",
+        "ungranted-time-random-does-not-consume-entropy",
+        "explicit-entropy-consumption",
+        "instruction-budget-enforced",
+        "all-session-cleanup"
+      ],
+      "failures": [],
+      "session_count": 0
+    },
+    {
+      "ok": true,
+      "schema": "agentvm.quality/v1",
+      "runtime": "bun-1.3.14",
+      "core_sha256": "f6da81a808447212f0dd607eca94126b36eb7119055842320a833c5b2045f20b",
+      "core_bytes": 1704601,
+      "checks": [
+        "ABI5-zero-imports",
+        "invalid-ELF-rejected",
+        "empty-argv-rejected",
+        "NUL-argv-rejected",
+        "oversized-argv-rejected",
+        "invalid-create-no-session-leak",
+        "independent-live-sessions",
+        "exact-exit-output",
+        "no-cross-session-state",
+        "exact-exit-output",
+        "stale-handle-rejected",
+        "exact-exit-output",
+        "error-recovery-cleanup",
+        "fresh-instance-restart-and-replay",
+        "workspace-snapshot-fresh-instance",
+        "exact-exit-output",
+        "ungranted-time-random-does-not-consume-entropy",
+        "explicit-entropy-consumption",
+        "instruction-budget-enforced",
+        "all-session-cleanup"
+      ],
+      "failures": [],
+      "session_count": 0
+    },
+    {
+      "ok": true,
+      "schema": "agentvm.quality/v1",
+      "runtime": "deno-2.9.4",
+      "core_sha256": "f6da81a808447212f0dd607eca94126b36eb7119055842320a833c5b2045f20b",
+      "core_bytes": 1704601,
+      "checks": [
+        "ABI5-zero-imports",
+        "invalid-ELF-rejected",
+        "empty-argv-rejected",
+        "NUL-argv-rejected",
+        "oversized-argv-rejected",
+        "invalid-create-no-session-leak",
+        "independent-live-sessions",
+        "exact-exit-output",
+        "no-cross-session-state",
+        "exact-exit-output",
+        "stale-handle-rejected",
+        "exact-exit-output",
+        "error-recovery-cleanup",
+        "fresh-instance-restart-and-replay",
+        "workspace-snapshot-fresh-instance",
+        "exact-exit-output",
+        "ungranted-time-random-does-not-consume-entropy",
+        "explicit-entropy-consumption",
+        "instruction-budget-enforced",
+        "all-session-cleanup"
+      ],
+      "failures": [],
+      "session_count": 0
+    }
+  ],
+  "prior_failure": {
+    "classification": "retained bounded-read compatibility failure on old MAIN; not candidate regression",
+    "input": "1MiB with one extremely long final line",
+    "exit": 1,
+    "error": "workspace read length 1179648 exceeds DirectBlock bound 1048576",
+    "resolution": "short-line representative workload; bound unchanged, no Core fix or permission expansion"
+  },
+  "qualification_scope": "bounded static rg 1MiB short-line workload only; 28-52 percent slower than generation2, no speedup/parity/full Agent/network claim"
+}
