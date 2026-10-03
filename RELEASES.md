@@ -7,7 +7,11 @@ SHA256 f6da81a808447212f0dd607eca94126b36eb7119055842320a833c5b2045f20b.
 Immutable release tag dev-20261003-g3 is the DEV manifest's download target;
 old dev/main generation2 assets remain available and are not mixed with it.
 Local Host tests6/6 and Node/Bun/Deno/Wasmi/Wasmtime real exit43 gates pass.
-Public cross-platform qualification and packages start pending. This larger
+Public source-free run37117072016 passed all JS and four-platform native gates.
+Package run37117071978 built/verified4/4 packages but attachment failed because
+publish job lacked checkout. Exact CI artifacts were internally verified and
+manually uploaded without rebuilding; the failure is retained in provenance.
+All four packages are bound to this Core and public glue4b33199. This larger
 Core does not inherit generation2 performance admission; MAIN/PROD unchanged.
 Public consumer skill is skills/agentvm-wasm/SKILL.md. Native Alpine network
 receipts do not imply those bindings exist in this public Wasm adapter.
@@ -48,7 +52,8 @@ performance qualification of the exact `dev` digest.
 
 ## main
 
-Unpublished until an exact `dev` artifact set passes the full admission gate.
+Retains qualified generation2. Generation3 is not promoted without its own
+exact-digest controlled performance admission, even if public semantics pass.
 
 ## prod
 

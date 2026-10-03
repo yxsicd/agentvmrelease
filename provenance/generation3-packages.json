@@ -1,0 +1,125 @@
+{
+  "run": 37117071978,
+  "workflow_result": "failure",
+  "build_jobs": "4/4 PASS",
+  "attachment_failure": "MODULE_NOT_FOUND channels/dev.json: publish job had no checkout",
+  "recovery": "manual upload of exact validated CI artifacts; no rebuild",
+  "packages": [
+    {
+      "asset": "agentvm-host-linux-x64.tar.gz",
+      "bytes": 5229427,
+      "sha256": "61be5441df90a44ff81157f4cc7b536d421fa392b7c5b0672c9dc42427fd23ab",
+      "internal_manifest": {
+        "schema": "agentvm.host-artifact/v1",
+        "platform": "linux-x64",
+        "core": {
+          "file": "agentvm-core.wasm",
+          "abi": 5,
+          "imports": 0,
+          "bytes": 1704601,
+          "sha256": "f6da81a808447212f0dd607eca94126b36eb7119055842320a833c5b2045f20b"
+        },
+        "native_host": {
+          "file": "agentvm-native-host",
+          "engines": [
+            "wasmi",
+            "wasmtime"
+          ],
+          "bytes": 17778080,
+          "sha256": "8ffb3f0dba74c6633bcf1ef0c7be7eca0bc36faabef4cb99e1ebbd89d98e9d8b"
+        },
+        "public_glue": {
+          "repository": "yxsicd/agentvmrelease",
+          "commit": "4b33199bab7870aba17562837acd7ac7469f0217"
+        }
+      }
+    },
+    {
+      "asset": "agentvm-host-linux-arm64.tar.gz",
+      "bytes": 4819245,
+      "sha256": "7f0f0df159ea243a81cca0a2a777c0d0e3d5c7ab7e5e4085d0ed98972fbedf4c",
+      "internal_manifest": {
+        "schema": "agentvm.host-artifact/v1",
+        "platform": "linux-arm64",
+        "core": {
+          "file": "agentvm-core.wasm",
+          "abi": 5,
+          "imports": 0,
+          "bytes": 1704601,
+          "sha256": "f6da81a808447212f0dd607eca94126b36eb7119055842320a833c5b2045f20b"
+        },
+        "native_host": {
+          "file": "agentvm-native-host",
+          "engines": [
+            "wasmi",
+            "wasmtime"
+          ],
+          "bytes": 14713992,
+          "sha256": "d9dc589d84912ded6643f89b72e5be6e969ff68a6ac16fcf76294c3652b71187"
+        },
+        "public_glue": {
+          "repository": "yxsicd/agentvmrelease",
+          "commit": "4b33199bab7870aba17562837acd7ac7469f0217"
+        }
+      }
+    },
+    {
+      "asset": "agentvm-host-macos-arm64.tar.gz",
+      "bytes": 4225206,
+      "sha256": "fa3180b4ddbac3d6c67c20f58b2811022c9c20c8a3ad34fdb37a0f0340118ad7",
+      "internal_manifest": {
+        "schema": "agentvm.host-artifact/v1",
+        "platform": "macos-arm64",
+        "core": {
+          "file": "agentvm-core.wasm",
+          "abi": 5,
+          "imports": 0,
+          "bytes": 1704601,
+          "sha256": "f6da81a808447212f0dd607eca94126b36eb7119055842320a833c5b2045f20b"
+        },
+        "native_host": {
+          "file": "agentvm-native-host",
+          "engines": [
+            "wasmi",
+            "wasmtime"
+          ],
+          "bytes": 12471056,
+          "sha256": "cadbafdb078aa193a5820e11c22dc7d34bc52ca72fcdc82f212769cd4c7eb06f"
+        },
+        "public_glue": {
+          "repository": "yxsicd/agentvmrelease",
+          "commit": "4b33199bab7870aba17562837acd7ac7469f0217"
+        }
+      }
+    },
+    {
+      "asset": "agentvm-host-windows-x64.tar.gz",
+      "bytes": 4222549,
+      "sha256": "415445c55a46125bb160f874690705ade21dcb32dcccaf45ca12fa3c103ec8e6",
+      "internal_manifest": {
+        "schema": "agentvm.host-artifact/v1",
+        "platform": "windows-x64",
+        "core": {
+          "file": "agentvm-core.wasm",
+          "abi": 5,
+          "imports": 0,
+          "bytes": 1704601,
+          "sha256": "f6da81a808447212f0dd607eca94126b36eb7119055842320a833c5b2045f20b"
+        },
+        "native_host": {
+          "file": "agentvm-native-host.exe",
+          "engines": [
+            "wasmi",
+            "wasmtime"
+          ],
+          "bytes": 10806784,
+          "sha256": "7bf5e91a6be8bb5809136828dbd9d47f3c670e988f62383b452cab4a4bb3dae0"
+        },
+        "public_glue": {
+          "repository": "yxsicd/agentvmrelease",
+          "commit": "4b33199bab7870aba17562837acd7ac7469f0217"
+        }
+      }
+    }
+  ]
+}

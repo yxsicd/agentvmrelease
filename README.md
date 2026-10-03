@@ -41,9 +41,10 @@ contents carry an immutable `HOST-ARTIFACT.json` bound to the exact Core and
 public-Glue commit. Only the release channel pointer/manifest changes during
 promotion.
 
-The first active generation is described in [`channels/dev.json`](channels/dev.json).
-`main` and `prod` start unpublished and become valid only after their promotion
-gates close.
+The newest DEV generation is described in [`channels/dev.json`](channels/dev.json).
+Download from the manifest's exact URL (it may name an immutable generation
+tag rather than the moving channel). MAIN retains its previously qualified
+generation until promotion gates close; PROD remains unpublished.
 
 ## Public Host glue
 

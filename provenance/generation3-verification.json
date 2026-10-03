@@ -1,0 +1,18 @@
+{
+  "schema": "agentvm.public-verification/v1",
+  "repository": "yxsicd/agentvmrelease",
+  "run_id": "37117072016",
+  "commit": "4b33199bab7870aba17562837acd7ac7469f0217",
+  "channel": "dev",
+  "jobs": [
+    {
+      "job": "javascript",
+      "result": "success"
+    },
+    {
+      "job": "native",
+      "result": "success"
+    }
+  ],
+  "ok": true
+}
