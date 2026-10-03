@@ -14,6 +14,9 @@ Fresh public matrix37152828383 PASS, 32 actual receipts at public238f4cf;
 evidence: provenance/generation4-public-qualification.json. Initial bootstrap
 CI/CDN failures remain in generation4-publication-pending.json. DEV consumers
 are admitted; controlled G4 performance promotion remains pending.
+Qualified-manifest CDN workflow37153275980 PASS at public2906fa7, all three
+channels: immutable downloads, HTTP200/CORS, exact digest/size, real ELF
+stdout/exit43 and cleanup0. Evidence: generation4-cdn-qualification.json.
 MAIN/PROD generation3 and rollback assets are unchanged. No transparent sockets,
 auth headers, SSE, file durability or constant browser-RSS claim.
 
