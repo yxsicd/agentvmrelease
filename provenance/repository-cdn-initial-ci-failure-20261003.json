@@ -1,0 +1,13 @@
+{
+  "repository": "yxsicd/agentvmrelease",
+  "run": 37140729925,
+  "public_commit": "7203d65fa688964ba40585e464ceb3fbf508f9cf",
+  "result": "failure",
+  "phase": "receipt write and artifact upload",
+  "error": "ENOENT: no such file or directory, open 'target/cdn-receipt.json'",
+  "cause": "new URL('../', receipt-file-URL) resolved above the target directory; fresh runner target directory was not created",
+  "receipt_missing": true,
+  "cdn_or_runtime_gate_qualified_from_this_run": false,
+  "resolution": "mkdir(dirname(resolve(receiptPath)), recursive:true); independently rerun on a fresh output directory and new CI revision",
+  "failed_run_retained": true
+}

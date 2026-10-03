@@ -2,6 +2,7 @@ import {resolveChannel, downloadVerified} from '../glue/js/distribution.mjs';
 import {AgentVmWasmHost} from '../glue/js/host.mjs';
 import {readFile, mkdir, writeFile} from 'node:fs/promises';
 import {createHash} from 'node:crypto';
+import {dirname, resolve} from 'node:path';
 const [revision, receiptPath = 'target/cdn-receipt.json'] = process.argv.slice(2);
 if (!/^[0-9a-f]{40}$/.test(revision ?? '')) throw Error('usage: node scripts/verify-cdn.mjs <public commit> [receipt.json]');
 const receipt = {schema:1, repository:'yxsicd/agentvmrelease', revision, started_at:new Date().toISOString(), passed:false, channels:[]};
@@ -43,7 +44,7 @@ try {
 } catch (error) { receipt.error = String(error); throw error; }
 finally {
   receipt.completed_at = new Date().toISOString();
-  await mkdir(new URL('../', new URL(receiptPath, 'file://' + process.cwd() + '/')), {recursive:true});
+  await mkdir(dirname(resolve(receiptPath)), {recursive:true});
   await writeFile(receiptPath, JSON.stringify(receipt,null,2) + '\n');
   console.log(JSON.stringify(receipt,null,2));
 }

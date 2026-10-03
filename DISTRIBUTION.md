@@ -86,3 +86,11 @@ Bun1.3.14 and Deno2.9.4 bounded ELF tests also pass; acquisition/receipt-policy
 explicit HEAD:refs/heads/main succeeded. CDN verification uses downloaded
 bytes, not a local-byte substitute. It does not establish a browser journey,
 new networking compatibility or a new performance baseline.
+
+Initial CDN Action37140729925 failed to write/upload its receipt on a fresh
+runner (target directory absent); that run does NOT qualify CDN acceptance.
+Failure is retained in provenance/repository-cdn-initial-ci-failure-20261003.json.
+The corrected dirname/resolve output path passes a fresh nested-directory
+real CDN rerun in provenance/repository-cdn-fresh-output-20261003.json.
+Independent CI reruns retain their own workflow result; a local PASS never
+rewrites the failed run into PASS.
