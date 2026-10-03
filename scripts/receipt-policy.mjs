@@ -1,3 +1,13 @@
+function validTiming(stat, requireSamples=false) {
+  if(!Number.isInteger(stat?.n)||stat.n<7||stat.n>31||
+    !Number.isFinite(stat.p95_ms)||stat.p95_ms<0||stat.p95_ms>5000)return false;
+  if(!requireSamples)return true; // Native v1 publishes summaries, not raw samples.
+  if(!Array.isArray(stat.samples_ms)||stat.samples_ms.length!==stat.n||
+    stat.samples_ms.some(v=>!Number.isFinite(v)||v<0))return false;
+  const sorted=[...stat.samples_ms].sort((a,b)=>a-b);
+  return stat.p95_ms===sorted[Math.ceil(stat.n*.95)-1];
+}
+
 export function validateReceipts(receipts, manifest) {
   const failures=[];
   const core=manifest.core;
@@ -11,8 +21,8 @@ export function validateReceipts(receipts, manifest) {
     if(r.core_sha256!==core?.sha256||r.core_bytes!==core?.bytes)failures.push(`wrong Core ${name}`);
     if(name.startsWith('performance-')){
       if(r.fixture_sha256!==fixtureSha||!r.runtime?.startsWith(name.slice(12,-5)+'-'))failures.push(`fixture/runtime ${name}`);
-      if(r.schema!=='agentvm.performance/v1'||r.steps!==30013||!Number.isFinite(r.linear_memory_bytes)||r.linear_memory_bytes>128*1024*1024)failures.push(`performance contract ${name}`);
-      for(const field of ['instantiate','create','run'])if(r[field]?.n<7||!Array.isArray(r[field]?.samples_ms)||r[field].samples_ms.length!==r[field].n||r[field].samples_ms.some(v=>!Number.isFinite(v)||v<0)||!Number.isFinite(r[field]?.p95_ms)||r[field].p95_ms>5000)failures.push(`invalid/grossly slow ${name}/${field}`);
+      if(r.schema!=='agentvm.performance/v1'||r.steps!==30013||!Number.isInteger(r.linear_memory_bytes)||r.linear_memory_bytes<=0||r.linear_memory_bytes>128*1024*1024)failures.push(`performance contract ${name}`);
+      for(const field of ['instantiate','create','run'])if(!validTiming(r[field],true))failures.push(`invalid/grossly slow ${name}/${field}`);
       if(!Number.isFinite(r.compile_ms)||r.compile_ms<0||r.compile_ms>120000)failures.push(`compile ceiling ${name}`);
     }else if(name.startsWith('quality-native-')){
       if(r.fixture_sha256!==fixtureSha)failures.push(`native fixture ${name}`);
@@ -20,8 +30,8 @@ export function validateReceipts(receipts, manifest) {
       for(const engine of ['wasmi','wasmtime']){
         const b=r.results?.[engine];
         if(b?.engine!==engine||b.abi!==5||b.imports!==0||b.wasm_bytes!==core?.bytes||b.results?.alu?.steps!==30013)failures.push(`engine contract ${name}/${engine}`);
-        if(!Number.isFinite(b?.compile_first_ms)||b.compile_first_ms<0||b.compile_first_ms>120000||!(b?.instantiate?.n>=7))failures.push(`native setup ${name}/${engine}`);
-        for(const field of ['create','run','total'])if(!(b?.results?.alu?.[field]?.n>=7)||!Number.isFinite(b?.results?.alu?.[field]?.p95_ms)||b.results.alu[field].p95_ms<0||b.results.alu[field].p95_ms>5000)failures.push(`native performance ${name}/${engine}/${field}`);
+        if(!Number.isFinite(b?.compile_first_ms)||b.compile_first_ms<0||b.compile_first_ms>120000||!validTiming(b?.instantiate))failures.push(`native setup ${name}/${engine}`);
+        for(const field of ['create','run','total'])if(!validTiming(b?.results?.alu?.[field]))failures.push(`native performance ${name}/${engine}/${field}`);
       }
     }else if(r.schema!=='agentvm.quality/v1'||!r.runtime?.startsWith(name.slice(8,-5)+'-')||r.session_count!==0||!Array.isArray(r.checks)||!r.checks.includes('fresh-instance-restart-and-replay')||!r.checks.includes('workspace-snapshot-fresh-instance')||!Array.isArray(r.failures)||r.failures.length)failures.push(`functional contract ${name}`);
   }

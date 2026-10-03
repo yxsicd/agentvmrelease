@@ -103,3 +103,12 @@ the checkout projection without changing Host/Core content or relaxing digest
 checks. test-checkout-identity.mjs verifies all three cohorts under CRLF-default
 Git configuration in every runtime/native lane. Keep the original failure and
 wait for independent Windows CI before claiming its gate PASS.
+
+Performance receipt admission also checks JS p95 against its actual raw samples,
+integer bounded sample counts and positive measured linear memory. Native v1
+receipts expose summaries only: their counts and instantiate/create/run/total
+p95 are checked, but raw percentile recomputation is not claimed. Six malformed
+mutations that previously passed are now rejected; the same seven real CI lanes
+remain admitted locally. Evidence: provenance/receipt-policy-consistency-20261003.json.
+This strengthens evidence quality without changing Core, benchmark methodology
+or performance ceilings; shared-runner measurements are not a speedup claim.

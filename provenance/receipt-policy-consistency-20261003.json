@@ -1,0 +1,25 @@
+{
+  "schema": 1,
+  "before_public_commit": "a655ab299c7e97d20ba3dd1cf2cde3e8783017d6",
+  "accepted_ci_receipts_run": 37141732123,
+  "accepted_ci_run_status": "completed",
+  "accepted_ci_run_conclusion": "success",
+  "scope": "Receipt admission only; no Core/Host, benchmark method or performance ceiling changes",
+  "isolated_mutation_tests_before": {"passed": 17, "failed": 6, "exit": 1},
+  "previously_admitted_invalid_mutations": [
+    "negative JS percentile", "forged JS percentile hiding slow raw samples",
+    "negative linear memory", "fractional native sample count",
+    "infinite native sample count", "missing native instantiate percentile"
+  ],
+  "validation_after": {"checkout_distribution_receipt_tests": 27, "passed": 27, "exit": 0},
+  "real_ci_artifacts_rechecked_locally": {
+    "receipt_count": 32, "failures": [],
+    "runtime_lanes": ["node", "bun", "deno", "linux-x64", "linux-arm64", "macos-arm64", "windows-x64"]
+  },
+  "native_raw_samples_available": false,
+  "native_policy_scope": "Integer bounded sample counts and finite nonnegative bounded p95 summaries, including instantiate; raw percentile recomputation not claimed",
+  "new_ci_pass_inferred": false,
+  "core_bytes": 1704601,
+  "js_linear_memory_bytes": 1638400,
+  "performance_improvement_claimed": false
+}
