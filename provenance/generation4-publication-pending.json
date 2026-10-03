@@ -1,0 +1,22 @@
+{
+  "generation": 4,
+  "release": "https://github.com/yxsicd/agentvmrelease/releases/tag/dev-20261003-g4",
+  "publication_head": "ff1354f70fe11ae36f91db3c2daba91b4e434e51",
+  "source_authority": "a9808ccfd3494cd74b66942708a9add22b38ec06",
+  "core_sha256": "2ae5b4e532d289555b8306a0ac56f9ba4560cafa1e536284c9fa0af343aae698",
+  "core_bytes": 1727654,
+  "anonymous_core_readback": "PASS exact size/SHA",
+  "local_node_bun_deno_quality": "PASS",
+  "adapter_tests": 10,
+  "distribution_identity_tests": 27,
+  "package_run": 37152312349,
+  "package_head": "ff1354f70fe11ae36f91db3c2daba91b4e434e51",
+  "package_status_at_record": "in_progress",
+  "initial_source_free_run": 37152246663,
+  "initial_source_free_result": "failure before Core load: CRLF child verifier omitted explicit candidate-dev inspection",
+  "initial_cdn_run": 37152246661,
+  "initial_cdn_result": "failure: pending DEV is intentionally not consumer-qualified",
+  "initial_release_create": "HTTP422 short target_commitish; recovered with full40hex same commit, no duplicate release",
+  "public_qualification": "pending, not inherited from G3",
+  "next": "Read package run, verify four exact new archives/internal Core/public-glue identities; record manifest package_head and archive identities; run fresh source-free DEV matrix and collect aggregate before qualification. CDN remains gated until public qualification pass. MAIN/PROD unchanged G3."
+}

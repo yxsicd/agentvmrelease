@@ -22,7 +22,7 @@ test('CRLF-default checkout preserves manifest-bound public bytes', async () => 
         assert.equal(createHash('sha256').update(bytes).digest('hex'),id.sha256,id.path);
       }
     }
-    const verify = spawnSync(process.execPath, ['scripts/verify-repository-distribution.mjs'],
+    const verify = spawnSync(process.execPath, ['scripts/verify-repository-distribution.mjs','--candidate-dev'],
       {cwd:dir,encoding:'utf8'});
     assert.equal(verify.status,0,verify.stderr);
     assert.equal(JSON.parse(verify.stdout).receipts.length,3);
