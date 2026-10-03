@@ -1,5 +1,18 @@
 # Release channels
 
+## dev — generation4 candidate (2026-10-03)
+
+Clean pushed private main a9808ccfd3494cd74b66942708a9add22b38ec06,
+Core1727654B/SHA2ae5b4e532d289555b8306a0ac56f9ba4560cafa1e536284c9fa0af343aae698,
+ABI5/imports0. Optional generic stream bridge and public peripheral FetchBridge
+support JSON POST, awaited streaming and BYOB with separate Host quota/window.
+Private actual browser10MiB byte checking, partial cancel/same-Host recovery,
+CORS/JSON preflight and response edges have receipts. Public adapter10 unit
+tests and exact Core static/quality tests pass locally. Native-package build
+and fresh public multi-platform verification are PENDING; no inherited G3 PASS.
+MAIN/PROD generation3 and rollback assets are unchanged. No transparent sockets,
+auth headers, SSE, file durability or constant browser-RSS claim.
+
 ## dev — generation 3 (2026-10-03)
 
 Clean pushed private main df6676eb produces ABI5 import-free Core1704601B,

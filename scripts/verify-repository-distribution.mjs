@@ -2,9 +2,13 @@ import {readFile, readdir} from 'node:fs/promises';
 import {createHash} from 'node:crypto';
 import {AgentVmWasmHost} from '../glue/js/host.mjs';
 const receipts = [];
+// CI can inspect an unqualified DEV candidate to qualify it; consumers remain
+// fail-closed in distribution.mjs. MAIN/PROD never get this exception.
+const candidateDev=process.argv.includes('--candidate-dev');
 for (const channel of ['dev', 'main', 'prod']) {
   const m = JSON.parse(await readFile(`channels/${channel}.json`, 'utf8'));
-  if (m.channel !== channel || m.public_qualification?.result !== 'pass' ||
+  const pending=candidateDev&&channel==='dev'&&m.state==='pending-public-qualification'&&m.public_qualification?.result==='pending';
+  if (m.channel !== channel || (!pending&&m.public_qualification?.result !== 'pass') ||
       m.distribution?.schema !== 'agentvm.repository-distribution/v1' ||
       m.core.repository_path !== `channels/${channel}/agentvm-core.wasm`) throw Error('invalid manifest');
   const files = await readdir(`channels/${channel}`);

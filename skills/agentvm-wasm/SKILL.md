@@ -78,3 +78,21 @@ Report selected channel/generation, exact Core SHA/bytes, runtime, stdout,
 stderr, guest exit and cleanup separately. Startup time, process RSS, Wasm
 linear memory and artifact size are distinct measurements. A fixture pass
 does not prove representative application compatibility or performance.
+
+Generation4 DEV adds optional generic stream-bridge v1. Use the same pinned
+public revision for glue/js/fetch-bridge.mjs and Host/Core. Feature-detect
+agentvm_wasm_stream_bridge_version before attaching explicit service FD3/4;
+older MAIN/PROD generation3 do not support this optional extension.
+FetchBridge uses ordinary managed/browser fetch, CORS and existing proxy policy;
+it bypasses no security and is NOT transparent Linux curl/socket/TCP/UDP support.
+Its request() helper buffers only small32KiB responses. Large transfers use
+stream(requestBytes,{onResponse,onChunk,chunkBytes,maxBodyBytes,signal,readerMode})
+with awaited sink draining and separate optional total Host quota. Default16KiB
+delivery prefers BYOB; non-byte streams may fall back, with actual mode/peak
+reported. Consumers own status/framing, final EOF and partial-data cleanup;
+stream does not aggregate the body or automatically publish EOF on success.
+JSON Content-Type is limited to string-body POST with contentType application/json;
+arbitrary/auth headers and SSE are not supported. CORS preflight denial may
+prevent POST, but simple GET denial does not prevent transmission. Browser10MiB
+byte-check/partial-cancel recovery is consumption proof, not file durability or
+bounded whole-browser RSS. No private native-network capability is inherited.

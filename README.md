@@ -42,8 +42,13 @@ public-Glue commit. Only the release channel pointer/manifest changes during
 promotion.
 
 The newest DEV generation is described in [`channels/dev.json`](channels/dev.json).
+Generation4 is a pending-public-qualification prerelease: new generic stream
+extension and optional public FetchBridge with JSON POST/BYOB streaming.
+Local Node/Bun/Deno gates pass; fresh native packages/matrix are required before
+MAIN/PROD promotion. Automatic consumer resolution rejects pending manifests;
+manual preview users must verify exact bytes and accept these limited gates.
 Download from the manifest's exact URL (it may name an immutable generation
-tag rather than the moving channel). MAIN and PROD now point to generation3,
+tag rather than the moving channel). MAIN and PROD still point to generation3,
 promoted byte-for-byte from DEV; older generation2 tags remain for rollback.
 The stable scope is bounded static AArch64 Linux execution, not unrestricted
 Alpine networking or full Agent compatibility. See RELEASES.md for exact gates
