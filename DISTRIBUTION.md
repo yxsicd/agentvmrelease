@@ -61,7 +61,9 @@ to MAIN/PROD. After the selected release is qualified:
    are verified before replacement; interrupted local writes must be reviewed.
 3. Run node scripts/verify-repository-distribution.mjs, acquisition negative
    tests and exact source-free runtime gates. Commit manifests, current Core
-   bytes and matching public Host/fixtures together, then push.
+   bytes and matching public Host/fixtures together, then push using
+   git push origin HEAD:refs/heads/main (the repository also has a main tag;
+   the short main ref is ambiguous).
 4. Run node scripts/verify-cdn.mjs <public-commit> <receipt.json>. Preserve
    failure receipts; CDN propagation failure is not a publication PASS.
 
@@ -70,3 +72,17 @@ repository Core identity. Existing native packages still undergo digest and
 relocation checks. The independent CDN workflow verifies all three channels
 on push, manually and daily. Old binaries are retained in Git history and
 immutable Release assets, not extra versioned Wasm files in the current tree.
+
+## Verified initial repository publication (2026-10-03)
+
+Immutable asset/manifest commit: 7203d65fa688964ba40585e464ceb3fbf508f9cf.
+All three existing qualified generation3 channels contain original bytes,
+1704601B, SHA f6da81a808447212f0dd607eca94126b36eb7119055842320a833c5b2045f20b.
+No rebuild/promotion/Core capability change. Exact three-channel HTTP200,
+anonymous CORS*, digest/size/ABI5/imports0, real ELF exit43/stdout/cleanup
+receipt is provenance/repository-cdn-20261003.json. Local Node26.5.1,
+Bun1.3.14 and Deno2.9.4 bounded ELF tests also pass; acquisition/receipt-policy
+19 tests pass. An initial short-ref git push failed before publication;
+explicit HEAD:refs/heads/main succeeded. CDN verification uses downloaded
+bytes, not a local-byte substitute. It does not establish a browser journey,
+new networking compatibility or a new performance baseline.
