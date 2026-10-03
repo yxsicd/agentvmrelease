@@ -27,7 +27,12 @@
     "eligible_for_main": false,
     "scope": "G4 candidate, public native packages and fresh matrix pending"
   },
-  "host_packages": [],
+  "host_packages": [
+    {"platform":"linux-arm64","asset":"agentvm-host-linux-arm64.tar.gz","bytes":4827458,"sha256":"31a297694a948d1feed645a5821793e10af51ceab9ec4c88f860da9725addd2b"},
+    {"platform":"linux-x64","asset":"agentvm-host-linux-x64.tar.gz","bytes":5237689,"sha256":"5a06a4ccb23c483403699f46539d1ae4d921189c8caa906c20cef089f632aee0"},
+    {"platform":"macos-arm64","asset":"agentvm-host-macos-arm64.tar.gz","bytes":4233952,"sha256":"a5430bfc3ed783616831fac695ca363962ff9d2b0dc7fbc9b042824480f52aa1"},
+    {"platform":"windows-x64","asset":"agentvm-host-windows-x64.tar.gz","bytes":4230759,"sha256":"f6a8e221c821c28704bea7a22198b1ab0bfb35708c0826654ec00470c2b38c4d"}
+  ],
   "private_qualification": {
     "result": "pass",
     "scope": "exact clean-source Core static and private browser/Node streaming receipts; local Node public quality gate; no inherited native qualification"
@@ -35,6 +40,8 @@
   "usage_skill": "skills/agentvm-wasm/SKILL.md",
   "public_qualification": {
     "result": "pending",
+    "package_run": 37152312349,
+    "package_head": "ff1354f70fe11ae36f91db3c2daba91b4e434e51",
     "scope": "New exact-digest matrix and four matching packages required"
   },
   "distribution": {
