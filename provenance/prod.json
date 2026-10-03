@@ -54,9 +54,9 @@
   ],
   "public_qualification": {
     "result": "pass",
-    "source_free_run": 37117072016,
-    "source_free_aggregate_sha256": "1998ae2073174eb60161f948366bf15bed8613200c6496788f82c030c99702de",
-    "source_free_head": "4b33199bab7870aba17562837acd7ac7469f0217",
+    "source_free_run": 37120834681,
+    "source_free_aggregate_sha256": "2c9488bb9f1a9cdc6b730743e08b5ebbef474dd2e6df2eb8739ecb095612b75a",
+    "source_free_head": "1a930751616fd5bb9fd10406fb4c7634405d6a73",
     "package_run": 37117071978,
     "package_head": "4b33199bab7870aba17562837acd7ac7469f0217",
     "package_build_jobs": "4/4 PASS",
@@ -81,7 +81,9 @@
       37120164805,
       37120492444
     ],
-    "aggregate_receipts_each": 32
+    "aggregate_receipts_each": 32,
+    "prod_regression_run": 37120834681,
+    "aggregate_receipts": 32
   },
   "policy": "Only clean pushed main produces Core; exact SHA identifies bytes. MAIN/PROD promotion requires independent exact-digest gates.",
   "host_packages": [
@@ -123,7 +125,7 @@
       37120492444
     ],
     "soak_scope": "two short-term full matrix regressions, not overnight or public application soak",
-    "post_publication_prod_verification": "pending"
+    "post_publication_prod_verification": "PASS"
   },
   "performance_admission": {
     "performance_qualified_exact_digest": true,

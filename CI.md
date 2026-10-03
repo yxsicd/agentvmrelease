@@ -1,5 +1,12 @@
 # Public source-free quality gates
 
+Generation3 promotion checkpoint2026-10-03: MAIN37120164805/37120492444 and
+PROD37120834681 all PASS,32 receipts each, same Core SHA f6da81a8. MAIN/PROD
+now use immutable generation3 download targets; older generation2 tags retained.
+See RELEASES.md and provenance/{main-g3-first,main-g3-second,prod-g3-final}-20261003.json.
+Controlled whole-tool admission separately records28-52% slower short-line
+ripgrep than generation2, not a shared-runner performance improvement claim.
+
 Qualification checkpoint2026-10-03: code7ed2b8c, DEV run37118599280 and MAIN
 run37118601504 both PASS, each32 collected receipts and all seven matrix jobs
 plus aggregate successful. Projection/digests in provenance/quality-ci-20261003.json.

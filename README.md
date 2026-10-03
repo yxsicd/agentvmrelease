@@ -43,8 +43,11 @@ promotion.
 
 The newest DEV generation is described in [`channels/dev.json`](channels/dev.json).
 Download from the manifest's exact URL (it may name an immutable generation
-tag rather than the moving channel). MAIN retains its previously qualified
-generation until promotion gates close; PROD remains unpublished.
+tag rather than the moving channel). MAIN and PROD now point to generation3,
+promoted byte-for-byte from DEV; older generation2 tags remain for rollback.
+The stable scope is bounded static AArch64 Linux execution, not unrestricted
+Alpine networking or full Agent compatibility. See RELEASES.md for exact gates
+and retained performance regressions.
 
 ## Public Host glue
 

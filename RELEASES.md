@@ -12,7 +12,8 @@ Package run37117071978 built/verified4/4 packages but attachment failed because
 publish job lacked checkout. Exact CI artifacts were internally verified and
 manually uploaded without rebuilding; the failure is retained in provenance.
 All four packages are bound to this Core and public glue4b33199. This larger
-Core does not inherit generation2 performance admission; MAIN/PROD unchanged.
+Core does not inherit generation2 performance admission; the independent
+generation3 promotion qualification is recorded below.
 Public consumer skill is skills/agentvm-wasm/SKILL.md. Native Alpine network
 receipts do not imply those bindings exist in this public Wasm adapter.
 
@@ -52,9 +53,35 @@ performance qualification of the exact `dev` digest.
 
 ## main
 
-Retains qualified generation2. Generation3 is not promoted without its own
-exact-digest controlled performance admission, even if public semantics pass.
+Generation3 published at main-20261003-g3, with exact DEV Core, four native
+packages and consumer skill bytes. Controlled same-machine alternating Node,
+Bun and Deno runs qualify prebuilt ripgrep over1MiB short-line workspace:
+3 warmups and7 measured iterations per artifact/runtime, exact output/exit and
+cleanup, no Guest compilation. Candidate run median is28-52% slower than
+generation2 (about30-34ms), not parity or speedup. It passes the explicitly
+recorded gross2x/5s/128MiB guardrails; Wasm linear memory about15MB is not RSS.
+Core1704601B is~89% larger. Full Agent/network performance remains unqualified.
+
+The same1MiB very-long-line input fails on generation2's bounded read but
+passes on generation3: exact stdout, exit0, empty stderr and cleanup0.
+Initial wrong import helper setup is INVALID fixture, separate from the real
+baseline failure. Evidence: provenance/promotion-long-line-20261003.json.
+
+Two fresh published MAIN full matrix regressions37120164805/37120492444
+PASS: all seven JS/native lanes plus aggregate,32 actual receipts each.
+This is short-term repeated regression admission, not overnight soak or
+representative public Agent journey. Generation2 releases remain untouched.
+Performance and exact reports are in provenance/promotion-performance-20261003.json
+and provenance/main-g3-{first,second}-20261003.json.
 
 ## prod
 
-Unpublished until an exact `main` artifact set passes soak/regression gates.
+Generation3 published at prod-20261003-g3, byte-for-byte from qualified MAIN;
+no Core/package/skill rebuild. Stable release remains limited to documented
+ABI5 static execution capabilities, not native Alpine network bindings,
+dynamic distro tools, streaming stdin or full application performance.
+PROD-address full matrix run37120834681 PASS: all seven JS/native lanes plus
+aggregate,32 actual receipts. Exact report: provenance/prod-g3-final-20261003.json.
+Anonymous Core download hash/Node execution and all published asset SHA checks
+PASS. Metadata qualification was finalized after CI; Core/package/skill bytes
+were not changed. Both MAIN and PROD are publicly downloadable.

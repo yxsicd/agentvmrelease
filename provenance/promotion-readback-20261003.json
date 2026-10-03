@@ -1,0 +1,109 @@
+{
+  "schema": "agentvm.promotion-readback/v1",
+  "core_and_packages_rebuilt": false,
+  "channels": {
+    "main": {
+      "release_tag": "main-20261003-g3",
+      "metadata_equal_to_repository": true,
+      "assets": [
+        {
+          "name": "agentvm-core.wasm",
+          "bytes": 1704601,
+          "sha256": "f6da81a808447212f0dd607eca94126b36eb7119055842320a833c5b2045f20b"
+        },
+        {
+          "name": "agentvm-host-linux-arm64.tar.gz",
+          "bytes": 4819245,
+          "sha256": "7f0f0df159ea243a81cca0a2a777c0d0e3d5c7ab7e5e4085d0ed98972fbedf4c"
+        },
+        {
+          "name": "agentvm-host-linux-x64.tar.gz",
+          "bytes": 5229427,
+          "sha256": "61be5441df90a44ff81157f4cc7b536d421fa392b7c5b0672c9dc42427fd23ab"
+        },
+        {
+          "name": "agentvm-host-macos-arm64.tar.gz",
+          "bytes": 4225206,
+          "sha256": "fa3180b4ddbac3d6c67c20f58b2811022c9c20c8a3ad34fdb37a0f0340118ad7"
+        },
+        {
+          "name": "agentvm-host-windows-x64.tar.gz",
+          "bytes": 4222549,
+          "sha256": "415445c55a46125bb160f874690705ade21dcb32dcccaf45ca12fa3c103ec8e6"
+        },
+        {
+          "name": "agentvm-wasm-skill.tar.gz",
+          "bytes": 2001,
+          "sha256": "c24a7510cfb0c8eb53dec80e881c10ed5af4836ed80451ca2dac32a0318f2a58"
+        },
+        {
+          "name": "agentvm-main.json",
+          "bytes": 3855,
+          "sha256": "1d071b2473029229c08d7e8d6a3af538e950ea9795067ae91c1b8fe12f8eff71"
+        },
+        {
+          "name": "provenance-main.json",
+          "bytes": 5070,
+          "sha256": "15226dc437dca38f4eb102b6ce517f1a580865e2d57d59bed15e7458c3d89d49"
+        }
+      ]
+    },
+    "prod": {
+      "release_tag": "prod-20261003-g3",
+      "metadata_equal_to_repository": true,
+      "assets": [
+        {
+          "name": "agentvm-core.wasm",
+          "bytes": 1704601,
+          "sha256": "f6da81a808447212f0dd607eca94126b36eb7119055842320a833c5b2045f20b"
+        },
+        {
+          "name": "agentvm-host-linux-arm64.tar.gz",
+          "bytes": 4819245,
+          "sha256": "7f0f0df159ea243a81cca0a2a777c0d0e3d5c7ab7e5e4085d0ed98972fbedf4c"
+        },
+        {
+          "name": "agentvm-host-linux-x64.tar.gz",
+          "bytes": 5229427,
+          "sha256": "61be5441df90a44ff81157f4cc7b536d421fa392b7c5b0672c9dc42427fd23ab"
+        },
+        {
+          "name": "agentvm-host-macos-arm64.tar.gz",
+          "bytes": 4225206,
+          "sha256": "fa3180b4ddbac3d6c67c20f58b2811022c9c20c8a3ad34fdb37a0f0340118ad7"
+        },
+        {
+          "name": "agentvm-host-windows-x64.tar.gz",
+          "bytes": 4222549,
+          "sha256": "415445c55a46125bb160f874690705ade21dcb32dcccaf45ca12fa3c103ec8e6"
+        },
+        {
+          "name": "agentvm-wasm-skill.tar.gz",
+          "bytes": 2001,
+          "sha256": "c24a7510cfb0c8eb53dec80e881c10ed5af4836ed80451ca2dac32a0318f2a58"
+        },
+        {
+          "name": "agentvm-prod.json",
+          "bytes": 3724,
+          "sha256": "5f137db2e4c1e6cff1d40696639042d2204362e04cc1af238f3bb27d91decfdb"
+        },
+        {
+          "name": "provenance-prod.json",
+          "bytes": 4940,
+          "sha256": "65ac6966d6707e323b65037bbc4a38d42f6f9da2adcd542f238606ea161d9acc"
+        }
+      ]
+    }
+  },
+  "anonymous_prod_node": {
+    "ok": true,
+    "runtime": "node-26.5.1",
+    "abi": 5,
+    "imports": 0,
+    "wasm_bytes": 1704601,
+    "elf_bytes": 656,
+    "exit": 43,
+    "steps": 9,
+    "slices": 3
+  }
+}
