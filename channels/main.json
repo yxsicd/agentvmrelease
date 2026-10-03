@@ -30,8 +30,12 @@
     "source_generation": 3,
     "byte_for_byte_core": true,
     "byte_for_byte_host_packages": true,
-    "eligible_for_prod": false,
-    "prod_gate": "two fresh published MAIN full matrix regressions pending; no overnight soak claim"
+    "eligible_for_prod": true,
+    "prod_gate": "two fresh full MAIN regressions PASS; bounded short-term soak only, no overnight claim",
+    "regression_runs": [
+      37120164805,
+      37120492444
+    ]
   },
   "host_packages": [
     {
@@ -97,7 +101,12 @@
     "native_engines": [
       "wasmi-2.0.0",
       "wasmtime-49.0.0-rc.1"
-    ]
+    ],
+    "main_regression_runs": [
+      37120164805,
+      37120492444
+    ],
+    "aggregate_receipts_each": 32
   },
   "skill_artifact": {
     "asset": "agentvm-wasm-skill.tar.gz",

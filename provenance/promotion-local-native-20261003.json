@@ -1,0 +1,134 @@
+{
+  "native": {
+    "ok": true,
+    "schema": "agentvm.native-quality/v1",
+    "platform": "darwin",
+    "arch": "arm64",
+    "core_sha256": "f6da81a808447212f0dd607eca94126b36eb7119055842320a833c5b2045f20b",
+    "fixture_sha256": "3f26f9e1832b8b63955069d1bba972eee357b47114ec4cf20106fb3370f5b160",
+    "core_bytes": 1704601,
+    "native_host_bytes": 12471056,
+    "native_host_sha256": "cadbafdb078aa193a5820e11c22dc7d34bc52ca72fcdc82f212769cd4c7eb06f",
+    "results": {
+      "wasmi": {
+        "engine": "wasmi",
+        "engine_version": "2.0.0",
+        "wasm_bytes": 1704601,
+        "imports": 0,
+        "abi": 5,
+        "compile_first_ms": 6.6823749999999995,
+        "instantiate": {
+          "n": 7,
+          "p50_ms": 0.029124999999999998,
+          "p95_ms": 0.12812500000000002,
+          "trimmed_mean_ms": 0.044077428571428566,
+          "min_ms": 0.026875,
+          "max_ms": 0.12812500000000002
+        },
+        "results": {
+          "alu": {
+            "create": {
+              "n": 9,
+              "p50_ms": 0.030583000000000003,
+              "p95_ms": 0.035042000000000004,
+              "trimmed_mean_ms": 0.03129166666666667,
+              "min_ms": 0.029625,
+              "max_ms": 0.035042000000000004
+            },
+            "run": {
+              "n": 9,
+              "p50_ms": 2.590666,
+              "p95_ms": 2.8065830000000003,
+              "trimmed_mean_ms": 2.620606444444445,
+              "min_ms": 2.558375,
+              "max_ms": 2.8065830000000003
+            },
+            "total": {
+              "n": 9,
+              "p50_ms": 2.62175,
+              "p95_ms": 2.8365,
+              "trimmed_mean_ms": 2.6518981111111106,
+              "min_ms": 2.5887919999999998,
+              "max_ms": 2.8365
+            },
+            "run_calls": [
+              1
+            ],
+            "steps": 30013
+          }
+        }
+      },
+      "wasmtime": {
+        "engine": "wasmtime",
+        "engine_version": "49.0.0-rc.1",
+        "wasm_bytes": 1704601,
+        "imports": 0,
+        "abi": 5,
+        "compile_first_ms": 745.539667,
+        "instantiate": {
+          "n": 7,
+          "p50_ms": 0.112583,
+          "p95_ms": 0.6862090000000001,
+          "trimmed_mean_ms": 0.21139900000000003,
+          "min_ms": 0.017292,
+          "max_ms": 0.6862090000000001
+        },
+        "results": {
+          "alu": {
+            "create": {
+              "n": 9,
+              "p50_ms": 0.003625,
+              "p95_ms": 0.005625000000000001,
+              "trimmed_mean_ms": 0.003824222222222222,
+              "min_ms": 0.003417,
+              "max_ms": 0.005625000000000001
+            },
+            "run": {
+              "n": 9,
+              "p50_ms": 0.4525,
+              "p95_ms": 0.470834,
+              "trimmed_mean_ms": 0.4529213333333334,
+              "min_ms": 0.43783299999999997,
+              "max_ms": 0.470834
+            },
+            "total": {
+              "n": 9,
+              "p50_ms": 0.45641699999999996,
+              "p95_ms": 0.474334,
+              "trimmed_mean_ms": 0.45674555555555557,
+              "min_ms": 0.44125000000000003,
+              "max_ms": 0.474334
+            },
+            "run_calls": [
+              1
+            ],
+            "steps": 30013
+          }
+        }
+      }
+    },
+    "failures": [],
+    "scope": "public CLI correctness and resident ALU benchmarks; no native snapshot/peak-RSS claim"
+  },
+  "relocated": {
+    "ok": true,
+    "platform": "darwin",
+    "arch": "arm64",
+    "binary": "target/promote-g3/relocated/agentvm/agentvm-native-host",
+    "core": "target/promote-g3/relocated/agentvm/agentvm-core.wasm",
+    "results": [
+      {
+        "engine": "wasmi",
+        "exit": 43,
+        "stdout": "agentvm-real-elf-pass",
+        "stderr_bytes": 0
+      },
+      {
+        "engine": "wasmtime",
+        "exit": 43,
+        "stdout": "agentvm-real-elf-pass",
+        "stderr_bytes": 0
+      }
+    ]
+  }
+}

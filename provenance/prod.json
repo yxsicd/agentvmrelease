@@ -1,6 +1,6 @@
 {
   "schema": "agentvm.release-provenance/v1",
-  "channel": "main",
+  "channel": "prod",
   "generation": 3,
   "built_from_private_source": true,
   "source_available": false,
@@ -15,7 +15,7 @@
     "imports": 0,
     "bytes": 1704601,
     "sha256": "f6da81a808447212f0dd607eca94126b36eb7119055842320a833c5b2045f20b",
-    "download": "https://github.com/yxsicd/agentvmrelease/releases/download/main-20261003-g3/agentvm-core.wasm"
+    "download": "https://github.com/yxsicd/agentvmrelease/releases/download/prod-20261003-g3/agentvm-core.wasm"
   },
   "build_toolchain": {
     "rustc": "1.96.0 (ac68faa20 2026-05-25)",
@@ -109,24 +109,21 @@
   "skill_artifact": {
     "asset": "agentvm-wasm-skill.tar.gz",
     "sha256": "c24a7510cfb0c8eb53dec80e881c10ed5af4836ed80451ca2dac32a0318f2a58",
-    "download": "https://github.com/yxsicd/agentvmrelease/releases/download/main-20261003-g3/agentvm-wasm-skill.tar.gz"
+    "download": "https://github.com/yxsicd/agentvmrelease/releases/download/prod-20261003-g3/agentvm-wasm-skill.tar.gz"
   },
   "promotion": {
-    "performance_qualified_exact_digest": true,
-    "public_source_free_qualified": true,
-    "eligible_for_main": true,
-    "performance_evidence": "provenance/promotion-performance-20261003.json",
-    "scope": "bounded static rg 1MiB short-line workload only; 28-52 percent slower than generation2, no speedup/parity/full Agent/network claim",
-    "promoted_from": "dev",
+    "promoted_from": "main",
     "source_generation": 3,
     "byte_for_byte_core": true,
     "byte_for_byte_host_packages": true,
-    "eligible_for_prod": true,
-    "prod_gate": "two fresh full MAIN regressions PASS; bounded short-term soak only, no overnight claim",
-    "regression_runs": [
+    "performance_qualified_exact_digest": true,
+    "performance_evidence": "provenance/promotion-performance-20261003.json",
+    "main_regression_runs": [
       37120164805,
       37120492444
-    ]
+    ],
+    "soak_scope": "two short-term full matrix regressions, not overnight or public application soak",
+    "post_publication_prod_verification": "pending"
   },
   "performance_admission": {
     "performance_qualified_exact_digest": true,

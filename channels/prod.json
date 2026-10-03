@@ -2,7 +2,112 @@
   "schema": "agentvm.release-channel/v1",
   "channel": "prod",
   "mutable": true,
-  "state": "unpublished",
-  "promotion_from": "main",
-  "rule": "byte-for-byte promotion only; no rebuild"
+  "state": "qualified-stable",
+  "generation": 3,
+  "release_tag": "prod-20261003-g3",
+  "core": {
+    "asset": "agentvm-core.wasm",
+    "target": "wasm32-unknown-unknown",
+    "abi": 5,
+    "imports": 0,
+    "bytes": 1704601,
+    "sha256": "f6da81a808447212f0dd607eca94126b36eb7119055842320a833c5b2045f20b",
+    "download": "https://github.com/yxsicd/agentvmrelease/releases/download/prod-20261003-g3/agentvm-core.wasm"
+  },
+  "source": {
+    "available": false,
+    "private_repository": "yxsicd/agentvm",
+    "release_authority_commit": "df6676eb355a4c250dea7ae74a8a3e5f0af69264",
+    "release_rule": "clean pushed main only"
+  },
+  "promotion": {
+    "promoted_from": "main",
+    "source_generation": 3,
+    "byte_for_byte_core": true,
+    "byte_for_byte_host_packages": true,
+    "performance_qualified_exact_digest": true,
+    "performance_evidence": "provenance/promotion-performance-20261003.json",
+    "main_regression_runs": [
+      37120164805,
+      37120492444
+    ],
+    "soak_scope": "two short-term full matrix regressions, not overnight or public application soak",
+    "post_publication_prod_verification": "pending"
+  },
+  "host_packages": [
+    {
+      "asset": "agentvm-host-linux-x64.tar.gz",
+      "bytes": 5229427,
+      "sha256": "61be5441df90a44ff81157f4cc7b536d421fa392b7c5b0672c9dc42427fd23ab"
+    },
+    {
+      "asset": "agentvm-host-linux-arm64.tar.gz",
+      "bytes": 4819245,
+      "sha256": "7f0f0df159ea243a81cca0a2a777c0d0e3d5c7ab7e5e4085d0ed98972fbedf4c"
+    },
+    {
+      "asset": "agentvm-host-macos-arm64.tar.gz",
+      "bytes": 4225206,
+      "sha256": "fa3180b4ddbac3d6c67c20f58b2811022c9c20c8a3ad34fdb37a0f0340118ad7"
+    },
+    {
+      "asset": "agentvm-host-windows-x64.tar.gz",
+      "bytes": 4222549,
+      "sha256": "415445c55a46125bb160f874690705ade21dcb32dcccaf45ca12fa3c103ec8e6"
+    }
+  ],
+  "private_qualification": {
+    "result": "pass",
+    "host_tests": "6/6",
+    "local_engines": [
+      "node-26.5.1",
+      "bun-1.3.14",
+      "deno-2.9.4",
+      "wasmi",
+      "wasmtime"
+    ],
+    "guest_exit": 43,
+    "guest_stdout": "agentvm-real-elf-pass\n",
+    "guest_stderr": "",
+    "guest_steps": 9,
+    "run_calls": 3,
+    "scope": "bounded real static ELF; no native Alpine networking or performance inheritance"
+  },
+  "usage_skill": "skills/agentvm-wasm/SKILL.md",
+  "public_qualification": {
+    "result": "pass",
+    "source_free_run": 37117072016,
+    "source_free_aggregate_sha256": "1998ae2073174eb60161f948366bf15bed8613200c6496788f82c030c99702de",
+    "source_free_head": "4b33199bab7870aba17562837acd7ac7469f0217",
+    "package_run": 37117071978,
+    "package_head": "4b33199bab7870aba17562837acd7ac7469f0217",
+    "package_build_jobs": "4/4 PASS",
+    "package_workflow_result": "failure: attachment job missing checkout",
+    "publication_recovery": "exact CI artifacts internally verified and manually uploaded; no rebuild",
+    "javascript_runtimes": [
+      "node-26.5.1",
+      "bun-1.3.14",
+      "deno-2.9.4"
+    ],
+    "native_platforms": [
+      "linux-x64",
+      "linux-arm64",
+      "macos-arm64",
+      "windows-x64"
+    ],
+    "native_engines": [
+      "wasmi-2.0.0",
+      "wasmtime-49.0.0-rc.1"
+    ],
+    "main_regression_runs": [
+      37120164805,
+      37120492444
+    ],
+    "aggregate_receipts_each": 32
+  },
+  "skill_artifact": {
+    "asset": "agentvm-wasm-skill.tar.gz",
+    "sha256": "c24a7510cfb0c8eb53dec80e881c10ed5af4836ed80451ca2dac32a0318f2a58",
+    "download": "https://github.com/yxsicd/agentvmrelease/releases/download/prod-20261003-g3/agentvm-wasm-skill.tar.gz"
+  }
 }

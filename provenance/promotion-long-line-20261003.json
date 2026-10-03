@@ -1,0 +1,27 @@
+{
+  "scope": "Exact 1MiB long-line old-MAIN failure and generation3 success; not all-size admission",
+  "input_sha256": "d0e40b776720131cb843e51ca5ac8b0cc154661fcffd4364cbb87f2bdccdd703",
+  "rows": [
+    {
+      "sha256": "a6a9bcad38ae88cc9f845483dd59eec585d1af1d492ca4b8b871c35f21a6bf97",
+      "error": "AgentVM session execution failed: workspace read length 1179648 exceeds DirectBlock bound 1048576",
+      "state": 1,
+      "exit": null,
+      "stdout": "",
+      "stderr": "",
+      "steps": 2381798,
+      "sessions_after_destroy": 0
+    },
+    {
+      "sha256": "f6da81a808447212f0dd607eca94126b36eb7119055842320a833c5b2045f20b",
+      "error": null,
+      "state": 2,
+      "exit": 0,
+      "stdout": "1:needle one\n2:beta needle two\n",
+      "stderr": "",
+      "steps": 4200104,
+      "sessions_after_destroy": 0
+    }
+  ],
+  "invalid_fixture_setup": "Initial helper import used wrong relative path, ERR_MODULE_NOT_FOUND exit1; no Guest execution."
+}
