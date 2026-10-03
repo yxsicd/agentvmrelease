@@ -1,0 +1,1581 @@
+{
+  "schema": "agentvm.quality-ci-checkpoint/v1",
+  "tested_commit": "7ed2b8c69176ce2b00bb0705cc94988c4b8a4b1e",
+  "results": [
+    {
+      "channel": "dev",
+      "run_id": "37118599280",
+      "commit": "7ed2b8c69176ce2b00bb0705cc94988c4b8a4b1e",
+      "core": {
+        "asset": "agentvm-core.wasm",
+        "target": "wasm32-unknown-unknown",
+        "abi": 5,
+        "imports": 0,
+        "bytes": 1704601,
+        "sha256": "f6da81a808447212f0dd607eca94126b36eb7119055842320a833c5b2045f20b",
+        "download": "https://github.com/yxsicd/agentvmrelease/releases/download/dev-20261003-g3/agentvm-core.wasm"
+      },
+      "report_sha256": "7eb198326cbeec9a0d3f350f0338d2e99a29e3f927cb7510edfa1622688f0417",
+      "receipt_count": 32,
+      "ok": true,
+      "javascript": [
+        {
+          "name": "quality-bun.json",
+          "runtime": "bun-1.3.14",
+          "check_count": 20,
+          "checks": [
+            "ABI5-zero-imports",
+            "invalid-ELF-rejected",
+            "empty-argv-rejected",
+            "NUL-argv-rejected",
+            "oversized-argv-rejected",
+            "invalid-create-no-session-leak",
+            "independent-live-sessions",
+            "exact-exit-output",
+            "no-cross-session-state",
+            "exact-exit-output",
+            "stale-handle-rejected",
+            "exact-exit-output",
+            "error-recovery-cleanup",
+            "fresh-instance-restart-and-replay",
+            "workspace-snapshot-fresh-instance",
+            "exact-exit-output",
+            "ungranted-time-random-does-not-consume-entropy",
+            "explicit-entropy-consumption",
+            "instruction-budget-enforced",
+            "all-session-cleanup"
+          ],
+          "session_count": 0,
+          "failures": []
+        },
+        {
+          "name": "quality-deno.json",
+          "runtime": "deno-2.9.4",
+          "check_count": 20,
+          "checks": [
+            "ABI5-zero-imports",
+            "invalid-ELF-rejected",
+            "empty-argv-rejected",
+            "NUL-argv-rejected",
+            "oversized-argv-rejected",
+            "invalid-create-no-session-leak",
+            "independent-live-sessions",
+            "exact-exit-output",
+            "no-cross-session-state",
+            "exact-exit-output",
+            "stale-handle-rejected",
+            "exact-exit-output",
+            "error-recovery-cleanup",
+            "fresh-instance-restart-and-replay",
+            "workspace-snapshot-fresh-instance",
+            "exact-exit-output",
+            "ungranted-time-random-does-not-consume-entropy",
+            "explicit-entropy-consumption",
+            "instruction-budget-enforced",
+            "all-session-cleanup"
+          ],
+          "session_count": 0,
+          "failures": []
+        },
+        {
+          "name": "quality-node.json",
+          "runtime": "node-26.5.1",
+          "check_count": 20,
+          "checks": [
+            "ABI5-zero-imports",
+            "invalid-ELF-rejected",
+            "empty-argv-rejected",
+            "NUL-argv-rejected",
+            "oversized-argv-rejected",
+            "invalid-create-no-session-leak",
+            "independent-live-sessions",
+            "exact-exit-output",
+            "no-cross-session-state",
+            "exact-exit-output",
+            "stale-handle-rejected",
+            "exact-exit-output",
+            "error-recovery-cleanup",
+            "fresh-instance-restart-and-replay",
+            "workspace-snapshot-fresh-instance",
+            "exact-exit-output",
+            "ungranted-time-random-does-not-consume-entropy",
+            "explicit-entropy-consumption",
+            "instruction-budget-enforced",
+            "all-session-cleanup"
+          ],
+          "session_count": 0,
+          "failures": []
+        }
+      ],
+      "js_performance": [
+        {
+          "name": "performance-bun.json",
+          "ok": true,
+          "schema": "agentvm.performance/v1",
+          "runtime": "bun-1.3.14",
+          "core_sha256": "f6da81a808447212f0dd607eca94126b36eb7119055842320a833c5b2045f20b",
+          "fixture_sha256": "3f26f9e1832b8b63955069d1bba972eee357b47114ec4cf20106fb3370f5b160",
+          "core_bytes": 1704601,
+          "compile_ms": 15.174047999999999,
+          "instantiate": {
+            "n": 9,
+            "p50_ms": 1.24536599999999,
+            "p95_ms": 3.106465,
+            "min_ms": 0.6176659999999998,
+            "max_ms": 3.106465,
+            "samples_ms": [
+              2.287010000000002,
+              0.7855849999999975,
+              3.106465,
+              0.6176659999999998,
+              1.6127809999999982,
+              0.6567639999999955,
+              2.134584000000004,
+              0.7115739999999988,
+              1.24536599999999
+            ]
+          },
+          "create": {
+            "n": 9,
+            "p50_ms": 0.18930100000000039,
+            "p95_ms": 0.29266300000000456,
+            "min_ms": 0.12916100000001052,
+            "max_ms": 0.29266300000000456,
+            "samples_ms": [
+              0.19217499999999887,
+              0.29266300000000456,
+              0.1660060000000101,
+              0.12916100000001052,
+              0.19857500000000528,
+              0.13358800000000315,
+              0.21564999999999657,
+              0.18930100000000039,
+              0.136092000000005
+            ]
+          },
+          "run": {
+            "n": 9,
+            "p50_ms": 3.1645309999999967,
+            "p95_ms": 3.80432900000001,
+            "min_ms": 2.628236000000001,
+            "max_ms": 3.80432900000001,
+            "samples_ms": [
+              3.279091000000001,
+              3.2367479999999915,
+              3.1645309999999967,
+              2.841701999999998,
+              2.7752729999999985,
+              2.898807000000005,
+              3.5963610000000017,
+              3.80432900000001,
+              2.628236000000001
+            ]
+          },
+          "steps": 30013,
+          "guest_steps_per_second": 9484185.808260381,
+          "linear_memory_bytes": 1638400,
+          "process_memory": {
+            "rss": 89468928,
+            "heapTotal": 1393664,
+            "heapUsed": 13682324,
+            "external": 13084412,
+            "arrayBuffers": 6621329
+          },
+          "scope": "fresh-instance ALU; process-memory point sample not peak RSS; CI timing diagnostic, no cross-run speedup claim"
+        },
+        {
+          "name": "performance-deno.json",
+          "ok": true,
+          "schema": "agentvm.performance/v1",
+          "runtime": "deno-2.9.4",
+          "core_sha256": "f6da81a808447212f0dd607eca94126b36eb7119055842320a833c5b2045f20b",
+          "fixture_sha256": "3f26f9e1832b8b63955069d1bba972eee357b47114ec4cf20106fb3370f5b160",
+          "core_bytes": 1704601,
+          "compile_ms": 9.040341,
+          "instantiate": {
+            "n": 9,
+            "p50_ms": 0.6020500000000055,
+            "p95_ms": 3.6775639999999896,
+            "min_ms": 0.4581400000000002,
+            "max_ms": 3.6775639999999896,
+            "samples_ms": [
+              1.6486250000000027,
+              0.6471549999999979,
+              0.5837560000000082,
+              3.008316999999991,
+              0.5574869999999947,
+              0.6020500000000055,
+              3.6775639999999896,
+              0.5311679999999939,
+              0.4581400000000002
+            ]
+          },
+          "create": {
+            "n": 9,
+            "p50_ms": 0.14074399999999798,
+            "p95_ms": 0.1539199999999994,
+            "min_ms": 0.10518799999999828,
+            "max_ms": 0.1539199999999994,
+            "samples_ms": [
+              0.14074399999999798,
+              0.1446419999999904,
+              0.1348729999999989,
+              0.14782800000000407,
+              0.12551500000000715,
+              0.1539199999999994,
+              0.15071199999999862,
+              0.1148550000000057,
+              0.10518799999999828
+            ]
+          },
+          "run": {
+            "n": 9,
+            "p50_ms": 5.983232000000001,
+            "p95_ms": 7.733407,
+            "min_ms": 4.396433000000002,
+            "max_ms": 7.733407,
+            "samples_ms": [
+              4.396433000000002,
+              6.195049000000012,
+              5.957363000000001,
+              6.0876870000000025,
+              7.733407,
+              6.1172830000000005,
+              5.983232000000001,
+              5.9071890000000025,
+              5.907088999999999
+            ]
+          },
+          "steps": 30013,
+          "guest_steps_per_second": 5016185.232329282,
+          "linear_memory_bytes": 1638400,
+          "process_memory": {
+            "rss": 106348544,
+            "heapTotal": 6553600,
+            "heapUsed": 3639184,
+            "external": 2022997
+          },
+          "scope": "fresh-instance ALU; process-memory point sample not peak RSS; CI timing diagnostic, no cross-run speedup claim"
+        },
+        {
+          "name": "performance-node.json",
+          "ok": true,
+          "schema": "agentvm.performance/v1",
+          "runtime": "node-26.5.1",
+          "core_sha256": "f6da81a808447212f0dd607eca94126b36eb7119055842320a833c5b2045f20b",
+          "fixture_sha256": "3f26f9e1832b8b63955069d1bba972eee357b47114ec4cf20106fb3370f5b160",
+          "core_bytes": 1704601,
+          "compile_ms": 3.3194739999999996,
+          "instantiate": {
+            "n": 9,
+            "p50_ms": 0.3061310000000006,
+            "p95_ms": 0.4420350000000042,
+            "min_ms": 0.26691100000000034,
+            "max_ms": 0.4420350000000042,
+            "samples_ms": [
+              0.3061310000000006,
+              0.30118299999999465,
+              0.26691100000000034,
+              0.2894459999999981,
+              0.30484900000000437,
+              0.33146899999999846,
+              0.38950599999999724,
+              0.34168400000000076,
+              0.4420350000000042
+            ]
+          },
+          "create": {
+            "n": 9,
+            "p50_ms": 0.07645499999999572,
+            "p95_ms": 0.08596900000000574,
+            "min_ms": 0.06147200000000197,
+            "max_ms": 0.08596900000000574,
+            "samples_ms": [
+              0.06596900000000261,
+              0.06991500000000173,
+              0.0840469999999982,
+              0.06147200000000197,
+              0.06479699999999866,
+              0.08047100000000285,
+              0.08596900000000574,
+              0.07645499999999572,
+              0.08407699999999352
+            ]
+          },
+          "run": {
+            "n": 9,
+            "p50_ms": 1.5859459999999999,
+            "p95_ms": 1.7000579999999985,
+            "min_ms": 0.9287969999999959,
+            "max_ms": 1.7000579999999985,
+            "samples_ms": [
+              0.9922729999999973,
+              0.9498790000000028,
+              0.9287969999999959,
+              0.9943559999999962,
+              1.5859459999999999,
+              1.6548499999999962,
+              1.7000579999999985,
+              1.5959610000000026,
+              1.6086000000000098
+            ]
+          },
+          "steps": 30013,
+          "guest_steps_per_second": 18924351.774902806,
+          "linear_memory_bytes": 1638400,
+          "process_memory": {
+            "rss": 96669696,
+            "heapTotal": 8785920,
+            "heapUsed": 6435376,
+            "external": 4182838,
+            "arrayBuffers": 2111231
+          },
+          "scope": "fresh-instance ALU; process-memory point sample not peak RSS; CI timing diagnostic, no cross-run speedup claim"
+        }
+      ],
+      "native": [
+        {
+          "name": "quality-native-linux-arm64.json",
+          "platform": "linux",
+          "arch": "arm64",
+          "native_host_bytes": 14713992,
+          "results": {
+            "wasmi": {
+              "engine": "wasmi",
+              "engine_version": "2.0.0",
+              "wasm_bytes": 1704601,
+              "imports": 0,
+              "abi": 5,
+              "compile_first_ms": 10.989196,
+              "instantiate": {
+                "n": 7,
+                "p50_ms": 0.047484,
+                "p95_ms": 0.41184499999999996,
+                "trimmed_mean_ms": 0.12595642857142855,
+                "min_ms": 0.041181999999999996,
+                "max_ms": 0.41184499999999996
+              },
+              "results": {
+                "alu": {
+                  "create": {
+                    "n": 9,
+                    "p50_ms": 0.045125,
+                    "p95_ms": 0.065148,
+                    "trimmed_mean_ms": 0.04746633333333334,
+                    "min_ms": 0.044734,
+                    "max_ms": 0.065148
+                  },
+                  "run": {
+                    "n": 9,
+                    "p50_ms": 7.575611,
+                    "p95_ms": 7.5848260000000005,
+                    "trimmed_mean_ms": 7.576713111111112,
+                    "min_ms": 7.5613399999999995,
+                    "max_ms": 7.5848260000000005
+                  },
+                  "total": {
+                    "n": 9,
+                    "p50_ms": 7.626136000000001,
+                    "p95_ms": 7.637831,
+                    "trimmed_mean_ms": 7.624179444444445,
+                    "min_ms": 7.606465,
+                    "max_ms": 7.637831
+                  },
+                  "run_calls": [
+                    1
+                  ],
+                  "steps": 30013
+                }
+              }
+            },
+            "wasmtime": {
+              "engine": "wasmtime",
+              "engine_version": "49.0.0-rc.1",
+              "wasm_bytes": 1704601,
+              "imports": 0,
+              "abi": 5,
+              "compile_first_ms": 1327.1415100000002,
+              "instantiate": {
+                "n": 7,
+                "p50_ms": 0.014854999999999998,
+                "p95_ms": 0.15559800000000001,
+                "trimmed_mean_ms": 0.03599871428571429,
+                "min_ms": 0.013879,
+                "max_ms": 0.15559800000000001
+              },
+              "results": {
+                "alu": {
+                  "create": {
+                    "n": 9,
+                    "p50_ms": 0.00536,
+                    "p95_ms": 0.005912000000000001,
+                    "trimmed_mean_ms": 0.005415666666666666,
+                    "min_ms": 0.0052959999999999995,
+                    "max_ms": 0.005912000000000001
+                  },
+                  "run": {
+                    "n": 9,
+                    "p50_ms": 0.887854,
+                    "p95_ms": 0.898494,
+                    "trimmed_mean_ms": 0.8900222222222224,
+                    "min_ms": 0.88375,
+                    "max_ms": 0.898494
+                  },
+                  "total": {
+                    "n": 9,
+                    "p50_ms": 0.8937660000000001,
+                    "p95_ms": 0.903854,
+                    "trimmed_mean_ms": 0.895437888888889,
+                    "min_ms": 0.889166,
+                    "max_ms": 0.903854
+                  },
+                  "run_calls": [
+                    1
+                  ],
+                  "steps": 30013
+                }
+              }
+            }
+          },
+          "failures": []
+        },
+        {
+          "name": "quality-native-linux-x64.json",
+          "platform": "linux",
+          "arch": "x64",
+          "native_host_bytes": 17778080,
+          "results": {
+            "wasmi": {
+              "engine": "wasmi",
+              "engine_version": "2.0.0",
+              "wasm_bytes": 1704601,
+              "imports": 0,
+              "abi": 5,
+              "compile_first_ms": 11.717055,
+              "instantiate": {
+                "n": 7,
+                "p50_ms": 0.043414,
+                "p95_ms": 0.590027,
+                "trimmed_mean_ms": 0.17817185714285713,
+                "min_ms": 0.042323,
+                "max_ms": 0.590027
+              },
+              "results": {
+                "alu": {
+                  "create": {
+                    "n": 9,
+                    "p50_ms": 0.057545,
+                    "p95_ms": 0.06289299999999999,
+                    "trimmed_mean_ms": 0.05798822222222222,
+                    "min_ms": 0.056133,
+                    "max_ms": 0.06289299999999999
+                  },
+                  "run": {
+                    "n": 9,
+                    "p50_ms": 7.0849850000000005,
+                    "p95_ms": 7.235287,
+                    "trimmed_mean_ms": 7.104484666666667,
+                    "min_ms": 7.057674,
+                    "max_ms": 7.235287
+                  },
+                  "total": {
+                    "n": 9,
+                    "p50_ms": 7.14253,
+                    "p95_ms": 7.2944949999999995,
+                    "trimmed_mean_ms": 7.16247288888889,
+                    "min_ms": 7.11585,
+                    "max_ms": 7.2944949999999995
+                  },
+                  "run_calls": [
+                    1
+                  ],
+                  "steps": 30013
+                }
+              }
+            },
+            "wasmtime": {
+              "engine": "wasmtime",
+              "engine_version": "49.0.0-rc.1",
+              "wasm_bytes": 1704601,
+              "imports": 0,
+              "abi": 5,
+              "compile_first_ms": 1298.8246370000002,
+              "instantiate": {
+                "n": 7,
+                "p50_ms": 0.035232,
+                "p95_ms": 0.157004,
+                "trimmed_mean_ms": 0.05196742857142857,
+                "min_ms": 0.026529999999999998,
+                "max_ms": 0.157004
+              },
+              "results": {
+                "alu": {
+                  "create": {
+                    "n": 9,
+                    "p50_ms": 0.008583,
+                    "p95_ms": 0.009344,
+                    "trimmed_mean_ms": 0.008717444444444446,
+                    "min_ms": 0.008293,
+                    "max_ms": 0.009344
+                  },
+                  "run": {
+                    "n": 9,
+                    "p50_ms": 1.139823,
+                    "p95_ms": 1.1658519999999999,
+                    "trimmed_mean_ms": 1.145691111111111,
+                    "min_ms": 1.129448,
+                    "max_ms": 1.1658519999999999
+                  },
+                  "total": {
+                    "n": 9,
+                    "p50_ms": 1.148116,
+                    "p95_ms": 1.1748660000000002,
+                    "trimmed_mean_ms": 1.1544085555555554,
+                    "min_ms": 1.13782,
+                    "max_ms": 1.1748660000000002
+                  },
+                  "run_calls": [
+                    1
+                  ],
+                  "steps": 30013
+                }
+              }
+            }
+          },
+          "failures": []
+        },
+        {
+          "name": "quality-native-macos-arm64.json",
+          "platform": "darwin",
+          "arch": "arm64",
+          "native_host_bytes": 12471056,
+          "results": {
+            "wasmi": {
+              "engine": "wasmi",
+              "engine_version": "2.0.0",
+              "wasm_bytes": 1704601,
+              "imports": 0,
+              "abi": 5,
+              "compile_first_ms": 9.471667,
+              "instantiate": {
+                "n": 7,
+                "p50_ms": 0.032666999999999995,
+                "p95_ms": 0.449417,
+                "trimmed_mean_ms": 0.098387,
+                "min_ms": 0.031791,
+                "max_ms": 0.449417
+              },
+              "results": {
+                "alu": {
+                  "create": {
+                    "n": 9,
+                    "p50_ms": 0.044583000000000005,
+                    "p95_ms": 0.048667,
+                    "trimmed_mean_ms": 0.04374088888888889,
+                    "min_ms": 0.038208,
+                    "max_ms": 0.048667
+                  },
+                  "run": {
+                    "n": 9,
+                    "p50_ms": 5.088292,
+                    "p95_ms": 5.251583,
+                    "trimmed_mean_ms": 5.087958333333333,
+                    "min_ms": 4.940957999999999,
+                    "max_ms": 5.251583
+                  },
+                  "total": {
+                    "n": 9,
+                    "p50_ms": 5.132167,
+                    "p95_ms": 5.296708,
+                    "trimmed_mean_ms": 5.131699222222223,
+                    "min_ms": 4.983375,
+                    "max_ms": 5.296708
+                  },
+                  "run_calls": [
+                    1
+                  ],
+                  "steps": 30013
+                }
+              }
+            },
+            "wasmtime": {
+              "engine": "wasmtime",
+              "engine_version": "49.0.0-rc.1",
+              "wasm_bytes": 1704601,
+              "imports": 0,
+              "abi": 5,
+              "compile_first_ms": 1087.637958,
+              "instantiate": {
+                "n": 7,
+                "p50_ms": 0.024708,
+                "p95_ms": 0.094625,
+                "trimmed_mean_ms": 0.034482000000000006,
+                "min_ms": 0.018542,
+                "max_ms": 0.094625
+              },
+              "results": {
+                "alu": {
+                  "create": {
+                    "n": 9,
+                    "p50_ms": 0.009583,
+                    "p95_ms": 0.01675,
+                    "trimmed_mean_ms": 0.010717444444444444,
+                    "min_ms": 0.006,
+                    "max_ms": 0.01675
+                  },
+                  "run": {
+                    "n": 9,
+                    "p50_ms": 0.73175,
+                    "p95_ms": 0.876334,
+                    "trimmed_mean_ms": 0.7480602222222221,
+                    "min_ms": 0.6617500000000001,
+                    "max_ms": 0.876334
+                  },
+                  "total": {
+                    "n": 9,
+                    "p50_ms": 0.745458,
+                    "p95_ms": 0.885917,
+                    "trimmed_mean_ms": 0.7587776666666666,
+                    "min_ms": 0.673916,
+                    "max_ms": 0.885917
+                  },
+                  "run_calls": [
+                    1
+                  ],
+                  "steps": 30013
+                }
+              }
+            }
+          },
+          "failures": []
+        },
+        {
+          "name": "quality-native-windows-x64.json",
+          "platform": "win32",
+          "arch": "x64",
+          "native_host_bytes": 10806784,
+          "results": {
+            "wasmi": {
+              "engine": "wasmi",
+              "engine_version": "2.0.0",
+              "wasm_bytes": 1704601,
+              "imports": 0,
+              "abi": 5,
+              "compile_first_ms": 15.6803,
+              "instantiate": {
+                "n": 7,
+                "p50_ms": 0.3289,
+                "p95_ms": 0.3909,
+                "trimmed_mean_ms": 0.34135714285714286,
+                "min_ms": 0.31980000000000003,
+                "max_ms": 0.3909
+              },
+              "results": {
+                "alu": {
+                  "create": {
+                    "n": 9,
+                    "p50_ms": 0.0698,
+                    "p95_ms": 0.0735,
+                    "trimmed_mean_ms": 0.07012222222222222,
+                    "min_ms": 0.06849999999999999,
+                    "max_ms": 0.0735
+                  },
+                  "run": {
+                    "n": 9,
+                    "p50_ms": 8.521700000000001,
+                    "p95_ms": 9.006200000000002,
+                    "trimmed_mean_ms": 8.566977777777778,
+                    "min_ms": 7.795,
+                    "max_ms": 9.006200000000002
+                  },
+                  "total": {
+                    "n": 9,
+                    "p50_ms": 8.593200000000001,
+                    "p95_ms": 9.0754,
+                    "trimmed_mean_ms": 8.6371,
+                    "min_ms": 7.863500000000001,
+                    "max_ms": 9.0754
+                  },
+                  "run_calls": [
+                    1
+                  ],
+                  "steps": 30013
+                }
+              }
+            },
+            "wasmtime": {
+              "engine": "wasmtime",
+              "engine_version": "49.0.0-rc.1",
+              "wasm_bytes": 1704601,
+              "imports": 0,
+              "abi": 5,
+              "compile_first_ms": 1743.5184000000002,
+              "instantiate": {
+                "n": 7,
+                "p50_ms": 0.0896,
+                "p95_ms": 0.1601,
+                "trimmed_mean_ms": 0.09944285714285715,
+                "min_ms": 0.0864,
+                "max_ms": 0.1601
+              },
+              "results": {
+                "alu": {
+                  "create": {
+                    "n": 9,
+                    "p50_ms": 0.0067,
+                    "p95_ms": 0.0165,
+                    "trimmed_mean_ms": 0.007899999999999999,
+                    "min_ms": 0.0059,
+                    "max_ms": 0.0165
+                  },
+                  "run": {
+                    "n": 9,
+                    "p50_ms": 0.8658,
+                    "p95_ms": 0.934,
+                    "trimmed_mean_ms": 0.8693222222222222,
+                    "min_ms": 0.8328,
+                    "max_ms": 0.934
+                  },
+                  "total": {
+                    "n": 9,
+                    "p50_ms": 0.8721,
+                    "p95_ms": 0.9420000000000001,
+                    "trimmed_mean_ms": 0.8772222222222221,
+                    "min_ms": 0.8399,
+                    "max_ms": 0.9420000000000001
+                  },
+                  "run_calls": [
+                    1
+                  ],
+                  "steps": 30013
+                }
+              }
+            }
+          },
+          "failures": []
+        }
+      ],
+      "packages": [
+        {
+          "name": "package-linux-arm64.json",
+          "sha256": "7f0f0df159ea243a81cca0a2a777c0d0e3d5c7ab7e5e4085d0ed98972fbedf4c",
+          "bytes": 4819245,
+          "glue_commit_fence": "explicit manifest commit",
+          "ok": true
+        },
+        {
+          "name": "package-linux-x64.json",
+          "sha256": "61be5441df90a44ff81157f4cc7b536d421fa392b7c5b0672c9dc42427fd23ab",
+          "bytes": 5229427,
+          "glue_commit_fence": "explicit manifest commit",
+          "ok": true
+        },
+        {
+          "name": "package-macos-arm64.json",
+          "sha256": "fa3180b4ddbac3d6c67c20f58b2811022c9c20c8a3ad34fdb37a0f0340118ad7",
+          "bytes": 4225206,
+          "glue_commit_fence": "explicit manifest commit",
+          "ok": true
+        },
+        {
+          "name": "package-windows-x64.json",
+          "sha256": "415445c55a46125bb160f874690705ade21dcb32dcccaf45ca12fa3c103ec8e6",
+          "bytes": 4222549,
+          "glue_commit_fence": "explicit manifest commit",
+          "ok": true
+        }
+      ]
+    },
+    {
+      "channel": "main",
+      "run_id": "37118601504",
+      "commit": "7ed2b8c69176ce2b00bb0705cc94988c4b8a4b1e",
+      "core": {
+        "asset": "agentvm-core.wasm",
+        "target": "wasm32-unknown-unknown",
+        "abi": 5,
+        "imports": 0,
+        "bytes": 903550,
+        "sha256": "a6a9bcad38ae88cc9f845483dd59eec585d1af1d492ca4b8b871c35f21a6bf97",
+        "download": "https://github.com/yxsicd/agentvmrelease/releases/download/main/agentvm-core.wasm"
+      },
+      "report_sha256": "ac8d1eaf1fe9f792d6d60574517d8a9b315bfc5295ecb444f643213434265ce8",
+      "receipt_count": 32,
+      "ok": true,
+      "javascript": [
+        {
+          "name": "quality-bun.json",
+          "runtime": "bun-1.3.14",
+          "check_count": 20,
+          "checks": [
+            "ABI5-zero-imports",
+            "invalid-ELF-rejected",
+            "empty-argv-rejected",
+            "NUL-argv-rejected",
+            "oversized-argv-rejected",
+            "invalid-create-no-session-leak",
+            "independent-live-sessions",
+            "exact-exit-output",
+            "no-cross-session-state",
+            "exact-exit-output",
+            "stale-handle-rejected",
+            "exact-exit-output",
+            "error-recovery-cleanup",
+            "fresh-instance-restart-and-replay",
+            "workspace-snapshot-fresh-instance",
+            "exact-exit-output",
+            "ungranted-time-random-does-not-consume-entropy",
+            "explicit-entropy-consumption",
+            "instruction-budget-enforced",
+            "all-session-cleanup"
+          ],
+          "session_count": 0,
+          "failures": []
+        },
+        {
+          "name": "quality-deno.json",
+          "runtime": "deno-2.9.4",
+          "check_count": 20,
+          "checks": [
+            "ABI5-zero-imports",
+            "invalid-ELF-rejected",
+            "empty-argv-rejected",
+            "NUL-argv-rejected",
+            "oversized-argv-rejected",
+            "invalid-create-no-session-leak",
+            "independent-live-sessions",
+            "exact-exit-output",
+            "no-cross-session-state",
+            "exact-exit-output",
+            "stale-handle-rejected",
+            "exact-exit-output",
+            "error-recovery-cleanup",
+            "fresh-instance-restart-and-replay",
+            "workspace-snapshot-fresh-instance",
+            "exact-exit-output",
+            "ungranted-time-random-does-not-consume-entropy",
+            "explicit-entropy-consumption",
+            "instruction-budget-enforced",
+            "all-session-cleanup"
+          ],
+          "session_count": 0,
+          "failures": []
+        },
+        {
+          "name": "quality-node.json",
+          "runtime": "node-26.5.1",
+          "check_count": 20,
+          "checks": [
+            "ABI5-zero-imports",
+            "invalid-ELF-rejected",
+            "empty-argv-rejected",
+            "NUL-argv-rejected",
+            "oversized-argv-rejected",
+            "invalid-create-no-session-leak",
+            "independent-live-sessions",
+            "exact-exit-output",
+            "no-cross-session-state",
+            "exact-exit-output",
+            "stale-handle-rejected",
+            "exact-exit-output",
+            "error-recovery-cleanup",
+            "fresh-instance-restart-and-replay",
+            "workspace-snapshot-fresh-instance",
+            "exact-exit-output",
+            "ungranted-time-random-does-not-consume-entropy",
+            "explicit-entropy-consumption",
+            "instruction-budget-enforced",
+            "all-session-cleanup"
+          ],
+          "session_count": 0,
+          "failures": []
+        }
+      ],
+      "js_performance": [
+        {
+          "name": "performance-bun.json",
+          "ok": true,
+          "schema": "agentvm.performance/v1",
+          "runtime": "bun-1.3.14",
+          "core_sha256": "a6a9bcad38ae88cc9f845483dd59eec585d1af1d492ca4b8b871c35f21a6bf97",
+          "fixture_sha256": "3f26f9e1832b8b63955069d1bba972eee357b47114ec4cf20106fb3370f5b160",
+          "core_bytes": 903550,
+          "compile_ms": 11.388964999999999,
+          "instantiate": {
+            "n": 9,
+            "p50_ms": 1.347887,
+            "p95_ms": 2.1317459999999997,
+            "min_ms": 0.40444800000000214,
+            "max_ms": 2.1317459999999997,
+            "samples_ms": [
+              1.4531130000000019,
+              0.40444800000000214,
+              1.6419579999999954,
+              0.5628840000000039,
+              1.347887,
+              0.6010970000000029,
+              2.1317459999999997,
+              0.7083669999999955,
+              1.7075099999999992
+            ]
+          },
+          "create": {
+            "n": 9,
+            "p50_ms": 0.13989199999999613,
+            "p95_ms": 0.3004439999999988,
+            "min_ms": 0.11851200000000972,
+            "max_ms": 0.3004439999999988,
+            "samples_ms": [
+              0.3004439999999988,
+              0.2709379999999939,
+              0.14930900000000236,
+              0.12239999999999895,
+              0.13989199999999613,
+              0.13040399999999863,
+              0.12103700000000117,
+              0.15041199999999577,
+              0.11851200000000972
+            ]
+          },
+          "run": {
+            "n": 9,
+            "p50_ms": 1.838236000000002,
+            "p95_ms": 2.7092680000000087,
+            "min_ms": 0.9978400000000036,
+            "max_ms": 2.7092680000000087,
+            "samples_ms": [
+              1.168098999999998,
+              0.9978400000000036,
+              1.838236000000002,
+              1.7244619999999955,
+              1.8948910000000012,
+              1.8743830000000017,
+              2.1964159999999993,
+              2.7092680000000087,
+              1.5572489999999988
+            ]
+          },
+          "steps": 30013,
+          "guest_steps_per_second": 16327065.730406743,
+          "linear_memory_bytes": 1572864,
+          "process_memory": {
+            "rss": 77656064,
+            "heapTotal": 1343488,
+            "heapUsed": 11086115,
+            "external": 10564603,
+            "arrayBuffers": 6672358
+          },
+          "scope": "fresh-instance ALU; process-memory point sample not peak RSS; CI timing diagnostic, no cross-run speedup claim"
+        },
+        {
+          "name": "performance-deno.json",
+          "ok": true,
+          "schema": "agentvm.performance/v1",
+          "runtime": "deno-2.9.4",
+          "core_sha256": "a6a9bcad38ae88cc9f845483dd59eec585d1af1d492ca4b8b871c35f21a6bf97",
+          "fixture_sha256": "3f26f9e1832b8b63955069d1bba972eee357b47114ec4cf20106fb3370f5b160",
+          "core_bytes": 903550,
+          "compile_ms": 4.586881,
+          "instantiate": {
+            "n": 9,
+            "p50_ms": 0.4200750000000042,
+            "p95_ms": 0.6068659999999966,
+            "min_ms": 0.3658140000000003,
+            "max_ms": 0.6068659999999966,
+            "samples_ms": [
+              0.4040960000000027,
+              0.40124099999999885,
+              0.4318969999999993,
+              0.6068659999999966,
+              0.4592790000000022,
+              0.4200750000000042,
+              0.4177609999999987,
+              0.3658140000000003,
+              0.43860100000000557
+            ]
+          },
+          "create": {
+            "n": 9,
+            "p50_ms": 0.09458699999999709,
+            "p95_ms": 0.10891400000000573,
+            "min_ms": 0.08989799999999804,
+            "max_ms": 0.10891400000000573,
+            "samples_ms": [
+              0.0928740000000019,
+              0.10008700000000204,
+              0.10891400000000573,
+              0.10535700000000503,
+              0.09638999999999953,
+              0.09031899999999382,
+              0.09458699999999709,
+              0.09174200000000354,
+              0.08989799999999804
+            ]
+          },
+          "run": {
+            "n": 9,
+            "p50_ms": 1.9974970000000027,
+            "p95_ms": 2.0441840000000013,
+            "min_ms": 0.9234379999999973,
+            "max_ms": 2.0441840000000013,
+            "samples_ms": [
+              2.033124000000001,
+              1.9974970000000027,
+              1.931162999999998,
+              1.9730009999999965,
+              2.0441840000000013,
+              2.005352000000002,
+              1.9955330000000018,
+              2.035677999999997,
+              0.9234379999999973
+            ]
+          },
+          "steps": 30013,
+          "guest_steps_per_second": 15025304.16816644,
+          "linear_memory_bytes": 1572864,
+          "process_memory": {
+            "rss": 74448896,
+            "heapTotal": 4456448,
+            "heapUsed": 3369888,
+            "external": 2008446
+          },
+          "scope": "fresh-instance ALU; process-memory point sample not peak RSS; CI timing diagnostic, no cross-run speedup claim"
+        },
+        {
+          "name": "performance-node.json",
+          "ok": true,
+          "schema": "agentvm.performance/v1",
+          "runtime": "node-26.5.1",
+          "core_sha256": "a6a9bcad38ae88cc9f845483dd59eec585d1af1d492ca4b8b871c35f21a6bf97",
+          "fixture_sha256": "3f26f9e1832b8b63955069d1bba972eee357b47114ec4cf20106fb3370f5b160",
+          "core_bytes": 903550,
+          "compile_ms": 1.4671939999999992,
+          "instantiate": {
+            "n": 9,
+            "p50_ms": 0.22427899999999568,
+            "p95_ms": 0.2519109999999998,
+            "min_ms": 0.19823900000000094,
+            "max_ms": 0.2519109999999998,
+            "samples_ms": [
+              0.22427899999999568,
+              0.21678700000000362,
+              0.19823900000000094,
+              0.22267599999999987,
+              0.22149399999999986,
+              0.2519109999999998,
+              0.2432370000000006,
+              0.24468900000000104,
+              0.23597600000000085
+            ]
+          },
+          "create": {
+            "n": 9,
+            "p50_ms": 0.050526000000004956,
+            "p95_ms": 0.06214400000000353,
+            "min_ms": 0.04562899999999814,
+            "max_ms": 0.06214400000000353,
+            "samples_ms": [
+              0.050526000000004956,
+              0.061382000000001824,
+              0.04562899999999814,
+              0.06214400000000353,
+              0.04841299999999649,
+              0.050826000000000704,
+              0.049244999999999095,
+              0.04749100000000084,
+              0.0513079999999988
+            ]
+          },
+          "run": {
+            "n": 9,
+            "p50_ms": 0.6467859999999988,
+            "p95_ms": 0.8072069999999982,
+            "min_ms": 0.32844599999999957,
+            "max_ms": 0.8072069999999982,
+            "samples_ms": [
+              0.6467859999999988,
+              0.6734459999999984,
+              0.6740370000000055,
+              0.6625099999999975,
+              0.6440610000000007,
+              0.4066739999999953,
+              0.33294200000000274,
+              0.32844599999999957,
+              0.8072069999999982
+            ]
+          },
+          "steps": 30013,
+          "guest_steps_per_second": 46403292.58827503,
+          "linear_memory_bytes": 1572864,
+          "process_memory": {
+            "rss": 72220672,
+            "heapTotal": 8523776,
+            "heapUsed": 6031656,
+            "external": 3119631,
+            "arrayBuffers": 1048024
+          },
+          "scope": "fresh-instance ALU; process-memory point sample not peak RSS; CI timing diagnostic, no cross-run speedup claim"
+        }
+      ],
+      "native": [
+        {
+          "name": "quality-native-linux-arm64.json",
+          "platform": "linux",
+          "arch": "arm64",
+          "native_host_bytes": 14713992,
+          "results": {
+            "wasmi": {
+              "engine": "wasmi",
+              "engine_version": "2.0.0",
+              "wasm_bytes": 903550,
+              "imports": 0,
+              "abi": 5,
+              "compile_first_ms": 5.830593,
+              "instantiate": {
+                "n": 7,
+                "p50_ms": 0.045021,
+                "p95_ms": 0.36385,
+                "trimmed_mean_ms": 0.11733214285714287,
+                "min_ms": 0.031366,
+                "max_ms": 0.36385
+              },
+              "results": {
+                "alu": {
+                  "create": {
+                    "n": 9,
+                    "p50_ms": 0.037765999999999994,
+                    "p95_ms": 0.039508999999999996,
+                    "trimmed_mean_ms": 0.03801088888888889,
+                    "min_ms": 0.037101999999999996,
+                    "max_ms": 0.039508999999999996
+                  },
+                  "run": {
+                    "n": 9,
+                    "p50_ms": 4.591228999999999,
+                    "p95_ms": 4.6307149999999995,
+                    "trimmed_mean_ms": 4.569254555555556,
+                    "min_ms": 4.362355,
+                    "max_ms": 4.6307149999999995
+                  },
+                  "total": {
+                    "n": 9,
+                    "p50_ms": 4.628387,
+                    "p95_ms": 4.668000999999999,
+                    "trimmed_mean_ms": 4.607265444444445,
+                    "min_ms": 4.4001209999999995,
+                    "max_ms": 4.668000999999999
+                  },
+                  "run_calls": [
+                    1
+                  ],
+                  "steps": 30013
+                }
+              }
+            },
+            "wasmtime": {
+              "engine": "wasmtime",
+              "engine_version": "49.0.0-rc.1",
+              "wasm_bytes": 903550,
+              "imports": 0,
+              "abi": 5,
+              "compile_first_ms": 727.420246,
+              "instantiate": {
+                "n": 7,
+                "p50_ms": 0.014239,
+                "p95_ms": 0.175509,
+                "trimmed_mean_ms": 0.037609000000000004,
+                "min_ms": 0.012335,
+                "max_ms": 0.175509
+              },
+              "results": {
+                "alu": {
+                  "create": {
+                    "n": 9,
+                    "p50_ms": 0.004535,
+                    "p95_ms": 0.0046879999999999995,
+                    "trimmed_mean_ms": 0.004556,
+                    "min_ms": 0.0044789999999999995,
+                    "max_ms": 0.0046879999999999995
+                  },
+                  "run": {
+                    "n": 9,
+                    "p50_ms": 0.431869,
+                    "p95_ms": 0.444124,
+                    "trimmed_mean_ms": 0.433184,
+                    "min_ms": 0.42867,
+                    "max_ms": 0.444124
+                  },
+                  "total": {
+                    "n": 9,
+                    "p50_ms": 0.43655700000000003,
+                    "p95_ms": 0.44868399999999997,
+                    "trimmed_mean_ms": 0.43774,
+                    "min_ms": 0.433221,
+                    "max_ms": 0.44868399999999997
+                  },
+                  "run_calls": [
+                    1
+                  ],
+                  "steps": 30013
+                }
+              }
+            }
+          },
+          "failures": []
+        },
+        {
+          "name": "quality-native-linux-x64.json",
+          "platform": "linux",
+          "arch": "x64",
+          "native_host_bytes": 17778080,
+          "results": {
+            "wasmi": {
+              "engine": "wasmi",
+              "engine_version": "2.0.0",
+              "wasm_bytes": 903550,
+              "imports": 0,
+              "abi": 5,
+              "compile_first_ms": 7.876485000000001,
+              "instantiate": {
+                "n": 7,
+                "p50_ms": 0.049332,
+                "p95_ms": 0.602915,
+                "trimmed_mean_ms": 0.18845171428571428,
+                "min_ms": 0.04796,
+                "max_ms": 0.602915
+              },
+              "results": {
+                "alu": {
+                  "create": {
+                    "n": 9,
+                    "p50_ms": 0.058859,
+                    "p95_ms": 0.063729,
+                    "trimmed_mean_ms": 0.059435,
+                    "min_ms": 0.058329,
+                    "max_ms": 0.063729
+                  },
+                  "run": {
+                    "n": 9,
+                    "p50_ms": 4.892068,
+                    "p95_ms": 5.020247,
+                    "trimmed_mean_ms": 4.920176777777779,
+                    "min_ms": 4.7752300000000005,
+                    "max_ms": 5.020247
+                  },
+                  "total": {
+                    "n": 9,
+                    "p50_ms": 4.950927,
+                    "p95_ms": 5.079046,
+                    "trimmed_mean_ms": 4.9796117777777775,
+                    "min_ms": 4.835112,
+                    "max_ms": 5.079046
+                  },
+                  "run_calls": [
+                    1
+                  ],
+                  "steps": 30013
+                }
+              }
+            },
+            "wasmtime": {
+              "engine": "wasmtime",
+              "engine_version": "49.0.0-rc.1",
+              "wasm_bytes": 903550,
+              "imports": 0,
+              "abi": 5,
+              "compile_first_ms": 841.8360329999999,
+              "instantiate": {
+                "n": 7,
+                "p50_ms": 0.048170000000000004,
+                "p95_ms": 0.132046,
+                "trimmed_mean_ms": 0.05696771428571429,
+                "min_ms": 0.028413,
+                "max_ms": 0.132046
+              },
+              "results": {
+                "alu": {
+                  "create": {
+                    "n": 9,
+                    "p50_ms": 0.007304,
+                    "p95_ms": 0.014908000000000001,
+                    "trimmed_mean_ms": 0.008963444444444446,
+                    "min_ms": 0.006771999999999999,
+                    "max_ms": 0.014908000000000001
+                  },
+                  "run": {
+                    "n": 9,
+                    "p50_ms": 0.6978219999999999,
+                    "p95_ms": 0.720785,
+                    "trimmed_mean_ms": 0.6804094444444444,
+                    "min_ms": 0.63284,
+                    "max_ms": 0.720785
+                  },
+                  "total": {
+                    "n": 9,
+                    "p50_ms": 0.705126,
+                    "p95_ms": 0.733929,
+                    "trimmed_mean_ms": 0.6893728888888888,
+                    "min_ms": 0.639784,
+                    "max_ms": 0.733929
+                  },
+                  "run_calls": [
+                    1
+                  ],
+                  "steps": 30013
+                }
+              }
+            }
+          },
+          "failures": []
+        },
+        {
+          "name": "quality-native-macos-arm64.json",
+          "platform": "darwin",
+          "arch": "arm64",
+          "native_host_bytes": 12471056,
+          "results": {
+            "wasmi": {
+              "engine": "wasmi",
+              "engine_version": "2.0.0",
+              "wasm_bytes": 903550,
+              "imports": 0,
+              "abi": 5,
+              "compile_first_ms": 5.034541,
+              "instantiate": {
+                "n": 7,
+                "p50_ms": 0.027209,
+                "p95_ms": 0.630625,
+                "trimmed_mean_ms": 0.11767257142857143,
+                "min_ms": 0.024708,
+                "max_ms": 0.630625
+              },
+              "results": {
+                "alu": {
+                  "create": {
+                    "n": 9,
+                    "p50_ms": 0.033916,
+                    "p95_ms": 0.041417,
+                    "trimmed_mean_ms": 0.03435177777777778,
+                    "min_ms": 0.030208,
+                    "max_ms": 0.041417
+                  },
+                  "run": {
+                    "n": 9,
+                    "p50_ms": 3.24425,
+                    "p95_ms": 3.4430419999999997,
+                    "trimmed_mean_ms": 3.2479444444444443,
+                    "min_ms": 3.043375,
+                    "max_ms": 3.4430419999999997
+                  },
+                  "total": {
+                    "n": 9,
+                    "p50_ms": 3.274458,
+                    "p95_ms": 3.4801670000000002,
+                    "trimmed_mean_ms": 3.282296222222222,
+                    "min_ms": 3.074708,
+                    "max_ms": 3.4801670000000002
+                  },
+                  "run_calls": [
+                    1
+                  ],
+                  "steps": 30013
+                }
+              }
+            },
+            "wasmtime": {
+              "engine": "wasmtime",
+              "engine_version": "49.0.0-rc.1",
+              "wasm_bytes": 903550,
+              "imports": 0,
+              "abi": 5,
+              "compile_first_ms": 741.374917,
+              "instantiate": {
+                "n": 7,
+                "p50_ms": 0.054375,
+                "p95_ms": 2.471333,
+                "trimmed_mean_ms": 0.40109500000000003,
+                "min_ms": 0.035833000000000004,
+                "max_ms": 2.471333
+              },
+              "results": {
+                "alu": {
+                  "create": {
+                    "n": 9,
+                    "p50_ms": 0.005125,
+                    "p95_ms": 0.010334,
+                    "trimmed_mean_ms": 0.005666777777777778,
+                    "min_ms": 0.004417,
+                    "max_ms": 0.010334
+                  },
+                  "run": {
+                    "n": 9,
+                    "p50_ms": 0.327042,
+                    "p95_ms": 0.376459,
+                    "trimmed_mean_ms": 0.3317824444444445,
+                    "min_ms": 0.321042,
+                    "max_ms": 0.376459
+                  },
+                  "total": {
+                    "n": 9,
+                    "p50_ms": 0.333667,
+                    "p95_ms": 0.38137499999999996,
+                    "trimmed_mean_ms": 0.3374492222222221,
+                    "min_ms": 0.326167,
+                    "max_ms": 0.38137499999999996
+                  },
+                  "run_calls": [
+                    1
+                  ],
+                  "steps": 30013
+                }
+              }
+            }
+          },
+          "failures": []
+        },
+        {
+          "name": "quality-native-windows-x64.json",
+          "platform": "win32",
+          "arch": "x64",
+          "native_host_bytes": 10806784,
+          "results": {
+            "wasmi": {
+              "engine": "wasmi",
+              "engine_version": "2.0.0",
+              "wasm_bytes": 903550,
+              "imports": 0,
+              "abi": 5,
+              "compile_first_ms": 6.3024,
+              "instantiate": {
+                "n": 7,
+                "p50_ms": 0.40509999999999996,
+                "p95_ms": 0.479,
+                "trimmed_mean_ms": 0.4179285714285715,
+                "min_ms": 0.3848,
+                "max_ms": 0.479
+              },
+              "results": {
+                "alu": {
+                  "create": {
+                    "n": 9,
+                    "p50_ms": 0.035500000000000004,
+                    "p95_ms": 0.0378,
+                    "trimmed_mean_ms": 0.03567777777777778,
+                    "min_ms": 0.034999999999999996,
+                    "max_ms": 0.0378
+                  },
+                  "run": {
+                    "n": 9,
+                    "p50_ms": 2.7414,
+                    "p95_ms": 2.8031,
+                    "trimmed_mean_ms": 2.743577777777778,
+                    "min_ms": 2.7128,
+                    "max_ms": 2.8031
+                  },
+                  "total": {
+                    "n": 9,
+                    "p50_ms": 2.7769,
+                    "p95_ms": 2.8387,
+                    "trimmed_mean_ms": 2.7792555555555554,
+                    "min_ms": 2.7483,
+                    "max_ms": 2.8387
+                  },
+                  "run_calls": [
+                    1
+                  ],
+                  "steps": 30013
+                }
+              }
+            },
+            "wasmtime": {
+              "engine": "wasmtime",
+              "engine_version": "49.0.0-rc.1",
+              "wasm_bytes": 903550,
+              "imports": 0,
+              "abi": 5,
+              "compile_first_ms": 768.5907,
+              "instantiate": {
+                "n": 7,
+                "p50_ms": 0.0609,
+                "p95_ms": 0.14229999999999998,
+                "trimmed_mean_ms": 0.07271428571428572,
+                "min_ms": 0.0593,
+                "max_ms": 0.14229999999999998
+              },
+              "results": {
+                "alu": {
+                  "create": {
+                    "n": 9,
+                    "p50_ms": 0.0045000000000000005,
+                    "p95_ms": 0.015000000000000001,
+                    "trimmed_mean_ms": 0.005633333333333334,
+                    "min_ms": 0.0042,
+                    "max_ms": 0.015000000000000001
+                  },
+                  "run": {
+                    "n": 9,
+                    "p50_ms": 0.35619999999999996,
+                    "p95_ms": 0.4864,
+                    "trimmed_mean_ms": 0.37514444444444445,
+                    "min_ms": 0.3524,
+                    "max_ms": 0.4864
+                  },
+                  "total": {
+                    "n": 9,
+                    "p50_ms": 0.3608,
+                    "p95_ms": 0.49069999999999997,
+                    "trimmed_mean_ms": 0.38077777777777777,
+                    "min_ms": 0.3568,
+                    "max_ms": 0.49069999999999997
+                  },
+                  "run_calls": [
+                    1
+                  ],
+                  "steps": 30013
+                }
+              }
+            }
+          },
+          "failures": []
+        }
+      ],
+      "packages": [
+        {
+          "name": "package-linux-arm64.json",
+          "sha256": "678bf701292a0138b8040f39f982a1a2a19c6b6c74218146d3ede8d72ae90607",
+          "bytes": 4551267,
+          "glue_commit_fence": "legacy manifest: pinned archive digest binds internal provenance",
+          "ok": true
+        },
+        {
+          "name": "package-linux-x64.json",
+          "sha256": "f74b1f29e55464e50662b2878fc7f77cff282b7cbf397634fa7f5015be529925",
+          "bytes": 4973931,
+          "glue_commit_fence": "legacy manifest: pinned archive digest binds internal provenance",
+          "ok": true
+        },
+        {
+          "name": "package-macos-arm64.json",
+          "sha256": "4062bcb3e6f4096babde1a625bddef410cd7e90db8d1fcb73030f009efb924ea",
+          "bytes": 3936727,
+          "glue_commit_fence": "legacy manifest: pinned archive digest binds internal provenance",
+          "ok": true
+        },
+        {
+          "name": "package-windows-x64.json",
+          "sha256": "aa3575659b8cf6affe49f994e78716c92890f3776be06c2e0224bc20a1c0b3d8",
+          "bytes": 3943428,
+          "glue_commit_fence": "legacy manifest: pinned archive digest binds internal provenance",
+          "ok": true
+        }
+      ]
+    }
+  ],
+  "retained_boundaries": [
+    "Initial getrandom fixture wrongly used process-only Session; corrected to test denial plus granted argv capability success; no Core or permission change",
+    "Initial MAIN run37118346632: legacy package_head assumption failed native package steps; superseded by workflow cancellation, final corrected MAIN37118601504 PASS",
+    "shared-runner micro timings diagnostic; no whole-Agent or native snapshot API admission",
+    "required branch protection absent; reporting guard is not enforced merge protection",
+    "generation-specific skill archives unchanged"
+  ]
+}

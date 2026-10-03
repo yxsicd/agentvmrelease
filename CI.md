@@ -1,5 +1,13 @@
 # Public source-free quality gates
 
+Qualification checkpoint2026-10-03: code7ed2b8c, DEV run37118599280 and MAIN
+run37118601504 both PASS, each32 collected receipts and all seven matrix jobs
+plus aggregate successful. Projection/digests in provenance/quality-ci-20261003.json.
+Local receipt-policy mutation suite16/16 PASS. Initial MAIN run37118346632
+failed legacy package_head assumptions and was superseded/cancelled; archive
+identity remained correct. Corrected full MAIN run proves recovery. No Core,
+release artifact, channel promotion or permission changes in this CI iteration.
+
 No browser, private source checkout or private-source credentials are used.
 Push/PR/manual source-free runs verify DEV; daily02:37UTC runs verify MAIN.
 Manual channel selection supports published PROD. Node26.5.1, Bun1.3.14 and
