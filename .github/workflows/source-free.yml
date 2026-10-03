@@ -54,7 +54,7 @@ jobs:
           set -euo pipefail
           mkdir -p target/release-input target/ci
           node scripts/verify-repository-distribution.mjs
-          node --test scripts/test-distribution.mjs
+          node --test scripts/test-distribution.mjs scripts/test-checkout-identity.mjs
           cp "channels/${AGENTVM_CHANNEL}/agentvm-core.wasm" target/release-input/agentvm-core.wasm
           node scripts/verify-manifest.mjs \
             "channels/${AGENTVM_CHANNEL}.json" \
@@ -144,7 +144,7 @@ jobs:
           set -euo pipefail
           mkdir -p target/release-input target/ci
           node scripts/verify-repository-distribution.mjs
-          node --test scripts/test-distribution.mjs
+          node --test scripts/test-distribution.mjs scripts/test-checkout-identity.mjs
           cp "channels/${AGENTVM_CHANNEL}/agentvm-core.wasm" target/release-input/agentvm-core.wasm
           node scripts/verify-manifest.mjs \
             "channels/${AGENTVM_CHANNEL}.json" \

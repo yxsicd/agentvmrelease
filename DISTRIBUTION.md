@@ -94,3 +94,12 @@ The corrected dirname/resolve output path passes a fresh nested-directory
 real CDN rerun in provenance/repository-cdn-fresh-output-20261003.json.
 Independent CI reruns retain their own workflow result; a local PASS never
 rewrites the failed run into PASS.
+
+Windows source-free job111255598399/run37141031266 rejected the public Host
+identity at checkout. A CRLF-default isolated checkout reproduces the exact
+error:837 CRLF pairs add837B to host.mjs, changing25194B to26031B and its hash.
+Explicit LF attributes for public text and binary attributes for Wasm/ELF fix
+the checkout projection without changing Host/Core content or relaxing digest
+checks. test-checkout-identity.mjs verifies all three cohorts under CRLF-default
+Git configuration in every runtime/native lane. Keep the original failure and
+wait for independent Windows CI before claiming its gate PASS.

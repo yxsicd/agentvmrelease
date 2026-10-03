@@ -1,0 +1,7 @@
+# Public digests bind Git/CDN bytes, not checkout-dependent CRLF projections.
+*.mjs text eol=lf
+*.json text eol=lf
+*.yml text eol=lf
+*.md text eol=lf
+*.wasm binary
+*.elf binary

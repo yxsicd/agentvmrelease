@@ -22,7 +22,7 @@ jobs:
       - name: Verify current tree and negative acquisition cases
         run: |
           node scripts/verify-repository-distribution.mjs
-          node --test scripts/test-distribution.mjs
+          node --test scripts/test-distribution.mjs scripts/test-checkout-identity.mjs
       - name: Verify immutable CDN downloads, CORS and actual ELF execution
         run: node scripts/verify-cdn.mjs "${{ github.sha }}" target/cdn-receipt.json
       - if: always()

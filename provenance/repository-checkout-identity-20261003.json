@@ -1,0 +1,27 @@
+{
+  "schema": 1,
+  "repository": "yxsicd/agentvmrelease",
+  "before_public_commit": "e986cb52088c9f1b37ea3c0178a91b8f3d86237b",
+  "failed_run": 37141031266,
+  "failed_job": 111255598399,
+  "job": "Native Host windows-x64",
+  "observed_error": "repository identity mismatch: glue/js/host.mjs",
+  "raw_windows_payload_hash_measured": false,
+  "local_reproduction": {
+    "command": "git -c core.autocrlf=true -c core.eol=crlf checkout-index --prefix=<fresh ignored directory>/ -a",
+    "verifier_before_exit": 1,
+    "before_error": "repository identity mismatch: glue/js/host.mjs",
+    "git_host_bytes": 25194,
+    "git_host_sha256": "b5b070d07642b91c68fe93725f6dfd866d3cf939c7686e6fa90c37e63f83c4f1",
+    "projected_host_bytes": 26031,
+    "projected_host_sha256": "17f79ffa85a4634f780fe2f551213819d6b6bf10c9b3cf442ed7de09b7033b53",
+    "projected_crlf_pairs": 837,
+    "verifier_after_exit": 0,
+    "verified_channels_after": ["dev", "main", "prod"],
+    "checkout_and_distribution_and_receipt_policy_tests_passed": 20
+  },
+  "resolution": "Explicit LF checkout attributes for public text, binary attributes for Wasm/ELF; no normalization or weakened hash verification in verifier",
+  "core_or_host_content_changed": false,
+  "new_windows_ci_pass_inferred_from_local_reproduction": false,
+  "failed_run_preserved": true
+}

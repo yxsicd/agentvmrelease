@@ -28,6 +28,9 @@ network access to the Guest. Verify the Host and fixture identities as well
 as Core before using them. Each channel has ONE current
 channels/<channel>/agentvm-core.wasm; history uses immutable Git commit URLs.
 See DISTRIBUTION.md for integration and release-refresh steps.
+Keep the repository's .gitattributes when checking out on Windows. Exact
+Host identities are Git/CDN LF bytes; do not normalize downloaded content or
+change the manifest hash to accept a CRLF checkout. Public Wasm/ELF are binary.
 Reject size/hash mismatch; do not disable integrity checks. Native packages
 must match that same channel's host_packages identities and internal
 HOST-ARTIFACT.json Core identity. Never mix old packages with a newer Core.
