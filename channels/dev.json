@@ -2,7 +2,7 @@
   "schema": "agentvm.release-channel/v1",
   "channel": "dev",
   "mutable": true,
-  "state": "pending-public-qualification",
+  "state": "qualified-dev",
   "generation": 4,
   "release_tag": "dev-20261003-g4",
   "core": {
@@ -23,9 +23,9 @@
   },
   "promotion": {
     "performance_qualified_exact_digest": false,
-    "public_source_free_qualified": false,
+    "public_source_free_qualified": true,
     "eligible_for_main": false,
-    "scope": "G4 candidate, public native packages and fresh matrix pending"
+    "scope": "G4 exact-digest public matrix and four packages qualified; controlled performance promotion pending"
   },
   "host_packages": [
     {"platform":"linux-arm64","asset":"agentvm-host-linux-arm64.tar.gz","bytes":4827458,"sha256":"31a297694a948d1feed645a5821793e10af51ceab9ec4c88f860da9725addd2b"},
@@ -39,10 +39,15 @@
   },
   "usage_skill": "skills/agentvm-wasm/SKILL.md",
   "public_qualification": {
-    "result": "pending",
+    "result": "pass",
+    "source_free_run": 37152828383,
+    "source_free_head": "238f4cf7e734fbe6fa2c177d5ae315da47931acb",
+    "source_free_aggregate_sha256": "af902482acb04aebf985edcd034a4aa2bc69ebfbd8e463ae093a2aaa7466e982",
+    "aggregate_receipts": 32,
+    "evidence": "provenance/generation4-public-qualification.json",
     "package_run": 37152312349,
     "package_head": "ff1354f70fe11ae36f91db3c2daba91b4e434e51",
-    "scope": "New exact-digest matrix and four matching packages required"
+    "scope": "Node/Bun/Deno, Wasmi/Wasmtime on four native platforms, exact published packages and relocated execution PASS; not full Alpine or Agent compatibility"
   },
   "distribution": {
     "schema": "agentvm.repository-distribution/v1",

@@ -19,6 +19,7 @@
   "bootstrap_matrix_run": 37152446403,
   "bootstrap_matrix_result": "failure; manifest package identities were not yet populated, retained rather than inherited from G3",
   "initial_release_create": "HTTP422 short target_commitish; recovered with full40hex same commit, no duplicate release",
-  "public_qualification": "pending, not inherited from G3",
-  "next": "Read package run, verify four exact new archives/internal Core/public-glue identities; record manifest package_head and archive identities; run fresh source-free DEV matrix and collect aggregate before qualification. CDN remains gated until public qualification pass. MAIN/PROD unchanged G3."
+  "public_qualification": "PASS run37152828383, 32 exact receipts; not inherited from G3",
+  "closure_evidence": "generation4-public-qualification.json and generation4-packages.json",
+  "next": "Verify immutable qualified-manifest CDN cohort. Controlled exact-digest performance promotion remains pending; MAIN/PROD unchanged G3."
 }

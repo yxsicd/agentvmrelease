@@ -1,6 +1,6 @@
 # Release channels
 
-## dev — generation4 candidate (2026-10-03)
+## dev — generation4 qualified preview (2026-10-03)
 
 Clean pushed private main a9808ccfd3494cd74b66942708a9add22b38ec06,
 Core1727654B/SHA2ae5b4e532d289555b8306a0ac56f9ba4560cafa1e536284c9fa0af343aae698,
@@ -8,8 +8,12 @@ ABI5/imports0. Optional generic stream bridge and public peripheral FetchBridge
 support JSON POST, awaited streaming and BYOB with separate Host quota/window.
 Private actual browser10MiB byte checking, partial cancel/same-Host recovery,
 CORS/JSON preflight and response edges have receipts. Public adapter10 unit
-tests and exact Core static/quality tests pass locally. Native-package build
-and fresh public multi-platform verification are PENDING; no inherited G3 PASS.
+tests and exact Core static/quality tests pass locally. Package workflow
+37152312349 PASS; all four new archives were downloaded and internally verified.
+Fresh public matrix37152828383 PASS, 32 actual receipts at public238f4cf;
+evidence: provenance/generation4-public-qualification.json. Initial bootstrap
+CI/CDN failures remain in generation4-publication-pending.json. DEV consumers
+are admitted; controlled G4 performance promotion remains pending.
 MAIN/PROD generation3 and rollback assets are unchanged. No transparent sockets,
 auth headers, SSE, file durability or constant browser-RSS claim.
 

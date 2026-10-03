@@ -42,11 +42,11 @@ public-Glue commit. Only the release channel pointer/manifest changes during
 promotion.
 
 The newest DEV generation is described in [`channels/dev.json`](channels/dev.json).
-Generation4 is a pending-public-qualification prerelease: new generic stream
+Generation4 is a publicly qualified DEV prerelease: new generic stream
 extension and optional public FetchBridge with JSON POST/BYOB streaming.
-Local Node/Bun/Deno gates pass; fresh native packages/matrix are required before
-MAIN/PROD promotion. Automatic consumer resolution rejects pending manifests;
-manual preview users must verify exact bytes and accept these limited gates.
+Node/Bun/Deno and four-platform Wasmi/Wasmtime published-package gates pass,
+with 32 exact-digest receipts. DEV automatic consumer resolution is admitted.
+Controlled performance qualification is still required before MAIN promotion.
 Download from the manifest's exact URL (it may name an immutable generation
 tag rather than the moving channel). MAIN and PROD still point to generation3,
 promoted byte-for-byte from DEV; older generation2 tags remain for rollback.
