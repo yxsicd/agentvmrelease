@@ -81,6 +81,9 @@ agentvm-native-host wasmtime run agentvm-core.wasm guest.elf guest-arg
 
 ## Release philosophy
 
+See [CI.md](CI.md) for the public Node/Bun/Deno, Wasmi/Wasmtime functional,
+performance and published-package guardrails and their remaining boundaries.
+
 The private AgentVM repository has one release source: a clean, validated,
 pushed `main` with local `HEAD == origin/main`. Feature branches, research
 branches, detached worktrees, and dirty working trees are never publication

@@ -44,6 +44,12 @@ agentvm-core.wasm guest.elf`, or select wasmtime explicitly.
 For embedding use glue/js/host.mjs AgentVmWasmHost: instantiate exact bytes,
 createSessionWithArgv, run bounded slices, read stdout/stderr/exit, always
 destroy in finally. Hosts own byte acquisition and secure entropy; no imports
+does not imply identical capability profiles: base createSession is process-only,
+while createSessionWithArgv adds signals/time-random/events. Base createAgentSession
+adds workspace; its argv variant additionally grants signals/time-random/events.
+Test both granted success and ungranted rejection rather than broadening a
+Session to make a fixture pass. See CI.md for public quality/performance gates.
+Zero imports
 does not grant arbitrary filesystem or network access. The current public
 adapter is not the experimental native Alpine HostNetwork/VFS binding. Do not
 claim dynamic distro tools, streaming stdin, TCP/UDP, browser persistence,

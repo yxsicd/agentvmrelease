@@ -78,6 +78,25 @@ jobs:
                 | tee target/ci/deno.json
               ;;
           esac
+      - name: Functional regression and failure recovery
+        shell: bash
+        run: |
+          set -euo pipefail
+          case "${{ matrix.runtime }}" in
+            node) node glue/js/quality-gate.mjs target/release-input/agentvm-core.wasm | tee target/ci/quality-node.json ;;
+            bun) bun glue/js/quality-gate.mjs target/release-input/agentvm-core.wasm | tee target/ci/quality-bun.json ;;
+            deno) deno run --allow-read glue/js/quality-gate.mjs target/release-input/agentvm-core.wasm | tee target/ci/quality-deno.json ;;
+          esac
+      - name: Record bounded performance even on semantic failure
+        if: ${{ !cancelled() }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          case "${{ matrix.runtime }}" in
+            node) node glue/js/benchmark.mjs target/release-input/agentvm-core.wasm | tee target/ci/performance-node.json ;;
+            bun) bun glue/js/benchmark.mjs target/release-input/agentvm-core.wasm | tee target/ci/performance-bun.json ;;
+            deno) deno run --allow-read glue/js/benchmark.mjs target/release-input/agentvm-core.wasm | tee target/ci/performance-deno.json ;;
+          esac
       - if: always()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         with:
@@ -146,6 +165,28 @@ jobs:
             target/release-input/agentvm-core.wasm \
             fixtures/exit43.elf \
             | tee "target/ci/native-${{ matrix.platform }}.json"
+      - name: Native functionality and resident performance
+        shell: bash
+        run: |
+          set -euo pipefail
+          node scripts/verify-native-quality.mjs \
+            "glue/rust/agentvm-native-host/target/release/${{ matrix.binary }}" \
+            target/release-input/agentvm-core.wasm fixtures \
+            | tee "target/ci/quality-native-${{ matrix.platform }}.json"
+      - name: Verify exact published package and relocatable execution
+        shell: bash
+        run: |
+          set -euo pipefail
+          url="$(node -p "require('./channels/' + process.env.AGENTVM_CHANNEL + '.json').core.download.replace(/agentvm-core.wasm$/, 'agentvm-host-${{ matrix.platform }}.tar.gz')")"
+          curl -fL --retry 3 -o target/release-input/package.tar.gz "$url"
+          node scripts/verify-package.mjs "channels/${AGENTVM_CHANNEL}.json" \
+            "${{ matrix.platform }}" target/release-input/package.tar.gz \
+            | tee "target/ci/package-${{ matrix.platform }}.json"
+          mkdir -p target/relocated
+          tar -xzf target/release-input/package.tar.gz -C target/relocated
+          node scripts/verify-native.mjs "target/relocated/agentvm/${{ matrix.binary }}" \
+            target/relocated/agentvm/agentvm-core.wasm fixtures/exit43.elf \
+            | tee "target/ci/relocated-${{ matrix.platform }}.json"
       - if: always()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         with:
@@ -165,10 +206,16 @@ jobs:
       - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020
         with:
           node-version: '26.5.1'
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          pattern: ci-*
+          path: target/ci-input
       - name: Fail closed and write aggregate receipt
         env:
           AGENTVM_CI_NEEDS: ${{ toJSON(needs) }}
-        run: node scripts/ci-summary.mjs
+        run: |
+          node --test scripts/test-receipt-policy.mjs
+          node scripts/ci-summary.mjs
       - if: always()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         with:

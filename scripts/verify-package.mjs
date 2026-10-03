@@ -1,0 +1,17 @@
+import {readFileSync} from 'node:fs';
+import {execFileSync} from 'node:child_process';
+import {createHash} from 'node:crypto';
+const [manifestPath,platform,path]=process.argv.slice(2);
+const m=JSON.parse(readFileSync(manifestPath)),asset=`agentvm-host-${platform}.tar.gz`;
+const expected=m.host_packages?.find(p=>p.asset===asset);
+if(!expected)throw Error('selected channel has no qualified platform package');
+const hash=b=>createHash('sha256').update(b).digest('hex'),archive=readFileSync(path);
+if(archive.length!==expected.bytes||hash(archive)!==expected.sha256)throw Error('package archive identity mismatch');
+const extract=n=>execFileSync('tar',['-xOf',path,`agentvm/${n}`],{maxBuffer:32*1024*1024});
+const internal=JSON.parse(extract('HOST-ARTIFACT.json')),core=extract('agentvm-core.wasm');
+if(internal.platform!==platform||internal.core.sha256!==m.core.sha256||hash(core)!==m.core.sha256||core.length!==m.core.bytes||internal.core.abi!==5||internal.core.imports!==0)throw Error('packaged Core contract mismatch');
+const expectedBinary=platform==='windows-x64'?'agentvm-native-host.exe':'agentvm-native-host';
+if(internal.native_host.file!==expectedBinary)throw Error('unexpected native Host filename');
+const host=extract(expectedBinary);
+if(host.length!==internal.native_host.bytes||hash(host)!==internal.native_host.sha256||internal.public_glue.commit!==m.public_qualification.package_head)throw Error('packaged Host provenance mismatch');
+console.log(JSON.stringify({ok:true,schema:'agentvm.published-package/v1',platform,asset,sha256:hash(archive),bytes:archive.length,internal_manifest:internal},null,2));

@@ -61,6 +61,10 @@ jobs:
             "glue/rust/agentvm-native-host/target/release/${{ matrix.binary }}" \
             target/release-input/agentvm-core.wasm \
             fixtures/exit43.elf
+          node glue/js/quality-gate.mjs target/release-input/agentvm-core.wasm
+          node scripts/verify-native-quality.mjs \
+            "glue/rust/agentvm-native-host/target/release/${{ matrix.binary }}" \
+            target/release-input/agentvm-core.wasm fixtures
       - name: Create platform package
         shell: bash
         run: |
