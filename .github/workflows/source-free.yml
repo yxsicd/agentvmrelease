@@ -55,7 +55,7 @@ jobs:
           mkdir -p target/release-input target/ci
           curl -fL --retry 3 \
             -o target/release-input/agentvm-core.wasm \
-            "https://github.com/${GITHUB_REPOSITORY}/releases/download/${AGENTVM_CHANNEL}/agentvm-core.wasm"
+            "$(node -p "require('./channels/' + process.env.AGENTVM_CHANNEL + '.json').core.download")"
           node scripts/verify-manifest.mjs \
             "channels/${AGENTVM_CHANNEL}.json" \
             target/release-input/agentvm-core.wasm \
@@ -126,7 +126,7 @@ jobs:
           mkdir -p target/release-input target/ci
           curl -fL --retry 3 \
             -o target/release-input/agentvm-core.wasm \
-            "https://github.com/${GITHUB_REPOSITORY}/releases/download/${AGENTVM_CHANNEL}/agentvm-core.wasm"
+            "$(node -p "require('./channels/' + process.env.AGENTVM_CHANNEL + '.json').core.download")"
           node scripts/verify-manifest.mjs \
             "channels/${AGENTVM_CHANNEL}.json" \
             target/release-input/agentvm-core.wasm \

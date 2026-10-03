@@ -1,5 +1,17 @@
 # Release channels
 
+## dev — generation 3 (2026-10-03)
+
+Clean pushed private main df6676eb produces ABI5 import-free Core1704601B,
+SHA256 f6da81a808447212f0dd607eca94126b36eb7119055842320a833c5b2045f20b.
+Immutable release tag dev-20261003-g3 is the DEV manifest's download target;
+old dev/main generation2 assets remain available and are not mixed with it.
+Local Host tests6/6 and Node/Bun/Deno/Wasmi/Wasmtime real exit43 gates pass.
+Public cross-platform qualification and packages start pending. This larger
+Core does not inherit generation2 performance admission; MAIN/PROD unchanged.
+Public consumer skill is skills/agentvm-wasm/SKILL.md. Native Alpine network
+receipts do not imply those bindings exist in this public Wasm adapter.
+
 ## dev — generation 2
 
 Generation 2 is the first `dev` generation produced under the canonical

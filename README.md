@@ -47,6 +47,10 @@ gates close.
 
 ## Public Host glue
 
+The public consumer skill is [skills/agentvm-wasm/SKILL.md](skills/agentvm-wasm/SKILL.md).
+It covers integrity-checked acquisition, bounded execution and the current
+adapter limits; it does not expose private maintainer skills or source.
+
 JavaScript:
 
 ```text
