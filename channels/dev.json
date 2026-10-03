@@ -12,7 +12,8 @@
     "imports": 0,
     "bytes": 1704601,
     "sha256": "f6da81a808447212f0dd607eca94126b36eb7119055842320a833c5b2045f20b",
-    "download": "https://github.com/yxsicd/agentvmrelease/releases/download/dev-20261003-g3/agentvm-core.wasm"
+    "download": "https://github.com/yxsicd/agentvmrelease/releases/download/dev-20261003-g3/agentvm-core.wasm",
+    "repository_path": "channels/dev/agentvm-core.wasm"
   },
   "source": {
     "available": false,
@@ -97,5 +98,22 @@
     "asset": "agentvm-wasm-skill.tar.gz",
     "sha256": "c24a7510cfb0c8eb53dec80e881c10ed5af4836ed80451ca2dac32a0318f2a58",
     "download": "https://github.com/yxsicd/agentvmrelease/releases/download/dev-20261003-g3/agentvm-wasm-skill.tar.gz"
+  },
+  "distribution": {
+    "schema": "agentvm.repository-distribution/v1",
+    "repository": "yxsicd/agentvmrelease",
+    "cdn_base": "https://cdn.jsdelivr.net/gh/yxsicd/agentvmrelease@",
+    "revision_policy": "Resolve main to its 40-hex public Git commit, then fetch manifest, Core, Host and fixture using that SAME commit. Never fetch Wasm from a moving CDN ref.",
+    "host": {
+      "path": "glue/js/host.mjs",
+      "bytes": 25194,
+      "sha256": "b5b070d07642b91c68fe93725f6dfd866d3cf939c7686e6fa90c37e63f83c4f1"
+    },
+    "fixture": {
+      "path": "fixtures/exit43.elf",
+      "bytes": 656,
+      "sha256": "69293e3bc0e984bfd9ad3f75e0480c71f2cc4238924f54bf0705ca7f380f1535"
+    },
+    "current_files_policy": "One current Core per channel; replace in place after existing qualification, history via Git commits. No rebuild or implicit promotion."
   }
 }

@@ -48,14 +48,14 @@ jobs:
         uses: denoland/setup-deno@22d081ff2d3a40755e97629de92e3bcbfa7cf2ed
         with:
           deno-version: '2.9.4'
-      - name: Download exact public Core
+      - name: Verify repository cohort and select exact public Core
         shell: bash
         run: |
           set -euo pipefail
           mkdir -p target/release-input target/ci
-          curl -fL --retry 3 \
-            -o target/release-input/agentvm-core.wasm \
-            "$(node -p "require('./channels/' + process.env.AGENTVM_CHANNEL + '.json').core.download")"
+          node scripts/verify-repository-distribution.mjs
+          node --test scripts/test-distribution.mjs
+          cp "channels/${AGENTVM_CHANNEL}/agentvm-core.wasm" target/release-input/agentvm-core.wasm
           node scripts/verify-manifest.mjs \
             "channels/${AGENTVM_CHANNEL}.json" \
             target/release-input/agentvm-core.wasm \
@@ -138,14 +138,14 @@ jobs:
           rustup default stable
           rustc --version
           cargo --version
-      - name: Download exact public Core
+      - name: Verify repository cohort and select exact public Core
         shell: bash
         run: |
           set -euo pipefail
           mkdir -p target/release-input target/ci
-          curl -fL --retry 3 \
-            -o target/release-input/agentvm-core.wasm \
-            "$(node -p "require('./channels/' + process.env.AGENTVM_CHANNEL + '.json').core.download")"
+          node scripts/verify-repository-distribution.mjs
+          node --test scripts/test-distribution.mjs
+          cp "channels/${AGENTVM_CHANNEL}/agentvm-core.wasm" target/release-input/agentvm-core.wasm
           node scripts/verify-manifest.mjs \
             "channels/${AGENTVM_CHANNEL}.json" \
             target/release-input/agentvm-core.wasm \

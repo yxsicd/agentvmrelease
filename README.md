@@ -51,6 +51,15 @@ and retained performance regressions.
 
 ## Public Host glue
 
+Browser-readable Core distribution now lives directly in this public tree:
+`channels/dev/agentvm-core.wasm`, `channels/main/agentvm-core.wasm` and
+`channels/prod/agentvm-core.wasm`. Each channel keeps one current file.
+Resolve one immutable public commit, fetch its manifest and all assets through
+jsDelivr using that SAME commit, and verify SHA/bytes/ABI/Host/fixture identities.
+Never combine moving CDN refs. See [DISTRIBUTION.md](DISTRIBUTION.md).
+Existing immutable GitHub Release assets and native package identities remain
+unchanged; this is distribution-only, not a new Core or channel promotion.
+
 The public consumer skill is [skills/agentvm-wasm/SKILL.md](skills/agentvm-wasm/SKILL.md).
 It covers integrity-checked acquisition, bounded execution and the current
 adapter limits; it does not expose private maintainer skills or source.

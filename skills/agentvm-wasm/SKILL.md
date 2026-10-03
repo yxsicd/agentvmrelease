@@ -14,6 +14,20 @@ downloaded bytes. Never inherit qualification from a different Core digest.
 
 Download the manifest's core.download to a task-local agentvm-core.wasm, then
 verify it with `node scripts/verify-manifest.mjs <manifest> <core.wasm>`.
+For browser/CDN use the repository distribution instead: resolve the public
+repository main to a 40-hex Git commit FIRST, then fetch channels/<channel>.json,
+core.repository_path, distribution.host and distribution.fixture from that
+SAME commit via https://cdn.jsdelivr.net/gh/yxsicd/agentvmrelease@<commit>/<path>.
+Never fetch Wasm from @main/@dev/@prod or combine a moving manifest with a
+different asset revision. A stale discovery result yields an older intact
+cohort, not a mixed generation. To refresh, repeat discovery without cache.
+The reusable glue/js/distribution.mjs resolveChannel/downloadVerified helpers
+enforce pinned paths, bounded downloads, SHA/size and anonymous CORS-mode
+acquisition; pass a caller AbortSignal for cancellation. They do not grant
+network access to the Guest. Verify the Host and fixture identities as well
+as Core before using them. Each channel has ONE current
+channels/<channel>/agentvm-core.wasm; history uses immutable Git commit URLs.
+See DISTRIBUTION.md for integration and release-refresh steps.
 Reject size/hash mismatch; do not disable integrity checks. Native packages
 must match that same channel's host_packages identities and internal
 HOST-ARTIFACT.json Core identity. Never mix old packages with a newer Core.
