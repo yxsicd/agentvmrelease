@@ -13,5 +13,6 @@ if(internal.platform!==platform||internal.core.sha256!==m.core.sha256||hash(core
 const expectedBinary=platform==='windows-x64'?'agentvm-native-host.exe':'agentvm-native-host';
 if(internal.native_host.file!==expectedBinary)throw Error('unexpected native Host filename');
 const host=extract(expectedBinary);
-if(host.length!==internal.native_host.bytes||hash(host)!==internal.native_host.sha256||internal.public_glue.commit!==m.public_qualification.package_head)throw Error('packaged Host provenance mismatch');
-console.log(JSON.stringify({ok:true,schema:'agentvm.published-package/v1',platform,asset,sha256:hash(archive),bytes:archive.length,internal_manifest:internal},null,2));
+const expectedGlue=m.public_qualification?.package_head;
+if(host.length!==internal.native_host.bytes||hash(host)!==internal.native_host.sha256||internal.public_glue.repository!=='yxsicd/agentvmrelease'||!/^[0-9a-f]{40}$/.test(internal.public_glue.commit)||(expectedGlue&&internal.public_glue.commit!==expectedGlue))throw Error('packaged Host provenance mismatch');
+console.log(JSON.stringify({ok:true,schema:'agentvm.published-package/v1',platform,asset,sha256:hash(archive),bytes:archive.length,internal_manifest:internal,glue_commit_fence:expectedGlue?'explicit manifest commit':'legacy manifest: pinned archive digest binds internal provenance'},null,2));

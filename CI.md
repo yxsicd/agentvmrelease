@@ -31,6 +31,9 @@ Aggregate verification downloads actual job receipts, rejects missing/duplicate,
 wrong digest/runtime/fixture, stale output, session leaks and invalid sample
 sets. Also verifies published archive/internal Core/Host/provenance and executes
 relocated packages. Missing packages fail this full public admission gate.
+Legacy MAIN lacks package_head; its exact archive digest binds internal Host
+provenance, whose repository/commit shape is checked. New manifests additionally
+fence against explicit package_head. This is not an excuse to skip archive hashes.
 Build-DEV packaging independently runs Node functional and both native engine
 gates before attaching new packages; it does not automatically promote channels.
 
