@@ -15,5 +15,7 @@ fixture with source. Alternative BusyBox startup166 and links/chmod/times
 remain unsupported/unqualified. MAIN/PROD Core bytes remain G3.
 
 DEV is pending until fresh G5 packages and independent source-free matrix pass.
+Initial Release creation with a short target SHA returned HTTP422 before any
+Release was created; retry used full40hex a810eca77408de6c6c871649ceccfadf3d734d4e.
 Do not inherit G4 qualification or package hashes. Exact-digest controlled
 performance promotion remains pending even after public matrix success.
