@@ -1,0 +1,37 @@
+{
+  "schema": "agentvm.anonymous-release-readback/v1",
+  "ok": true,
+  "core_sha256": "854428a780fe442f3fa000de710ef6225993330250106888393e16831beb88b0",
+  "results": [
+    {
+      "url": "https://github.com/yxsicd/agentvmrelease/releases/download/dev-20261004-g5/agentvm-host-linux-arm64.tar.gz",
+      "bytes": 4834872,
+      "sha256": "a616480acb41b25b48e2b46f0b5f69fb2affeb054b75a0b9224ccce7cf372925",
+      "status": 200
+    },
+    {
+      "url": "https://github.com/yxsicd/agentvmrelease/releases/download/dev-20261004-g5/agentvm-host-linux-x64.tar.gz",
+      "bytes": 5245514,
+      "sha256": "3684f2d1ce80e72feee327c124910b43dfff525a87a55a125f5c6a15b4634765",
+      "status": 200
+    },
+    {
+      "url": "https://github.com/yxsicd/agentvmrelease/releases/download/dev-20261004-g5/agentvm-host-macos-arm64.tar.gz",
+      "bytes": 4241499,
+      "sha256": "931404bda58a65f6e8a44e1ae825db757bfa10d4cd7a66cdec83836b6296221c",
+      "status": 200
+    },
+    {
+      "url": "https://github.com/yxsicd/agentvmrelease/releases/download/dev-20261004-g5/agentvm-host-windows-x64.tar.gz",
+      "bytes": 4238889,
+      "sha256": "b1e2c39f4079c8e3bd78620cd9d0f8c18e06250dd4875ce212f95153f365b515",
+      "status": 200
+    },
+    {
+      "url": "https://github.com/yxsicd/agentvmrelease/releases/download/dev-20261004-g5/agentvm-wasm-skill.tar.gz",
+      "bytes": 3822,
+      "sha256": "c8f126dd8ae7acf61863189e419a855b451feca26044eaae3990c47a9ba88545",
+      "status": 200
+    }
+  ]
+}

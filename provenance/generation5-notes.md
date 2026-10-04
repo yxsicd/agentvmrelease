@@ -14,9 +14,14 @@ BusyBox is not redistributed here; public ELF is an independent tiny syscall
 fixture with source. Alternative BusyBox startup166 and links/chmod/times
 remain unsupported/unqualified. MAIN/PROD Core bytes remain G3.
 
-DEV is pending until fresh G5 packages and independent source-free matrix pass.
+DEV is now qualified: fresh source-free run37168130299 at
+ef7a066ed2df0eaa5d0116e196fb578fe8a9f7d2 passed all seven lanes and aggregate.
+All35 exact-digest receipts were independently admitted locally with no failures;
+aggregate SHA6bfdf988062f23fd9cbb295cec5002565be556c7daaaf137288c6b7b3ff3be09.
+Four-platform package build/attachment37167832831 PASS; all release assets
+anonymously downloaded and their SHA/size verified. MAIN/PROD unchanged.
 Package build37167832831 produced all four exact G5 packages; platform hashes
-recorded in DEV manifest, fresh matrix required. Bootstrap source-free
+recorded in DEV manifest. Bootstrap source-free
 37167857254 ran before packages were available and failed package downloads;
 this result is retained, never relabeled as PASS.
 Anonymous Release download matched exact Core SHA/size and ELF exit43. Three

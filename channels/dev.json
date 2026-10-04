@@ -2,7 +2,7 @@
   "schema": "agentvm.release-channel/v1",
   "channel": "dev",
   "mutable": true,
-  "state": "pending-public-qualification",
+  "state": "qualified-dev",
   "generation": 5,
   "release_tag": "dev-20261004-g5",
   "core": {
@@ -23,9 +23,9 @@
   },
   "promotion": {
     "performance_qualified_exact_digest": false,
-    "public_source_free_qualified": false,
+    "public_source_free_qualified": true,
     "eligible_for_main": false,
-    "scope": "Explicit workspace mutation DEV preview only; controlled performance promotion pending"
+    "scope": "G5 exact-digest public 35-receipt matrix and four packages qualified; explicit workspace preview, no MAIN/PROD promotion"
   },
   "host_packages": [
     {
@@ -59,10 +59,15 @@
   },
   "usage_skill": "skills/agentvm-wasm/SKILL.md",
   "public_qualification": {
-    "result": "pending",
-    "scope": "Fresh G5 four-platform packages and source-free matrix required; no inherited G4 qualification",
+    "result": "pass",
+    "source_free_run": 37168130299,
+    "source_free_head": "ef7a066ed2df0eaa5d0116e196fb578fe8a9f7d2",
+    "source_free_aggregate_sha256": "6bfdf988062f23fd9cbb295cec5002565be556c7daaaf137288c6b7b3ff3be09",
+    "aggregate_receipts": 35,
+    "evidence": "provenance/generation5-public-qualification.json",
     "package_run": 37167832831,
-    "package_head": "a810eca77408de6c6c871649ceccfadf3d734d4e"
+    "package_head": "a810eca77408de6c6c871649ceccfadf3d734d4e",
+    "scope": "Node/Bun/Deno explicit grants/denial/snapshot; four-platform Wasmi/Wasmtime ordinary quality/performance and exact relocated packages PASS; not full Alpine, browser journey or broad network support"
   },
   "distribution": {
     "schema": "agentvm.repository-distribution/v1",
