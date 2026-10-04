@@ -27,7 +27,32 @@
     "eligible_for_main": false,
     "scope": "Explicit workspace mutation DEV preview only; controlled performance promotion pending"
   },
-  "host_packages": [],
+  "host_packages": [
+    {
+      "platform": "linux-arm64",
+      "asset": "agentvm-host-linux-arm64.tar.gz",
+      "bytes": 4834872,
+      "sha256": "a616480acb41b25b48e2b46f0b5f69fb2affeb054b75a0b9224ccce7cf372925"
+    },
+    {
+      "platform": "linux-x64",
+      "asset": "agentvm-host-linux-x64.tar.gz",
+      "bytes": 5245514,
+      "sha256": "3684f2d1ce80e72feee327c124910b43dfff525a87a55a125f5c6a15b4634765"
+    },
+    {
+      "platform": "macos-arm64",
+      "asset": "agentvm-host-macos-arm64.tar.gz",
+      "bytes": 4241499,
+      "sha256": "931404bda58a65f6e8a44e1ae825db757bfa10d4cd7a66cdec83836b6296221c"
+    },
+    {
+      "platform": "windows-x64",
+      "asset": "agentvm-host-windows-x64.tar.gz",
+      "bytes": 4238889,
+      "sha256": "b1e2c39f4079c8e3bd78620cd9d0f8c18e06250dd4875ce212f95153f365b515"
+    }
+  ],
   "private_qualification": {
     "result": "pass",
     "scope": "Exact clean pushed source Core; Node/Bun/Deno bounded persistent Alpine shell mkdir, child file pipeline, failure recovery and cleanup; not full Alpine compatibility"
@@ -35,7 +60,9 @@
   "usage_skill": "skills/agentvm-wasm/SKILL.md",
   "public_qualification": {
     "result": "pending",
-    "scope": "Fresh G5 four-platform packages and source-free matrix required; no inherited G4 qualification"
+    "scope": "Fresh G5 four-platform packages and source-free matrix required; no inherited G4 qualification",
+    "package_run": 37167832831,
+    "package_head": "a810eca77408de6c6c871649ceccfadf3d734d4e"
   },
   "distribution": {
     "schema": "agentvm.repository-distribution/v1",
@@ -71,5 +98,11 @@
       "agentvm-usermode/abi-workspace-mutate"
     ],
     "scope": "Explicit in-memory workspace mutation only; no Host filesystem/network/thread/memfd grants"
+  },
+  "skill_artifact": {
+    "asset": "agentvm-wasm-skill.tar.gz",
+    "bytes": 3822,
+    "sha256": "c8f126dd8ae7acf61863189e419a855b451feca26044eaae3990c47a9ba88545",
+    "download": "https://github.com/yxsicd/agentvmrelease/releases/download/dev-20261004-g5/agentvm-wasm-skill.tar.gz"
   }
 }

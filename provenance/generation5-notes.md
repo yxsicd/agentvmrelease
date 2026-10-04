@@ -15,6 +15,18 @@ fixture with source. Alternative BusyBox startup166 and links/chmod/times
 remain unsupported/unqualified. MAIN/PROD Core bytes remain G3.
 
 DEV is pending until fresh G5 packages and independent source-free matrix pass.
+Package build37167832831 produced all four exact G5 packages; platform hashes
+recorded in DEV manifest, fresh matrix required. Bootstrap source-free
+37167857254 ran before packages were available and failed package downloads;
+this result is retained, never relabeled as PASS.
+Anonymous Release download matched exact Core SHA/size and ELF exit43. Three
+paired same-machine rg1MiB receipts passed: run ratios Node0.9918803,
+Bun1.0001236,Deno1.0000102; no speedup claim. Default workspace grants stayed
+unchanged. These narrow performance receipts do not independently promote.
+Pending-stage CDN runs37167815708/37167857271 correctly rejected the
+unqualified DEV manifest; no CDN PASS is inherited. Source-free37167815728
+was superseded by the validation-test push: three JS lanes passed but native
+lanes cancelled and aggregate FAIL. Fresh full matrix is still required.
 Initial Release creation with a short target SHA returned HTTP422 before any
 Release was created; retry used full40hex a810eca77408de6c6c871649ceccfadf3d734d4e.
 Do not inherit G4 qualification or package hashes. Exact-digest controlled
