@@ -11,6 +11,16 @@ function validTiming(stat, requireSamples=false) {
 export function validateReceipts(receipts, manifest) {
   const failures=[];
   const core=manifest.core;
+  if(manifest.capability_profile){
+    for(const runtime of ['node','bun','deno']){
+      const r=receipts[`explicit-${runtime}.json`];
+      if(r?.passed!==true||r.cleanup_sessions!==0||r.core?.sha256!==core?.sha256||r.core?.bytes!==core?.bytes||
+         r.abi!==5||r.imports!==0||!r.runtime?.startsWith(runtime+'-')||r.cases?.length!==5||r.rejected?.length!==3||
+         !['legacy-default','explicit-off','explicit-on','parent-denial','outside-denial'].every((name,i)=>r.cases?.[i]?.name===name&&r.cases[i].return===[-1,-1,0,-13,-2][i]&&r.cases[i].steps===18&&r.cases[i].guest_exit===1&&r.cases[i].stderr==='')||
+         r.cases?.[2]?.child_write!==true||r.cases?.[2]?.replay_return!==0||r.cases?.[2]?.replay_steps!==18)
+        failures.push(`explicit workspace contract ${runtime}`);
+    }
+  }
   const fixtureSha='3f26f9e1832b8b63955069d1bba972eee357b47114ec4cf20106fb3370f5b160';
   if(!core||core.abi!==5||core.imports!==0||core.bytes>8*1024*1024)failures.push('invalid Core contract/8MiB ceiling');
   const expected=[...['node','bun','deno'].flatMap(r=>[`quality-${r}.json`,`performance-${r}.json`]),...['linux-x64','linux-arm64','macos-arm64','windows-x64'].map(p=>`quality-native-${p}.json`)];

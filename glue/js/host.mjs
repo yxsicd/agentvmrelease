@@ -209,6 +209,28 @@ export class AgentVmWasmHost {
     }
   }
 
+  createAgentSessionWithCapabilities(elfBytes, argv, capabilities, maxSteps = 10_000_000) {
+    const create = this.exports.agentvm_wasm_agent_session_create_with_capabilities;
+    if (typeof create !== "function") throw new Error("Explicit Agent capabilities were not compiled into this module");
+    if (typeof capabilities !== "string") throw new TypeError("Agent capabilities must be a string");
+    const encoded = new TextEncoder().encode(capabilities);
+    if (encoded.length > 1024) throw new RangeError("Agent capabilities exceed 1024 bytes");
+    const elf = this.upload(elfBytes);
+    let packed = null, caps = null;
+    try {
+      packed = this.upload(encodeArgv(argv));
+      caps = this.upload(encoded);
+      return this.require(
+        create(elf.pointer, elf.len, packed.pointer, packed.len, caps.pointer, caps.len, maxSteps),
+        "Explicit Agent capability session creation failed",
+      );
+    } finally {
+      if (caps) this.release(caps.pointer);
+      if (packed) this.release(packed.pointer);
+      this.release(elf.pointer);
+    }
+  }
+
   createSessionFromRestart(elfBytes, restartBytes) {
     const elf = this.upload(elfBytes);
     let restart = null;

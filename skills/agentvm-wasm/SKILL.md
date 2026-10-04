@@ -5,6 +5,21 @@ description: Consume the public AgentVM Core Wasm release to execute bounded sta
 
 # AgentVM Wasm consumer
 
+Generation5 DEV is an explicit workspace preview, not stable promotion. Existing
+constructors retain their grants. Feature-detect the optional
+agentvm_wasm_agent_session_create_with_capabilities export, then use
+createAgentSessionWithCapabilities(elf, argv,
+'process,workspace,workspace-mutate,signals,time-random,events', maxSteps)
+only when the application requires in-memory workspace mutation. Missing exports
+fail before allocation; never fall back or broaden Host permissions. Use composed
+exportAgentSnapshot/createAgentSessionFromSnapshot for workspace restore;
+ordinary quiescent checkpoints reject attached mutable workspaces. This preview
+does not add Host filesystem access or unrestricted network/thread/memfd grants.
+Pinned Alpine shell mkdir, child-file pipeline and failure recovery passed on
+Node/Bun/Deno privately; alternative BusyBox syscall166 startup and unsupported
+links/chmod/times remain unqualified. Require fresh public matrix/package receipts
+before admitting DEV consumers; a Release upload alone is not qualification.
+
 Use https://github.com/yxsicd/agentvmrelease as the source-free distribution.
 Clone or use an existing clean checkout; read README.md and the selected
 channels/dev.json, channels/main.json or channels/prod.json before downloading.

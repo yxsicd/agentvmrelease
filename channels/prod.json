@@ -120,8 +120,8 @@
     "revision_policy": "Resolve main to its 40-hex public Git commit, then fetch manifest, Core, Host and fixture using that SAME commit. Never fetch Wasm from a moving CDN ref.",
     "host": {
       "path": "glue/js/host.mjs",
-      "bytes": 25194,
-      "sha256": "b5b070d07642b91c68fe93725f6dfd866d3cf939c7686e6fa90c37e63f83c4f1"
+      "bytes": 26262,
+      "sha256": "83d802922a17b4375779cb5412abcda057c33d832d1185c0dd0025a4ccd8e27e"
     },
     "fixture": {
       "path": "fixtures/exit43.elf",

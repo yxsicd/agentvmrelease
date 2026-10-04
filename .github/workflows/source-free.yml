@@ -87,6 +87,20 @@ jobs:
             bun) bun glue/js/quality-gate.mjs target/release-input/agentvm-core.wasm | tee target/ci/quality-bun.json ;;
             deno) deno run --allow-read glue/js/quality-gate.mjs target/release-input/agentvm-core.wasm | tee target/ci/quality-deno.json ;;
           esac
+      - name: Explicit workspace admission and restore
+        if: ${{ !cancelled() }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          node --test glue/js/host-capabilities.test.mjs
+          if node -e 'process.exit(require("./channels/"+process.env.AGENTVM_CHANNEL+".json").capability_profile ? 0 : 1)'; then
+            digest="$(node -p 'require("./channels/"+process.env.AGENTVM_CHANNEL+".json").core.sha256')"
+            case "${{ matrix.runtime }}" in
+              node) node glue/js/explicit-workspace-gate.mjs target/release-input/agentvm-core.wasm "$digest" fixtures/mkdirat-errno.elf target/ci/explicit-node.json ;;
+              bun) bun glue/js/explicit-workspace-gate.mjs target/release-input/agentvm-core.wasm "$digest" fixtures/mkdirat-errno.elf target/ci/explicit-bun.json ;;
+              deno) deno run --allow-read --allow-write=target/ci glue/js/explicit-workspace-gate.mjs target/release-input/agentvm-core.wasm "$digest" fixtures/mkdirat-errno.elf target/ci/explicit-deno.json ;;
+            esac
+          fi
       - name: Record bounded performance even on semantic failure
         if: ${{ !cancelled() }}
         shell: bash
