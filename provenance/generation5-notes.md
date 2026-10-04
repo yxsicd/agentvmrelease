@@ -18,6 +18,11 @@ DEV is now qualified: fresh source-free run37168130299 at
 ef7a066ed2df0eaa5d0116e196fb578fe8a9f7d2 passed all seven lanes and aggregate.
 All35 exact-digest receipts were independently admitted locally with no failures;
 aggregate SHA6bfdf988062f23fd9cbb295cec5002565be556c7daaaf137288c6b7b3ff3be09.
+Qualified immutable manifest commit c9cd98064f29c058e2fc7ae51441c838b7832e57:
+local real CDN readback PASS for dev/main/prod, HTTP200/CORS*, exact digest,
+ELF exit43/stdout/empty stderr/session0. Independent CDN Action37168560637
+at that commit PASS. Initial local CDN invocation used a mistyped full revision,
+got404 and is retained as INVALID input receipt, not a candidate runtime failure.
 Four-platform package build/attachment37167832831 PASS; all release assets
 anonymously downloaded and their SHA/size verified. MAIN/PROD unchanged.
 Package build37167832831 produced all four exact G5 packages; platform hashes

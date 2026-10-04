@@ -1,0 +1,139 @@
+{
+  "schema": 1,
+  "repository": "yxsicd/agentvmrelease",
+  "revision": "c9cd98064f29c058e2fc7ae51441c838b7832e57",
+  "started_at": "2026-10-04T01:37:29.750Z",
+  "passed": true,
+  "channels": [
+    {
+      "channel": "dev",
+      "manifest_url": "https://cdn.jsdelivr.net/gh/yxsicd/agentvmrelease@c9cd98064f29c058e2fc7ae51441c838b7832e57/channels/dev.json",
+      "core_url": "https://cdn.jsdelivr.net/gh/yxsicd/agentvmrelease@c9cd98064f29c058e2fc7ae51441c838b7832e57/channels/dev/agentvm-core.wasm",
+      "bytes": 1757119,
+      "sha256": "854428a780fe442f3fa000de710ef6225993330250106888393e16831beb88b0",
+      "abi": 5,
+      "imports": 0,
+      "cleanup_sessions": 0,
+      "result": {
+        "exit": 43,
+        "stdout": "agentvm-real-elf-pass\n",
+        "stderr": "",
+        "steps": 9,
+        "calls": 3
+      },
+      "downloads": [
+        {
+          "url": "https://cdn.jsdelivr.net/gh/yxsicd/agentvmrelease@c9cd98064f29c058e2fc7ae51441c838b7832e57/channels/dev.json",
+          "status": 200,
+          "cors": "*",
+          "content_type": "application/json; charset=utf-8"
+        },
+        {
+          "url": "https://cdn.jsdelivr.net/gh/yxsicd/agentvmrelease@c9cd98064f29c058e2fc7ae51441c838b7832e57/channels/dev/agentvm-core.wasm",
+          "status": 200,
+          "cors": "*",
+          "content_type": "application/wasm"
+        },
+        {
+          "url": "https://cdn.jsdelivr.net/gh/yxsicd/agentvmrelease@c9cd98064f29c058e2fc7ae51441c838b7832e57/glue/js/host.mjs",
+          "status": 200,
+          "cors": "*",
+          "content_type": "application/javascript; charset=utf-8"
+        },
+        {
+          "url": "https://cdn.jsdelivr.net/gh/yxsicd/agentvmrelease@c9cd98064f29c058e2fc7ae51441c838b7832e57/fixtures/exit43.elf",
+          "status": 200,
+          "cors": "*",
+          "content_type": "application/octet-stream"
+        }
+      ]
+    },
+    {
+      "channel": "main",
+      "manifest_url": "https://cdn.jsdelivr.net/gh/yxsicd/agentvmrelease@c9cd98064f29c058e2fc7ae51441c838b7832e57/channels/main.json",
+      "core_url": "https://cdn.jsdelivr.net/gh/yxsicd/agentvmrelease@c9cd98064f29c058e2fc7ae51441c838b7832e57/channels/main/agentvm-core.wasm",
+      "bytes": 1704601,
+      "sha256": "f6da81a808447212f0dd607eca94126b36eb7119055842320a833c5b2045f20b",
+      "abi": 5,
+      "imports": 0,
+      "cleanup_sessions": 0,
+      "result": {
+        "exit": 43,
+        "stdout": "agentvm-real-elf-pass\n",
+        "stderr": "",
+        "steps": 9,
+        "calls": 3
+      },
+      "downloads": [
+        {
+          "url": "https://cdn.jsdelivr.net/gh/yxsicd/agentvmrelease@c9cd98064f29c058e2fc7ae51441c838b7832e57/channels/main.json",
+          "status": 200,
+          "cors": "*",
+          "content_type": "application/json; charset=utf-8"
+        },
+        {
+          "url": "https://cdn.jsdelivr.net/gh/yxsicd/agentvmrelease@c9cd98064f29c058e2fc7ae51441c838b7832e57/channels/main/agentvm-core.wasm",
+          "status": 200,
+          "cors": "*",
+          "content_type": "application/wasm"
+        },
+        {
+          "url": "https://cdn.jsdelivr.net/gh/yxsicd/agentvmrelease@c9cd98064f29c058e2fc7ae51441c838b7832e57/glue/js/host.mjs",
+          "status": 200,
+          "cors": "*",
+          "content_type": "application/javascript; charset=utf-8"
+        },
+        {
+          "url": "https://cdn.jsdelivr.net/gh/yxsicd/agentvmrelease@c9cd98064f29c058e2fc7ae51441c838b7832e57/fixtures/exit43.elf",
+          "status": 200,
+          "cors": "*",
+          "content_type": "application/octet-stream"
+        }
+      ]
+    },
+    {
+      "channel": "prod",
+      "manifest_url": "https://cdn.jsdelivr.net/gh/yxsicd/agentvmrelease@c9cd98064f29c058e2fc7ae51441c838b7832e57/channels/prod.json",
+      "core_url": "https://cdn.jsdelivr.net/gh/yxsicd/agentvmrelease@c9cd98064f29c058e2fc7ae51441c838b7832e57/channels/prod/agentvm-core.wasm",
+      "bytes": 1704601,
+      "sha256": "f6da81a808447212f0dd607eca94126b36eb7119055842320a833c5b2045f20b",
+      "abi": 5,
+      "imports": 0,
+      "cleanup_sessions": 0,
+      "result": {
+        "exit": 43,
+        "stdout": "agentvm-real-elf-pass\n",
+        "stderr": "",
+        "steps": 9,
+        "calls": 3
+      },
+      "downloads": [
+        {
+          "url": "https://cdn.jsdelivr.net/gh/yxsicd/agentvmrelease@c9cd98064f29c058e2fc7ae51441c838b7832e57/channels/prod.json",
+          "status": 200,
+          "cors": "*",
+          "content_type": "application/json; charset=utf-8"
+        },
+        {
+          "url": "https://cdn.jsdelivr.net/gh/yxsicd/agentvmrelease@c9cd98064f29c058e2fc7ae51441c838b7832e57/channels/prod/agentvm-core.wasm",
+          "status": 200,
+          "cors": "*",
+          "content_type": "application/wasm"
+        },
+        {
+          "url": "https://cdn.jsdelivr.net/gh/yxsicd/agentvmrelease@c9cd98064f29c058e2fc7ae51441c838b7832e57/glue/js/host.mjs",
+          "status": 200,
+          "cors": "*",
+          "content_type": "application/javascript; charset=utf-8"
+        },
+        {
+          "url": "https://cdn.jsdelivr.net/gh/yxsicd/agentvmrelease@c9cd98064f29c058e2fc7ae51441c838b7832e57/fixtures/exit43.elf",
+          "status": 200,
+          "cors": "*",
+          "content_type": "application/octet-stream"
+        }
+      ]
+    }
+  ],
+  "completed_at": "2026-10-04T01:37:34.370Z"
+}
