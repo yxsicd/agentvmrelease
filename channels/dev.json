@@ -2,72 +2,40 @@
   "schema": "agentvm.release-channel/v1",
   "channel": "dev",
   "mutable": true,
-  "state": "qualified-dev",
-  "generation": 5,
-  "release_tag": "dev-20261004-g5",
+  "state": "pending-public-qualification",
+  "generation": 6,
+  "release_tag": "dev-20261007-g6",
   "core": {
     "asset": "agentvm-core.wasm",
     "target": "wasm32-unknown-unknown",
     "abi": 5,
     "imports": 0,
-    "bytes": 1757119,
-    "sha256": "854428a780fe442f3fa000de710ef6225993330250106888393e16831beb88b0",
-    "download": "https://github.com/yxsicd/agentvmrelease/releases/download/dev-20261004-g5/agentvm-core.wasm",
+    "bytes": 1922957,
+    "sha256": "dcf384f26ea9ad9cdeabda248b1f3e390505ff57330143b665f9636b2bfa42dd",
+    "download": "https://github.com/yxsicd/agentvmrelease/releases/download/dev-20261007-g6/agentvm-core.wasm",
     "repository_path": "channels/dev/agentvm-core.wasm"
   },
   "source": {
     "available": false,
     "private_repository": "yxsicd/agentvm",
-    "release_authority_commit": "a334a47839d1a71d2e4ab2be138016bead137332",
+    "release_authority_commit": "98f566163e883b6239396c0c95e53537b9d052d8",
     "release_rule": "clean pushed main only"
   },
   "promotion": {
     "performance_qualified_exact_digest": false,
-    "public_source_free_qualified": true,
+    "public_source_free_qualified": false,
     "eligible_for_main": false,
-    "scope": "G5 exact-digest public 35-receipt matrix and four packages qualified; explicit workspace preview, no MAIN/PROD promotion"
+    "scope": "Pending fresh G6 package/full-matrix/browser/application admission; bounded static execution and optional explicit in-memory workspace only"
   },
-  "host_packages": [
-    {
-      "platform": "linux-arm64",
-      "asset": "agentvm-host-linux-arm64.tar.gz",
-      "bytes": 4834872,
-      "sha256": "a616480acb41b25b48e2b46f0b5f69fb2affeb054b75a0b9224ccce7cf372925"
-    },
-    {
-      "platform": "linux-x64",
-      "asset": "agentvm-host-linux-x64.tar.gz",
-      "bytes": 5245514,
-      "sha256": "3684f2d1ce80e72feee327c124910b43dfff525a87a55a125f5c6a15b4634765"
-    },
-    {
-      "platform": "macos-arm64",
-      "asset": "agentvm-host-macos-arm64.tar.gz",
-      "bytes": 4241499,
-      "sha256": "931404bda58a65f6e8a44e1ae825db757bfa10d4cd7a66cdec83836b6296221c"
-    },
-    {
-      "platform": "windows-x64",
-      "asset": "agentvm-host-windows-x64.tar.gz",
-      "bytes": 4238889,
-      "sha256": "b1e2c39f4079c8e3bd78620cd9d0f8c18e06250dd4875ce212f95153f365b515"
-    }
-  ],
+  "host_packages": [],
   "private_qualification": {
     "result": "pass",
-    "scope": "Exact clean pushed source Core; Node/Bun/Deno bounded persistent Alpine shell mkdir, child file pipeline, failure recovery and cleanup; not full Alpine compatibility"
+    "scope": "Exact source/profile ABI5 imports0; Node/Bun/Deno real ELF/ordinary quality/explicit OFF-ON-denials/composed replay, private pinned Alpine file lifecycle/timestamp refusal recovery/recursive copy cleanup; no full Alpine/asyncio/native product admission"
   },
   "usage_skill": "skills/agentvm-wasm/SKILL.md",
   "public_qualification": {
-    "result": "pass",
-    "source_free_run": 37168130299,
-    "source_free_head": "ef7a066ed2df0eaa5d0116e196fb578fe8a9f7d2",
-    "source_free_aggregate_sha256": "6bfdf988062f23fd9cbb295cec5002565be556c7daaaf137288c6b7b3ff3be09",
-    "aggregate_receipts": 35,
-    "evidence": "provenance/generation5-public-qualification.json",
-    "package_run": 37167832831,
-    "package_head": "a810eca77408de6c6c871649ceccfadf3d734d4e",
-    "scope": "Node/Bun/Deno explicit grants/denial/snapshot; four-platform Wasmi/Wasmtime ordinary quality/performance and exact relocated packages PASS; not full Alpine, browser journey or broad network support"
+    "result": "pending",
+    "scope": "Fresh four-platform G6 packages and exact public full matrix required; no G5 receipt inheritance"
   },
   "distribution": {
     "schema": "agentvm.repository-distribution/v1",
@@ -106,8 +74,8 @@
   },
   "skill_artifact": {
     "asset": "agentvm-wasm-skill.tar.gz",
-    "bytes": 3822,
-    "sha256": "c8f126dd8ae7acf61863189e419a855b451feca26044eaae3990c47a9ba88545",
-    "download": "https://github.com/yxsicd/agentvmrelease/releases/download/dev-20261004-g5/agentvm-wasm-skill.tar.gz"
+    "bytes": 3666,
+    "sha256": "7509255e6aaaa179630aff34fb526a9e02dd03e6e69daf5d9853810de87906c0",
+    "download": "https://github.com/yxsicd/agentvmrelease/releases/download/dev-20261007-g6/agentvm-wasm-skill.tar.gz"
   }
 }

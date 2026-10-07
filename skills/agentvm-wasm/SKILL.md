@@ -5,20 +5,25 @@ description: Consume the public AgentVM Core Wasm release to execute bounded sta
 
 # AgentVM Wasm consumer
 
-Generation5 DEV is an explicit workspace preview, not stable promotion. Existing
-constructors retain their grants. Feature-detect the optional
+Generation6 is the current explicit workspace release candidate. Read the
+selected immutable channel manifest and require its public_qualification PASS
+before use. Existing constructors retain their grants. Feature-detect the optional
 agentvm_wasm_agent_session_create_with_capabilities export, then use
 createAgentSessionWithCapabilities(elf, argv,
 'process,workspace,workspace-mutate,signals,time-random,events', maxSteps)
-only when the application requires in-memory workspace mutation. Missing exports
-fail before allocation; never fall back or broaden Host permissions. Use composed
+only for explicit in-memory workspace mutation. Missing exports fail before
+allocation; never fall back or broaden Host permissions. Use composed
 exportAgentSnapshot/createAgentSessionFromSnapshot for workspace restore;
-ordinary quiescent checkpoints reject attached mutable workspaces. This preview
-does not add Host filesystem access or unrestricted network/thread/memfd grants.
-Pinned Alpine shell mkdir, child-file pipeline and failure recovery passed on
-Node/Bun/Deno privately; alternative BusyBox syscall166 startup and unsupported
-links/chmod/times remain unqualified. Require fresh public matrix/package receipts
-before admitting DEV consumers; a Release upload alone is not qualification.
+ordinary quiescent checkpoints reject attached mutable workspaces. No Host
+filesystem or unrestricted network/thread/memfd access is granted.
+Private pinned static Alpine shell file lifecycle, recursive copy/readback and
+cleanup, unsupported timestamp errno and same-shell recovery passed on
+Node/Bun/Deno. These receipts do not qualify full Alpine, dynamic programs,
+_asyncio, default native product packaging or a browser application journey.
+Read-only TAR image bindings are not compiled into this release profile.
+Four new platform packages and a fresh exact-digest full matrix are mandatory;
+a Release upload alone is not qualification. G5/G3 immutable releases remain
+available for rollback.
 
 Use https://github.com/yxsicd/agentvmrelease as the source-free distribution.
 Clone or use an existing clean checkout; read README.md and the selected

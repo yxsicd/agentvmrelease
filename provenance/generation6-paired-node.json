@@ -1,0 +1,191 @@
+{
+  "schema": "agentvm.promotion-performance/v1",
+  "ok": true,
+  "runtime": "node-26.5.1",
+  "fixture_sha256": "c14cdb389f34e504d69e386cfc67d5c5d9a730a990de03ca6910b2a15e30386a",
+  "input_sha256": "a15a4ece33b6ccb944709c0d408a584f7db420ba806b51ce1491f1f416bd0164",
+  "input_bytes": 1048576,
+  "warmups": 3,
+  "iterations": 7,
+  "alternating_order": true,
+  "limits": {
+    "median_ratio": 2,
+    "total_ms": 5000,
+    "linear_memory_bytes": 134217728
+  },
+  "ratios": {
+    "run_ms": 0.9638007748732181,
+    "total_ms": 0.9608819464288401
+  },
+  "lanes": [
+    {
+      "core_sha256": "f6da81a808447212f0dd607eca94126b36eb7119055842320a833c5b2045f20b",
+      "core_bytes": 1704601,
+      "compile_ms": 4.201332999999998,
+      "samples": [
+        {
+          "instantiate_ms": 0.1377909999999929,
+          "setup_ms": 1.594791999999984,
+          "run_ms": 29.075207999999975,
+          "total_ms": 30.807790999999952,
+          "steps": 3362591,
+          "calls": 55,
+          "linear_memory_bytes": 15007744,
+          "stdout": "1:needle one\n2:beta needle two\n",
+          "exit": 0
+        },
+        {
+          "instantiate_ms": 0.11454200000002857,
+          "setup_ms": 1.494166000000007,
+          "run_ms": 28.707334000000003,
+          "total_ms": 30.31604200000004,
+          "steps": 3362591,
+          "calls": 55,
+          "linear_memory_bytes": 15007744,
+          "stdout": "1:needle one\n2:beta needle two\n",
+          "exit": 0
+        },
+        {
+          "instantiate_ms": 0.15333299999997507,
+          "setup_ms": 1.2088749999999777,
+          "run_ms": 29.63770900000003,
+          "total_ms": 30.999916999999982,
+          "steps": 3362591,
+          "calls": 55,
+          "linear_memory_bytes": 15007744,
+          "stdout": "1:needle one\n2:beta needle two\n",
+          "exit": 0
+        },
+        {
+          "instantiate_ms": 0.1571249999999509,
+          "setup_ms": 1.3428750000000491,
+          "run_ms": 29.316040999999984,
+          "total_ms": 30.816040999999984,
+          "steps": 3362591,
+          "calls": 55,
+          "linear_memory_bytes": 15007744,
+          "stdout": "1:needle one\n2:beta needle two\n",
+          "exit": 0
+        },
+        {
+          "instantiate_ms": 0.11916599999995015,
+          "setup_ms": 1.2773339999999962,
+          "run_ms": 28.785582999999974,
+          "total_ms": 30.18208299999992,
+          "steps": 3362591,
+          "calls": 55,
+          "linear_memory_bytes": 15007744,
+          "stdout": "1:needle one\n2:beta needle two\n",
+          "exit": 0
+        },
+        {
+          "instantiate_ms": 0.1051670000000513,
+          "setup_ms": 1.3218749999999773,
+          "run_ms": 29.33029099999999,
+          "total_ms": 30.757333000000017,
+          "steps": 3362591,
+          "calls": 55,
+          "linear_memory_bytes": 15007744,
+          "stdout": "1:needle one\n2:beta needle two\n",
+          "exit": 0
+        },
+        {
+          "instantiate_ms": 0.1358340000000453,
+          "setup_ms": 1.6162500000000364,
+          "run_ms": 28.954374999999914,
+          "total_ms": 30.706458999999995,
+          "steps": 3362591,
+          "calls": 55,
+          "linear_memory_bytes": 15007744,
+          "stdout": "1:needle one\n2:beta needle two\n",
+          "exit": 0
+        }
+      ]
+    },
+    {
+      "core_sha256": "dcf384f26ea9ad9cdeabda248b1f3e390505ff57330143b665f9636b2bfa42dd",
+      "core_bytes": 1922957,
+      "compile_ms": 2.477415999999998,
+      "samples": [
+        {
+          "instantiate_ms": 0.1289579999999546,
+          "setup_ms": 1.345875000000035,
+          "run_ms": 28.53716700000001,
+          "total_ms": 30.012,
+          "steps": 3362591,
+          "calls": 55,
+          "linear_memory_bytes": 15007744,
+          "stdout": "1:needle one\n2:beta needle two\n",
+          "exit": 0
+        },
+        {
+          "instantiate_ms": 0.12712500000003502,
+          "setup_ms": 1.3477499999999623,
+          "run_ms": 27.93195800000001,
+          "total_ms": 29.406833000000006,
+          "steps": 3362591,
+          "calls": 55,
+          "linear_memory_bytes": 15007744,
+          "stdout": "1:needle one\n2:beta needle two\n",
+          "exit": 0
+        },
+        {
+          "instantiate_ms": 0.178291999999999,
+          "setup_ms": 1.2856249999999818,
+          "run_ms": 28.918416000000036,
+          "total_ms": 30.382333000000017,
+          "steps": 3362591,
+          "calls": 55,
+          "linear_memory_bytes": 15007744,
+          "stdout": "1:needle one\n2:beta needle two\n",
+          "exit": 0
+        },
+        {
+          "instantiate_ms": 0.1318329999999719,
+          "setup_ms": 1.3642500000000268,
+          "run_ms": 28.394749999999988,
+          "total_ms": 29.890832999999986,
+          "steps": 3362591,
+          "calls": 55,
+          "linear_memory_bytes": 15007744,
+          "stdout": "1:needle one\n2:beta needle two\n",
+          "exit": 0
+        },
+        {
+          "instantiate_ms": 0.15866700000003675,
+          "setup_ms": 1.2453749999999673,
+          "run_ms": 27.712999999999965,
+          "total_ms": 29.11704199999997,
+          "steps": 3362591,
+          "calls": 55,
+          "linear_memory_bytes": 15007744,
+          "stdout": "1:needle one\n2:beta needle two\n",
+          "exit": 0
+        },
+        {
+          "instantiate_ms": 0.14575000000002092,
+          "setup_ms": 1.3913329999999178,
+          "run_ms": 28.01708300000007,
+          "total_ms": 29.55416600000001,
+          "steps": 3362591,
+          "calls": 55,
+          "linear_memory_bytes": 15007744,
+          "stdout": "1:needle one\n2:beta needle two\n",
+          "exit": 0
+        },
+        {
+          "instantiate_ms": 0.11291700000003857,
+          "setup_ms": 1.277832999999987,
+          "run_ms": 28.022707999999966,
+          "total_ms": 29.41345799999999,
+          "steps": 3362591,
+          "calls": 55,
+          "linear_memory_bytes": 15007744,
+          "stdout": "1:needle one\n2:beta needle two\n",
+          "exit": 0
+        }
+      ]
+    }
+  ],
+  "scope": "same-machine static rg 1MiB workspace, no Guest compilation; linear memory is not peak RSS; no full Agent/network performance claim"
+}

@@ -1,0 +1,35 @@
+{
+  "schema": "agentvm.release-build/v1",
+  "source": "98f566163e883b6239396c0c95e53537b9d052d8",
+  "source_clean_pushed": true,
+  "target": "wasm32-unknown-unknown",
+  "features": [
+    "explicit-session-capabilities",
+    "agentvm-usermode/abi-workspace-mutate"
+  ],
+  "rustflags": "--cfg getrandom_backend=\"custom\"",
+  "rustc": "1.96.0 (ac68faa20 2026-05-25)",
+  "cargo": "1.96.0 (30a34c682 2026-05-25)",
+  "wasm_tools": "1.255.0",
+  "core": {
+    "asset": "agentvm-core.wasm",
+    "target": "wasm32-unknown-unknown",
+    "abi": 5,
+    "imports": 0,
+    "bytes": 1922957,
+    "sha256": "dcf384f26ea9ad9cdeabda248b1f3e390505ff57330143b665f9636b2bfa42dd",
+    "download": "https://github.com/yxsicd/agentvmrelease/releases/download/dev-20261007-g6/agentvm-core.wasm",
+    "repository_path": "channels/dev/agentvm-core.wasm"
+  },
+  "build_seconds": 22.28132995800115,
+  "warnings": 59,
+  "initial_build_failure": "Missing custom getrandom backend cfg, exit101; retained privately. No product change required.",
+  "private_gates": 22,
+  "fullasyncio": "Original native bounded task FAIL retained; no rerun or qualification",
+  "previous_dev": {
+    "generation": 5,
+    "tag": "dev-20261004-g5",
+    "core_sha256": "854428a780fe442f3fa000de710ef6225993330250106888393e16831beb88b0"
+  },
+  "main_prod": "Unchanged G3; independent promotion admission required"
+}
