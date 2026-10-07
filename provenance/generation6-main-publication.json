@@ -1,0 +1,54 @@
+{
+  "schema": "agentvm.channel-promotion/v1",
+  "from": "dev",
+  "to": "main",
+  "generation": 6,
+  "core_sha256": "dcf384f26ea9ad9cdeabda248b1f3e390505ff57330143b665f9636b2bfa42dd",
+  "assets": [
+    {
+      "asset": "agentvm-core.wasm",
+      "target": "wasm32-unknown-unknown",
+      "abi": 5,
+      "imports": 0,
+      "bytes": 1922957,
+      "sha256": "dcf384f26ea9ad9cdeabda248b1f3e390505ff57330143b665f9636b2bfa42dd",
+      "download": "https://github.com/yxsicd/agentvmrelease/releases/download/main-20261007-g6/agentvm-core.wasm",
+      "repository_path": "channels/main/agentvm-core.wasm"
+    },
+    {
+      "asset": "agentvm-host-linux-arm64.tar.gz",
+      "bytes": 4895804,
+      "sha256": "88573361a107907726315d3afd49d752690634edf0ef7499514a84b89ff4f54f",
+      "platform": "linux-arm64"
+    },
+    {
+      "asset": "agentvm-host-linux-x64.tar.gz",
+      "bytes": 5305607,
+      "sha256": "f1049d910abb8f4c775aae2c42229d7b5d2b2a2c326f6c097a4fa2910e40e10d",
+      "platform": "linux-x64"
+    },
+    {
+      "asset": "agentvm-host-macos-arm64.tar.gz",
+      "bytes": 4302054,
+      "sha256": "37ab3bed976c496f1d28674b3e463778f28a307293d4b6b0ec56e7394cfd8c2a",
+      "platform": "macos-arm64"
+    },
+    {
+      "asset": "agentvm-host-windows-x64.tar.gz",
+      "bytes": 4300169,
+      "sha256": "306c38348f5aa091a0d93276429dfc343217b6392d1681bd99b903247358c5ea",
+      "platform": "windows-x64"
+    },
+    {
+      "asset": "agentvm-wasm-skill.tar.gz",
+      "bytes": 3666,
+      "sha256": "7509255e6aaaa179630aff34fb526a9e02dd03e6e69daf5d9853810de87906c0",
+      "download": "https://github.com/yxsicd/agentvmrelease/releases/download/main-20261007-g6/agentvm-wasm-skill.tar.gz"
+    }
+  ],
+  "byte_for_byte": true,
+  "rebuilt": false,
+  "qualification_source_public_commit": "a54395fde0c9d923d3387816ebd7e4926b9e9976",
+  "main_regression": "pending",
+  "prod": "generation3 retained"
+}

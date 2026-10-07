@@ -28,6 +28,19 @@ unqualified. Optional TAR image bindings and diagnostic features not compiled.
 Initial missing custom entropy cfg build101 retained; existing cfg correction
 build22.28s/59warnings PASS. OldG5/G3 immutable rollback releases untouched.
 
+## main — generation6 promoted preview (2026-10-07 UTC)
+
+Byte-for-byte from qualified DEV dev-20261007-g6: Core1922957B/SHA dcf384f26ea9ad9cdeabda248b1f3e390505ff57330143b665f9636b2bfa42dd,
+four new platform Host packages and the same consumer skill. No rebuild.
+DEV package37686038965/source-free37686952750(35actualreceipts)/actual Chromium
+explicit grants, restore and original private file-task gates/immutable CDN
+37688094646 qualified this exact cohort. Controlled paired static rg1MiB gross
+performance gate passed on Node/Bun/Deno; not a speedup or peak RSS claim.
+MAIN two fresh full regression matrices remain pending; PROD retains G3.
+Scope: bounded static ABI5 Linux execution and explicit in-memory workspace.
+Full Alpine/_asyncio/native product/network/durability remain unqualified.
+Older MAIN/PROD generation3 immutable assets remain for rollback.
+
 ## dev — generation4 qualified preview (2026-10-03)
 
 Clean pushed private main a9808ccfd3494cd74b66942708a9add22b38ec06,
