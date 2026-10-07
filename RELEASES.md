@@ -20,8 +20,9 @@ closed; no browser durability or peak RSS claim.
 Controlled same-machine static rg1MiB3warmups/7alternating samples pass2x/5s/
 128MiB gross bounds: run ratiosNode0.96380/Bun0.93579/Deno0.98493 vsG3,
 identical3362591Gueststeps. Core+12.81%; small timings are not a speedup claim.
-DEV is qualified and eligible for bounded MAIN admission. MAIN/PROD remainG3
-until independent promotion. Exact qualified-manifest CDN is pending.
+DEV qualified-manifest58fa1ef6 CDN PASS locally and in Action37688094646.
+MAIN advanced byte-for-byte and passed two fresh35receipt full regressions;
+PROD remainsG3 pending its separate publication/addressed matrix.
 Original native bounded fullasyncioFAIL retained/not rerun. Full Alpine/dynamic
 programs/Guest networking/native product packaging/RSS/Host durability remain
 unqualified. Optional TAR image bindings and diagnostic features not compiled.
@@ -36,7 +37,12 @@ DEV package37686038965/source-free37686952750(35actualreceipts)/actual Chromium
 explicit grants, restore and original private file-task gates/immutable CDN
 37688094646 qualified this exact cohort. Controlled paired static rg1MiB gross
 performance gate passed on Node/Bun/Deno; not a speedup or peak RSS claim.
-MAIN two fresh full regression matrices remain pending; PROD retains G3.
+MAIN two fresh full matrices37689152011/37690454204 atpublice714a739 PASS
+sevenlanes+aggregate35actualreceipts each; independently validated failures0.
+Raw aggregate SHAs0ee40945970f0fa92e5b8d0932bb0053a70af93fb611188dbecf44ac9d039bff
+and641ad09fe05930804e164e8934131d2e80d2d60812dc96912281524456e3024a.
+Anonymous MAIN6assets exact and immutable CDN PASS. This is short-term repeated
+regression admission, not overnight soak. PROD retainsG3 until its separate plan.
 Scope: bounded static ABI5 Linux execution and explicit in-memory workspace.
 Full Alpine/_asyncio/native product/network/durability remain unqualified.
 Older MAIN/PROD generation3 immutable assets remain for rollback.

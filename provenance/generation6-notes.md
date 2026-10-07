@@ -18,8 +18,9 @@ closed; no browser durability or peak RSS claim.
 Controlled same-machine static rg1MiB3warmups/7alternating samples pass2x/5s/
 128MiB gross bounds: run ratiosNode0.96380/Bun0.93579/Deno0.98493 vsG3,
 identical3362591Gueststeps. Core+12.81%; small timings are not a speedup claim.
-DEV is qualified and eligible for bounded MAIN admission. MAIN/PROD remainG3
-until independent promotion. Exact qualified-manifest CDN is pending.
+DEV qualified-manifest58fa1ef6 CDN PASS locally and in Action37688094646.
+MAIN advanced byte-for-byte and passed two fresh35receipt full regressions;
+PROD remainsG3 pending its separate publication/addressed matrix.
 Original native bounded fullasyncioFAIL retained/not rerun. Full Alpine/dynamic
 programs/Guest networking/native product packaging/RSS/Host durability remain
 unqualified. Optional TAR image bindings and diagnostic features not compiled.

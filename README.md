@@ -47,7 +47,7 @@ packages, anonymous artifact integrity and actual Chromium explicit-workspace
 application checks. Its optional in-memory workspace grants remain explicit;
 existing constructors keep their grants. The exact same Core/package/consumer
 skill bytes advance to MAIN/PROD only after their separate admission gates.
-MAIN now points to generation6 preview; PROD remains generation3 while two fresh MAIN regressions are pending. Download the selected manifest's exact
+MAIN now points to generation6 preview; two fresh MAIN35receipt regressions have passed; PROD remains generation3 pending separate promotion. Download the selected manifest's exact
 immutable generation URL and preserve its public commit. Old G5/G3 assets remain
 available for rollback. This release qualifies bounded static AArch64 Linux
 execution and documented optional in-memory workspace tasks; full Alpine,
