@@ -34,7 +34,9 @@
     "byte_for_byte_skill": true,
     "eligible_for_prod": false,
     "prod_gate": "Two fresh MAIN35receipt regressions required",
-    "regression_runs": []
+    "regression_runs": [
+      37689152011
+    ]
   },
   "host_packages": [
     {
@@ -79,7 +81,7 @@
     "aggregate_receipts": 35,
     "evidence": "provenance/generation6-public-qualification.json",
     "browser_evidence": "provenance/generation6-browser.json",
-    "main_post_publication": "pending fresh two MAIN matrices; inherited exact-byte DEV admission only"
+    "main_post_publication": "First MAIN35receipt matrix PASS; second fresh independent regression pending"
   },
   "distribution": {
     "schema": "agentvm.repository-distribution/v1",

@@ -1,0 +1,1515 @@
+{
+  "schema": "agentvm.public-verification/v1",
+  "repository": "yxsicd/agentvmrelease",
+  "run_id": "37689152011",
+  "commit": "e714a739036eaac35607b1c80357654d3273778b",
+  "channel": "main",
+  "jobs": [
+    {
+      "job": "javascript",
+      "result": "success"
+    },
+    {
+      "job": "native",
+      "result": "success"
+    }
+  ],
+  "core": {
+    "asset": "agentvm-core.wasm",
+    "target": "wasm32-unknown-unknown",
+    "abi": 5,
+    "imports": 0,
+    "bytes": 1922957,
+    "sha256": "dcf384f26ea9ad9cdeabda248b1f3e390505ff57330143b665f9636b2bfa42dd",
+    "download": "https://github.com/yxsicd/agentvmrelease/releases/download/main-20261007-g6/agentvm-core.wasm",
+    "repository_path": "channels/main/agentvm-core.wasm"
+  },
+  "receipts": {
+    "bun.json": {
+      "ok": true,
+      "runtime": "bun-1.3.14",
+      "abi": 5,
+      "imports": 0,
+      "wasm_bytes": 1922957,
+      "elf_bytes": 656,
+      "exit": 43,
+      "steps": 9,
+      "slices": 3
+    },
+    "explicit-bun.json": {
+      "schema": "agentvm.wasm-explicit-workspace/v1",
+      "runtime": "bun-1.3.14",
+      "core": {
+        "bytes": 1922957,
+        "sha256": "dcf384f26ea9ad9cdeabda248b1f3e390505ff57330143b665f9636b2bfa42dd"
+      },
+      "driver_sha256": "e40c8fe6192ff9e738cb7e0f381872fd20609c5c8018e8955a91388a66135650",
+      "host_sha256": "83d802922a17b4375779cb5412abcda057c33d832d1185c0dd0025a4ccd8e27e",
+      "cases": [
+        {
+          "name": "legacy-default",
+          "path": "/workspace/notes",
+          "capabilities": null,
+          "guest_sha256": "eb4bb4dc774c3ae831a3a5e3adb5c47d074aed0d4c1754a4ea66e18777cda4e4",
+          "state": 2,
+          "guest_exit": 1,
+          "return": -1,
+          "stdout_hex": "ffffffffffffffff",
+          "stderr": "",
+          "steps": 18,
+          "calls": 3,
+          "wall_ms": 1.4379040000000032,
+          "linear_memory_bytes": 1638400
+        },
+        {
+          "name": "explicit-off",
+          "path": "/workspace/notes",
+          "capabilities": "process,workspace",
+          "guest_sha256": "eb4bb4dc774c3ae831a3a5e3adb5c47d074aed0d4c1754a4ea66e18777cda4e4",
+          "state": 2,
+          "guest_exit": 1,
+          "return": -1,
+          "stdout_hex": "ffffffffffffffff",
+          "stderr": "",
+          "steps": 18,
+          "calls": 3,
+          "wall_ms": 0.5693739999999963,
+          "linear_memory_bytes": 1638400
+        },
+        {
+          "name": "explicit-on",
+          "path": "/workspace/notes",
+          "capabilities": "process,workspace,workspace-mutate",
+          "guest_sha256": "eb4bb4dc774c3ae831a3a5e3adb5c47d074aed0d4c1754a4ea66e18777cda4e4",
+          "state": 2,
+          "guest_exit": 1,
+          "return": 0,
+          "stdout_hex": "0000000000000000",
+          "stderr": "",
+          "steps": 18,
+          "calls": 3,
+          "wall_ms": 0.41537699999999944,
+          "linear_memory_bytes": 7143424,
+          "child_write": true,
+          "restore_write_error": "Error: AgentVM SnapshotWorkspace write failed: workspace path was not found",
+          "replay_return": 0,
+          "replay_steps": 18
+        },
+        {
+          "name": "parent-denial",
+          "path": "../escape",
+          "capabilities": "process,workspace,workspace-mutate",
+          "guest_sha256": "2a11f9b38340ab95f0053610d95e6fee55580a9662e97b57b7fee2c53ffc2f8b",
+          "state": 2,
+          "guest_exit": 1,
+          "return": -13,
+          "stdout_hex": "f3ffffffffffffff",
+          "stderr": "",
+          "steps": 18,
+          "calls": 3,
+          "wall_ms": 0.3202879999999979,
+          "linear_memory_bytes": 7143424
+        },
+        {
+          "name": "outside-denial",
+          "path": "/etc/escape",
+          "capabilities": "process,workspace,workspace-mutate",
+          "guest_sha256": "ed9b4f1da868dd4238bc193e5f007ee0472339457929f3fec32c96b78bfec5dc",
+          "state": 2,
+          "guest_exit": 1,
+          "return": -2,
+          "stdout_hex": "feffffffffffffff",
+          "stderr": "",
+          "steps": 18,
+          "calls": 3,
+          "wall_ms": 0.2728190000000055,
+          "linear_memory_bytes": 7143424
+        }
+      ],
+      "passed": true,
+      "scope": "Experimental explicit SnapshotWorkspace grant, not default/public profile or Alpine application admission",
+      "abi": 5,
+      "imports": 0,
+      "rejected": [
+        {
+          "spec": "process",
+          "error": "Error: Explicit Agent capability session creation failed: Agent capability selection requires process and workspace"
+        },
+        {
+          "spec": "process,workspace,unknown",
+          "error": "Error: Explicit Agent capability session creation failed: unknown runtime capability: unknown"
+        },
+        {
+          "spec": "process,workspace,network",
+          "error": "Error: Explicit Agent capability session creation failed: runtime capability abi-network was not compiled into this binary"
+        }
+      ],
+      "cleanup_sessions": 0
+    },
+    "manifest-bun.json": {
+      "ok": true,
+      "channel": "main",
+      "generation": 6,
+      "bytes": 1922957,
+      "sha256": "dcf384f26ea9ad9cdeabda248b1f3e390505ff57330143b665f9636b2bfa42dd",
+      "abi": 5,
+      "imports": 0
+    },
+    "performance-bun.json": {
+      "ok": true,
+      "schema": "agentvm.performance/v1",
+      "runtime": "bun-1.3.14",
+      "core_sha256": "dcf384f26ea9ad9cdeabda248b1f3e390505ff57330143b665f9636b2bfa42dd",
+      "fixture_sha256": "3f26f9e1832b8b63955069d1bba972eee357b47114ec4cf20106fb3370f5b160",
+      "core_bytes": 1922957,
+      "compile_ms": 17.598803,
+      "instantiate": {
+        "n": 9,
+        "p50_ms": 1.160027999999997,
+        "p95_ms": 7.0774239999999935,
+        "min_ms": 0.5272449999999935,
+        "max_ms": 7.0774239999999935,
+        "samples_ms": [
+          2.007951999999996,
+          0.8670399999999887,
+          1.2761449999999996,
+          0.591194999999999,
+          1.160027999999997,
+          3.408636999999999,
+          0.5272449999999935,
+          7.0774239999999935,
+          0.5762869999999936
+        ]
+      },
+      "create": {
+        "n": 9,
+        "p50_ms": 0.13124500000000694,
+        "p95_ms": 0.3748599999999982,
+        "min_ms": 0.1102769999999964,
+        "max_ms": 0.3748599999999982,
+        "samples_ms": [
+          0.17387500000000955,
+          0.3748599999999982,
+          0.15973800000000438,
+          0.13124500000000694,
+          0.13040399999999863,
+          0.14468000000000814,
+          0.12820999999999572,
+          0.1102769999999964,
+          0.12236900000000617
+        ]
+      },
+      "run": {
+        "n": 9,
+        "p50_ms": 3.4278859999999867,
+        "p95_ms": 6.377687000000009,
+        "min_ms": 2.0813090000000045,
+        "max_ms": 6.377687000000009,
+        "samples_ms": [
+          3.4278859999999867,
+          3.4970950000000016,
+          3.4404190000000057,
+          3.2484599999999944,
+          3.3820189999999997,
+          3.6514139999999884,
+          6.377687000000009,
+          2.0813090000000045,
+          2.104621999999992
+        ]
+      },
+      "steps": 30013,
+      "guest_steps_per_second": 8755542.045447286,
+      "linear_memory_bytes": 1638400,
+      "process_memory": {
+        "rss": 93720576,
+        "heapTotal": 1411072,
+        "heapUsed": 17950956,
+        "external": 17388036,
+        "arrayBuffers": 12345157
+      },
+      "scope": "fresh-instance ALU; process-memory point sample not peak RSS; CI timing diagnostic, no cross-run speedup claim"
+    },
+    "quality-bun.json": {
+      "ok": true,
+      "schema": "agentvm.quality/v1",
+      "runtime": "bun-1.3.14",
+      "core_sha256": "dcf384f26ea9ad9cdeabda248b1f3e390505ff57330143b665f9636b2bfa42dd",
+      "core_bytes": 1922957,
+      "checks": [
+        "ABI5-zero-imports",
+        "invalid-ELF-rejected",
+        "empty-argv-rejected",
+        "NUL-argv-rejected",
+        "oversized-argv-rejected",
+        "invalid-create-no-session-leak",
+        "independent-live-sessions",
+        "exact-exit-output",
+        "no-cross-session-state",
+        "exact-exit-output",
+        "stale-handle-rejected",
+        "exact-exit-output",
+        "error-recovery-cleanup",
+        "fresh-instance-restart-and-replay",
+        "workspace-snapshot-fresh-instance",
+        "exact-exit-output",
+        "ungranted-time-random-does-not-consume-entropy",
+        "explicit-entropy-consumption",
+        "instruction-budget-enforced",
+        "all-session-cleanup"
+      ],
+      "failures": [],
+      "session_count": 0
+    },
+    "deno.json": {
+      "ok": true,
+      "runtime": "deno-2.9.4",
+      "abi": 5,
+      "imports": 0,
+      "wasm_bytes": 1922957,
+      "elf_bytes": 656,
+      "exit": 43,
+      "steps": 9,
+      "slices": 3
+    },
+    "explicit-deno.json": {
+      "schema": "agentvm.wasm-explicit-workspace/v1",
+      "runtime": "deno-2.9.4",
+      "core": {
+        "bytes": 1922957,
+        "sha256": "dcf384f26ea9ad9cdeabda248b1f3e390505ff57330143b665f9636b2bfa42dd"
+      },
+      "driver_sha256": "e40c8fe6192ff9e738cb7e0f381872fd20609c5c8018e8955a91388a66135650",
+      "host_sha256": "83d802922a17b4375779cb5412abcda057c33d832d1185c0dd0025a4ccd8e27e",
+      "cases": [
+        {
+          "name": "legacy-default",
+          "path": "/workspace/notes",
+          "capabilities": null,
+          "guest_sha256": "eb4bb4dc774c3ae831a3a5e3adb5c47d074aed0d4c1754a4ea66e18777cda4e4",
+          "state": 2,
+          "guest_exit": 1,
+          "return": -1,
+          "stdout_hex": "ffffffffffffffff",
+          "stderr": "",
+          "steps": 18,
+          "calls": 3,
+          "wall_ms": 12.082966999999996,
+          "linear_memory_bytes": 1638400
+        },
+        {
+          "name": "explicit-off",
+          "path": "/workspace/notes",
+          "capabilities": "process,workspace",
+          "guest_sha256": "eb4bb4dc774c3ae831a3a5e3adb5c47d074aed0d4c1754a4ea66e18777cda4e4",
+          "state": 2,
+          "guest_exit": 1,
+          "return": -1,
+          "stdout_hex": "ffffffffffffffff",
+          "stderr": "",
+          "steps": 18,
+          "calls": 3,
+          "wall_ms": 0.07417999999999836,
+          "linear_memory_bytes": 1638400
+        },
+        {
+          "name": "explicit-on",
+          "path": "/workspace/notes",
+          "capabilities": "process,workspace,workspace-mutate",
+          "guest_sha256": "eb4bb4dc774c3ae831a3a5e3adb5c47d074aed0d4c1754a4ea66e18777cda4e4",
+          "state": 2,
+          "guest_exit": 1,
+          "return": 0,
+          "stdout_hex": "0000000000000000",
+          "stderr": "",
+          "steps": 18,
+          "calls": 3,
+          "wall_ms": 0.6808300000000003,
+          "linear_memory_bytes": 7143424,
+          "child_write": true,
+          "restore_write_error": "Error: AgentVM SnapshotWorkspace write failed: workspace path was not found",
+          "replay_return": 0,
+          "replay_steps": 18
+        },
+        {
+          "name": "parent-denial",
+          "path": "../escape",
+          "capabilities": "process,workspace,workspace-mutate",
+          "guest_sha256": "2a11f9b38340ab95f0053610d95e6fee55580a9662e97b57b7fee2c53ffc2f8b",
+          "state": 2,
+          "guest_exit": 1,
+          "return": -13,
+          "stdout_hex": "f3ffffffffffffff",
+          "stderr": "",
+          "steps": 18,
+          "calls": 3,
+          "wall_ms": 2.615811000000008,
+          "linear_memory_bytes": 7143424
+        },
+        {
+          "name": "outside-denial",
+          "path": "/etc/escape",
+          "capabilities": "process,workspace,workspace-mutate",
+          "guest_sha256": "ed9b4f1da868dd4238bc193e5f007ee0472339457929f3fec32c96b78bfec5dc",
+          "state": 2,
+          "guest_exit": 1,
+          "return": -2,
+          "stdout_hex": "feffffffffffffff",
+          "stderr": "",
+          "steps": 18,
+          "calls": 3,
+          "wall_ms": 0.08178200000000402,
+          "linear_memory_bytes": 7143424
+        }
+      ],
+      "passed": true,
+      "scope": "Experimental explicit SnapshotWorkspace grant, not default/public profile or Alpine application admission",
+      "abi": 5,
+      "imports": 0,
+      "rejected": [
+        {
+          "spec": "process",
+          "error": "Error: Explicit Agent capability session creation failed: Agent capability selection requires process and workspace"
+        },
+        {
+          "spec": "process,workspace,unknown",
+          "error": "Error: Explicit Agent capability session creation failed: unknown runtime capability: unknown"
+        },
+        {
+          "spec": "process,workspace,network",
+          "error": "Error: Explicit Agent capability session creation failed: runtime capability abi-network was not compiled into this binary"
+        }
+      ],
+      "cleanup_sessions": 0
+    },
+    "manifest-deno.json": {
+      "ok": true,
+      "channel": "main",
+      "generation": 6,
+      "bytes": 1922957,
+      "sha256": "dcf384f26ea9ad9cdeabda248b1f3e390505ff57330143b665f9636b2bfa42dd",
+      "abi": 5,
+      "imports": 0
+    },
+    "performance-deno.json": {
+      "ok": true,
+      "schema": "agentvm.performance/v1",
+      "runtime": "deno-2.9.4",
+      "core_sha256": "dcf384f26ea9ad9cdeabda248b1f3e390505ff57330143b665f9636b2bfa42dd",
+      "fixture_sha256": "3f26f9e1832b8b63955069d1bba972eee357b47114ec4cf20106fb3370f5b160",
+      "core_bytes": 1922957,
+      "compile_ms": 6.4299,
+      "instantiate": {
+        "n": 9,
+        "p50_ms": 0.37700900000000104,
+        "p95_ms": 0.5319389999999942,
+        "min_ms": 0.3455029999999937,
+        "max_ms": 0.5319389999999942,
+        "samples_ms": [
+          0.5319389999999942,
+          0.4202529999999953,
+          0.36350000000000193,
+          0.3772790000000015,
+          0.37700900000000104,
+          0.37476599999999394,
+          0.37255300000000346,
+          0.4184009999999887,
+          0.3455029999999937
+        ]
+      },
+      "create": {
+        "n": 9,
+        "p50_ms": 0.09121499999999827,
+        "p95_ms": 0.1811179999999979,
+        "min_ms": 0.0676600000000036,
+        "max_ms": 0.1811179999999979,
+        "samples_ms": [
+          0.10536600000000362,
+          0.09333900000000028,
+          0.1811179999999979,
+          0.0851469999999992,
+          0.09132599999999513,
+          0.08705000000000496,
+          0.09121499999999827,
+          0.0708450000000056,
+          0.0676600000000036
+        ]
+      },
+      "run": {
+        "n": 9,
+        "p50_ms": 2.124110999999999,
+        "p95_ms": 3.527043000000006,
+        "min_ms": 1.0850500000000096,
+        "max_ms": 3.527043000000006,
+        "samples_ms": [
+          2.8246309999999966,
+          2.302496000000005,
+          2.1728039999999993,
+          2.124110999999999,
+          1.9673590000000019,
+          2.1212269999999975,
+          3.527043000000006,
+          1.886538999999999,
+          1.0850500000000096
+        ]
+      },
+      "steps": 30013,
+      "guest_steps_per_second": 14129675.897351885,
+      "linear_memory_bytes": 1638400,
+      "process_memory": {
+        "rss": 107311104,
+        "heapTotal": 6950912,
+        "heapUsed": 3923512,
+        "external": 2241385
+      },
+      "scope": "fresh-instance ALU; process-memory point sample not peak RSS; CI timing diagnostic, no cross-run speedup claim"
+    },
+    "quality-deno.json": {
+      "ok": true,
+      "schema": "agentvm.quality/v1",
+      "runtime": "deno-2.9.4",
+      "core_sha256": "dcf384f26ea9ad9cdeabda248b1f3e390505ff57330143b665f9636b2bfa42dd",
+      "core_bytes": 1922957,
+      "checks": [
+        "ABI5-zero-imports",
+        "invalid-ELF-rejected",
+        "empty-argv-rejected",
+        "NUL-argv-rejected",
+        "oversized-argv-rejected",
+        "invalid-create-no-session-leak",
+        "independent-live-sessions",
+        "exact-exit-output",
+        "no-cross-session-state",
+        "exact-exit-output",
+        "stale-handle-rejected",
+        "exact-exit-output",
+        "error-recovery-cleanup",
+        "fresh-instance-restart-and-replay",
+        "workspace-snapshot-fresh-instance",
+        "exact-exit-output",
+        "ungranted-time-random-does-not-consume-entropy",
+        "explicit-entropy-consumption",
+        "instruction-budget-enforced",
+        "all-session-cleanup"
+      ],
+      "failures": [],
+      "session_count": 0
+    },
+    "explicit-node.json": {
+      "schema": "agentvm.wasm-explicit-workspace/v1",
+      "runtime": "node-26.5.1",
+      "core": {
+        "bytes": 1922957,
+        "sha256": "dcf384f26ea9ad9cdeabda248b1f3e390505ff57330143b665f9636b2bfa42dd"
+      },
+      "driver_sha256": "e40c8fe6192ff9e738cb7e0f381872fd20609c5c8018e8955a91388a66135650",
+      "host_sha256": "83d802922a17b4375779cb5412abcda057c33d832d1185c0dd0025a4ccd8e27e",
+      "cases": [
+        {
+          "name": "legacy-default",
+          "path": "/workspace/notes",
+          "capabilities": null,
+          "guest_sha256": "eb4bb4dc774c3ae831a3a5e3adb5c47d074aed0d4c1754a4ea66e18777cda4e4",
+          "state": 2,
+          "guest_exit": 1,
+          "return": -1,
+          "stdout_hex": "ffffffffffffffff",
+          "stderr": "",
+          "steps": 18,
+          "calls": 3,
+          "wall_ms": 8.657564999999998,
+          "linear_memory_bytes": 1638400
+        },
+        {
+          "name": "explicit-off",
+          "path": "/workspace/notes",
+          "capabilities": "process,workspace",
+          "guest_sha256": "eb4bb4dc774c3ae831a3a5e3adb5c47d074aed0d4c1754a4ea66e18777cda4e4",
+          "state": 2,
+          "guest_exit": 1,
+          "return": -1,
+          "stdout_hex": "ffffffffffffffff",
+          "stderr": "",
+          "steps": 18,
+          "calls": 3,
+          "wall_ms": 0.09320999999999913,
+          "linear_memory_bytes": 1638400
+        },
+        {
+          "name": "explicit-on",
+          "path": "/workspace/notes",
+          "capabilities": "process,workspace,workspace-mutate",
+          "guest_sha256": "eb4bb4dc774c3ae831a3a5e3adb5c47d074aed0d4c1754a4ea66e18777cda4e4",
+          "state": 2,
+          "guest_exit": 1,
+          "return": 0,
+          "stdout_hex": "0000000000000000",
+          "stderr": "",
+          "steps": 18,
+          "calls": 3,
+          "wall_ms": 0.6136330000000001,
+          "linear_memory_bytes": 7143424,
+          "child_write": true,
+          "restore_write_error": "Error: AgentVM SnapshotWorkspace write failed: workspace path was not found",
+          "replay_return": 0,
+          "replay_steps": 18
+        },
+        {
+          "name": "parent-denial",
+          "path": "../escape",
+          "capabilities": "process,workspace,workspace-mutate",
+          "guest_sha256": "2a11f9b38340ab95f0053610d95e6fee55580a9662e97b57b7fee2c53ffc2f8b",
+          "state": 2,
+          "guest_exit": 1,
+          "return": -13,
+          "stdout_hex": "f3ffffffffffffff",
+          "stderr": "",
+          "steps": 18,
+          "calls": 3,
+          "wall_ms": 0.07667600000000618,
+          "linear_memory_bytes": 7143424
+        },
+        {
+          "name": "outside-denial",
+          "path": "/etc/escape",
+          "capabilities": "process,workspace,workspace-mutate",
+          "guest_sha256": "ed9b4f1da868dd4238bc193e5f007ee0472339457929f3fec32c96b78bfec5dc",
+          "state": 2,
+          "guest_exit": 1,
+          "return": -2,
+          "stdout_hex": "feffffffffffffff",
+          "stderr": "",
+          "steps": 18,
+          "calls": 3,
+          "wall_ms": 0.1660400000000024,
+          "linear_memory_bytes": 7143424
+        }
+      ],
+      "passed": true,
+      "scope": "Experimental explicit SnapshotWorkspace grant, not default/public profile or Alpine application admission",
+      "abi": 5,
+      "imports": 0,
+      "rejected": [
+        {
+          "spec": "process",
+          "error": "Error: Explicit Agent capability session creation failed: Agent capability selection requires process and workspace"
+        },
+        {
+          "spec": "process,workspace,unknown",
+          "error": "Error: Explicit Agent capability session creation failed: unknown runtime capability: unknown"
+        },
+        {
+          "spec": "process,workspace,network",
+          "error": "Error: Explicit Agent capability session creation failed: runtime capability abi-network was not compiled into this binary"
+        }
+      ],
+      "cleanup_sessions": 0
+    },
+    "manifest-node.json": {
+      "ok": true,
+      "channel": "main",
+      "generation": 6,
+      "bytes": 1922957,
+      "sha256": "dcf384f26ea9ad9cdeabda248b1f3e390505ff57330143b665f9636b2bfa42dd",
+      "abi": 5,
+      "imports": 0
+    },
+    "node.json": {
+      "ok": true,
+      "runtime": "node-26.5.1",
+      "abi": 5,
+      "imports": 0,
+      "wasm_bytes": 1922957,
+      "elf_bytes": 656,
+      "exit": 43,
+      "steps": 9,
+      "slices": 3
+    },
+    "performance-node.json": {
+      "ok": true,
+      "schema": "agentvm.performance/v1",
+      "runtime": "node-26.5.1",
+      "core_sha256": "dcf384f26ea9ad9cdeabda248b1f3e390505ff57330143b665f9636b2bfa42dd",
+      "fixture_sha256": "3f26f9e1832b8b63955069d1bba972eee357b47114ec4cf20106fb3370f5b160",
+      "core_bytes": 1922957,
+      "compile_ms": 3.7723259999999996,
+      "instantiate": {
+        "n": 9,
+        "p50_ms": 0.3513889999999975,
+        "p95_ms": 0.4782200000000074,
+        "min_ms": 0.27623599999999726,
+        "max_ms": 0.4782200000000074,
+        "samples_ms": [
+          0.4199309999999983,
+          0.2924599999999984,
+          0.27623599999999726,
+          0.39016700000000526,
+          0.2920790000000011,
+          0.3175679999999943,
+          0.4782200000000074,
+          0.3513889999999975,
+          0.36704299999999535
+        ]
+      },
+      "create": {
+        "n": 9,
+        "p50_ms": 0.07822799999999575,
+        "p95_ms": 0.10256400000000099,
+        "min_ms": 0.05689599999999473,
+        "max_ms": 0.10256400000000099,
+        "samples_ms": [
+          0.09103700000000003,
+          0.07129799999999875,
+          0.06019000000000574,
+          0.06776199999999477,
+          0.05689599999999473,
+          0.07822799999999575,
+          0.10256400000000099,
+          0.09912900000000491,
+          0.09410099999999488
+        ]
+      },
+      "run": {
+        "n": 9,
+        "p50_ms": 1.4824700000000064,
+        "p95_ms": 1.778646000000002,
+        "min_ms": 0.9048110000000094,
+        "max_ms": 1.778646000000002,
+        "samples_ms": [
+          1.778646000000002,
+          0.9385919999999999,
+          0.9118819999999985,
+          1.5958710000000025,
+          0.9048110000000094,
+          1.5428509999999989,
+          1.5052149999999926,
+          1.474688999999998,
+          1.4824700000000064
+        ]
+      },
+      "steps": 30013,
+      "guest_steps_per_second": 20245266.346030526,
+      "linear_memory_bytes": 1638400,
+      "process_memory": {
+        "rss": 96239616,
+        "heapTotal": 8785920,
+        "heapUsed": 6577928,
+        "external": 4466733,
+        "arrayBuffers": 2395126
+      },
+      "scope": "fresh-instance ALU; process-memory point sample not peak RSS; CI timing diagnostic, no cross-run speedup claim"
+    },
+    "quality-node.json": {
+      "ok": true,
+      "schema": "agentvm.quality/v1",
+      "runtime": "node-26.5.1",
+      "core_sha256": "dcf384f26ea9ad9cdeabda248b1f3e390505ff57330143b665f9636b2bfa42dd",
+      "core_bytes": 1922957,
+      "checks": [
+        "ABI5-zero-imports",
+        "invalid-ELF-rejected",
+        "empty-argv-rejected",
+        "NUL-argv-rejected",
+        "oversized-argv-rejected",
+        "invalid-create-no-session-leak",
+        "independent-live-sessions",
+        "exact-exit-output",
+        "no-cross-session-state",
+        "exact-exit-output",
+        "stale-handle-rejected",
+        "exact-exit-output",
+        "error-recovery-cleanup",
+        "fresh-instance-restart-and-replay",
+        "workspace-snapshot-fresh-instance",
+        "exact-exit-output",
+        "ungranted-time-random-does-not-consume-entropy",
+        "explicit-entropy-consumption",
+        "instruction-budget-enforced",
+        "all-session-cleanup"
+      ],
+      "failures": [],
+      "session_count": 0
+    },
+    "manifest-linux-arm64.json": {
+      "ok": true,
+      "channel": "main",
+      "generation": 6,
+      "bytes": 1922957,
+      "sha256": "dcf384f26ea9ad9cdeabda248b1f3e390505ff57330143b665f9636b2bfa42dd",
+      "abi": 5,
+      "imports": 0
+    },
+    "native-linux-arm64.json": {
+      "ok": true,
+      "platform": "linux",
+      "arch": "arm64",
+      "binary": "glue/rust/agentvm-native-host/target/release/agentvm-native-host",
+      "core": "target/release-input/agentvm-core.wasm",
+      "results": [
+        {
+          "engine": "wasmi",
+          "exit": 43,
+          "stdout": "agentvm-real-elf-pass",
+          "stderr_bytes": 0
+        },
+        {
+          "engine": "wasmtime",
+          "exit": 43,
+          "stdout": "agentvm-real-elf-pass",
+          "stderr_bytes": 0
+        }
+      ]
+    },
+    "package-linux-arm64.json": {
+      "ok": true,
+      "schema": "agentvm.published-package/v1",
+      "platform": "linux-arm64",
+      "asset": "agentvm-host-linux-arm64.tar.gz",
+      "sha256": "88573361a107907726315d3afd49d752690634edf0ef7499514a84b89ff4f54f",
+      "bytes": 4895804,
+      "internal_manifest": {
+        "schema": "agentvm.host-artifact/v1",
+        "platform": "linux-arm64",
+        "core": {
+          "file": "agentvm-core.wasm",
+          "abi": 5,
+          "imports": 0,
+          "bytes": 1922957,
+          "sha256": "dcf384f26ea9ad9cdeabda248b1f3e390505ff57330143b665f9636b2bfa42dd"
+        },
+        "native_host": {
+          "file": "agentvm-native-host",
+          "engines": [
+            "wasmi",
+            "wasmtime"
+          ],
+          "bytes": 14713992,
+          "sha256": "d9dc589d84912ded6643f89b72e5be6e969ff68a6ac16fcf76294c3652b71187"
+        },
+        "public_glue": {
+          "repository": "yxsicd/agentvmrelease",
+          "commit": "409463254c3798a4633b29575ec415f6fb586cde"
+        }
+      },
+      "glue_commit_fence": "explicit manifest commit"
+    },
+    "quality-native-linux-arm64.json": {
+      "ok": true,
+      "schema": "agentvm.native-quality/v1",
+      "platform": "linux",
+      "arch": "arm64",
+      "core_sha256": "dcf384f26ea9ad9cdeabda248b1f3e390505ff57330143b665f9636b2bfa42dd",
+      "fixture_sha256": "3f26f9e1832b8b63955069d1bba972eee357b47114ec4cf20106fb3370f5b160",
+      "core_bytes": 1922957,
+      "native_host_bytes": 14713992,
+      "native_host_sha256": "d9dc589d84912ded6643f89b72e5be6e969ff68a6ac16fcf76294c3652b71187",
+      "results": {
+        "wasmi": {
+          "engine": "wasmi",
+          "engine_version": "2.0.0",
+          "wasm_bytes": 1922957,
+          "imports": 0,
+          "abi": 5,
+          "compile_first_ms": 12.450391,
+          "instantiate": {
+            "n": 7,
+            "p50_ms": 0.054133,
+            "p95_ms": 0.463772,
+            "trimmed_mean_ms": 0.14314914285714284,
+            "min_ms": 0.050469,
+            "max_ms": 0.463772
+          },
+          "results": {
+            "alu": {
+              "create": {
+                "n": 9,
+                "p50_ms": 0.048229,
+                "p95_ms": 0.050341,
+                "trimmed_mean_ms": 0.04827444444444443,
+                "min_ms": 0.047182,
+                "max_ms": 0.050341
+              },
+              "run": {
+                "n": 9,
+                "p50_ms": 7.880043,
+                "p95_ms": 7.943607,
+                "trimmed_mean_ms": 7.8843803333333335,
+                "min_ms": 7.862045,
+                "max_ms": 7.943607
+              },
+              "total": {
+                "n": 9,
+                "p50_ms": 7.927225,
+                "p95_ms": 7.991836,
+                "trimmed_mean_ms": 7.93265477777778,
+                "min_ms": 7.910337999999999,
+                "max_ms": 7.991836
+              },
+              "run_calls": [
+                1
+              ],
+              "steps": 30013
+            }
+          }
+        },
+        "wasmtime": {
+          "engine": "wasmtime",
+          "engine_version": "49.0.0-rc.1",
+          "wasm_bytes": 1922957,
+          "imports": 0,
+          "abi": 5,
+          "compile_first_ms": 1485.8557079999998,
+          "instantiate": {
+            "n": 7,
+            "p50_ms": 0.018527000000000002,
+            "p95_ms": 0.15918200000000002,
+            "trimmed_mean_ms": 0.03827771428571429,
+            "min_ms": 0.015647,
+            "max_ms": 0.15918200000000002
+          },
+          "results": {
+            "alu": {
+              "create": {
+                "n": 9,
+                "p50_ms": 0.005368,
+                "p95_ms": 0.005582999999999999,
+                "trimmed_mean_ms": 0.005436,
+                "min_ms": 0.005312,
+                "max_ms": 0.005582999999999999
+              },
+              "run": {
+                "n": 9,
+                "p50_ms": 0.907539,
+                "p95_ms": 0.9141779999999999,
+                "trimmed_mean_ms": 0.9082041111111112,
+                "min_ms": 0.903882,
+                "max_ms": 0.9141779999999999
+              },
+              "total": {
+                "n": 9,
+                "p50_ms": 0.913082,
+                "p95_ms": 0.9195460000000001,
+                "trimmed_mean_ms": 0.913640111111111,
+                "min_ms": 0.90925,
+                "max_ms": 0.9195460000000001
+              },
+              "run_calls": [
+                1
+              ],
+              "steps": 30013
+            }
+          }
+        }
+      },
+      "failures": [],
+      "scope": "public CLI correctness and resident ALU benchmarks; no native snapshot/peak-RSS claim"
+    },
+    "relocated-linux-arm64.json": {
+      "ok": true,
+      "platform": "linux",
+      "arch": "arm64",
+      "binary": "target/relocated/agentvm/agentvm-native-host",
+      "core": "target/relocated/agentvm/agentvm-core.wasm",
+      "results": [
+        {
+          "engine": "wasmi",
+          "exit": 43,
+          "stdout": "agentvm-real-elf-pass",
+          "stderr_bytes": 0
+        },
+        {
+          "engine": "wasmtime",
+          "exit": 43,
+          "stdout": "agentvm-real-elf-pass",
+          "stderr_bytes": 0
+        }
+      ]
+    },
+    "manifest-linux-x64.json": {
+      "ok": true,
+      "channel": "main",
+      "generation": 6,
+      "bytes": 1922957,
+      "sha256": "dcf384f26ea9ad9cdeabda248b1f3e390505ff57330143b665f9636b2bfa42dd",
+      "abi": 5,
+      "imports": 0
+    },
+    "native-linux-x64.json": {
+      "ok": true,
+      "platform": "linux",
+      "arch": "x64",
+      "binary": "glue/rust/agentvm-native-host/target/release/agentvm-native-host",
+      "core": "target/release-input/agentvm-core.wasm",
+      "results": [
+        {
+          "engine": "wasmi",
+          "exit": 43,
+          "stdout": "agentvm-real-elf-pass",
+          "stderr_bytes": 0
+        },
+        {
+          "engine": "wasmtime",
+          "exit": 43,
+          "stdout": "agentvm-real-elf-pass",
+          "stderr_bytes": 0
+        }
+      ]
+    },
+    "package-linux-x64.json": {
+      "ok": true,
+      "schema": "agentvm.published-package/v1",
+      "platform": "linux-x64",
+      "asset": "agentvm-host-linux-x64.tar.gz",
+      "sha256": "f1049d910abb8f4c775aae2c42229d7b5d2b2a2c326f6c097a4fa2910e40e10d",
+      "bytes": 5305607,
+      "internal_manifest": {
+        "schema": "agentvm.host-artifact/v1",
+        "platform": "linux-x64",
+        "core": {
+          "file": "agentvm-core.wasm",
+          "abi": 5,
+          "imports": 0,
+          "bytes": 1922957,
+          "sha256": "dcf384f26ea9ad9cdeabda248b1f3e390505ff57330143b665f9636b2bfa42dd"
+        },
+        "native_host": {
+          "file": "agentvm-native-host",
+          "engines": [
+            "wasmi",
+            "wasmtime"
+          ],
+          "bytes": 17778080,
+          "sha256": "8ffb3f0dba74c6633bcf1ef0c7be7eca0bc36faabef4cb99e1ebbd89d98e9d8b"
+        },
+        "public_glue": {
+          "repository": "yxsicd/agentvmrelease",
+          "commit": "409463254c3798a4633b29575ec415f6fb586cde"
+        }
+      },
+      "glue_commit_fence": "explicit manifest commit"
+    },
+    "quality-native-linux-x64.json": {
+      "ok": true,
+      "schema": "agentvm.native-quality/v1",
+      "platform": "linux",
+      "arch": "x64",
+      "core_sha256": "dcf384f26ea9ad9cdeabda248b1f3e390505ff57330143b665f9636b2bfa42dd",
+      "fixture_sha256": "3f26f9e1832b8b63955069d1bba972eee357b47114ec4cf20106fb3370f5b160",
+      "core_bytes": 1922957,
+      "native_host_bytes": 17778080,
+      "native_host_sha256": "8ffb3f0dba74c6633bcf1ef0c7be7eca0bc36faabef4cb99e1ebbd89d98e9d8b",
+      "results": {
+        "wasmi": {
+          "engine": "wasmi",
+          "engine_version": "2.0.0",
+          "wasm_bytes": 1922957,
+          "imports": 0,
+          "abi": 5,
+          "compile_first_ms": 17.078019,
+          "instantiate": {
+            "n": 7,
+            "p50_ms": 0.061431,
+            "p95_ms": 0.856994,
+            "trimmed_mean_ms": 0.2545782857142857,
+            "min_ms": 0.059678,
+            "max_ms": 0.856994
+          },
+          "results": {
+            "alu": {
+              "create": {
+                "n": 9,
+                "p50_ms": 0.075211,
+                "p95_ms": 0.08410400000000001,
+                "trimmed_mean_ms": 0.07575622222222221,
+                "min_ms": 0.07286799999999999,
+                "max_ms": 0.08410400000000001
+              },
+              "run": {
+                "n": 9,
+                "p50_ms": 8.589734,
+                "p95_ms": 8.786344,
+                "trimmed_mean_ms": 8.596223666666667,
+                "min_ms": 8.512129999999999,
+                "max_ms": 8.786344
+              },
+              "total": {
+                "n": 9,
+                "p50_ms": 8.664995,
+                "p95_ms": 8.859212,
+                "trimmed_mean_ms": 8.671979888888888,
+                "min_ms": 8.585338,
+                "max_ms": 8.859212
+              },
+              "run_calls": [
+                1
+              ],
+              "steps": 30013
+            }
+          }
+        },
+        "wasmtime": {
+          "engine": "wasmtime",
+          "engine_version": "49.0.0-rc.1",
+          "wasm_bytes": 1922957,
+          "imports": 0,
+          "abi": 5,
+          "compile_first_ms": 1923.480845,
+          "instantiate": {
+            "n": 7,
+            "p50_ms": 0.04778,
+            "p95_ms": 0.19614900000000002,
+            "trimmed_mean_ms": 0.06695285714285715,
+            "min_ms": 0.035392,
+            "max_ms": 0.19614900000000002
+          },
+          "results": {
+            "alu": {
+              "create": {
+                "n": 9,
+                "p50_ms": 0.00655,
+                "p95_ms": 0.012539,
+                "trimmed_mean_ms": 0.0073854444444444445,
+                "min_ms": 0.006239,
+                "max_ms": 0.012539
+              },
+              "run": {
+                "n": 9,
+                "p50_ms": 1.015257,
+                "p95_ms": 1.167842,
+                "trimmed_mean_ms": 1.047930111111111,
+                "min_ms": 0.988708,
+                "max_ms": 1.167842
+              },
+              "total": {
+                "n": 9,
+                "p50_ms": 1.021547,
+                "p95_ms": 1.174642,
+                "trimmed_mean_ms": 1.0553155555555556,
+                "min_ms": 0.995278,
+                "max_ms": 1.174642
+              },
+              "run_calls": [
+                1
+              ],
+              "steps": 30013
+            }
+          }
+        }
+      },
+      "failures": [],
+      "scope": "public CLI correctness and resident ALU benchmarks; no native snapshot/peak-RSS claim"
+    },
+    "relocated-linux-x64.json": {
+      "ok": true,
+      "platform": "linux",
+      "arch": "x64",
+      "binary": "target/relocated/agentvm/agentvm-native-host",
+      "core": "target/relocated/agentvm/agentvm-core.wasm",
+      "results": [
+        {
+          "engine": "wasmi",
+          "exit": 43,
+          "stdout": "agentvm-real-elf-pass",
+          "stderr_bytes": 0
+        },
+        {
+          "engine": "wasmtime",
+          "exit": 43,
+          "stdout": "agentvm-real-elf-pass",
+          "stderr_bytes": 0
+        }
+      ]
+    },
+    "manifest-macos-arm64.json": {
+      "ok": true,
+      "channel": "main",
+      "generation": 6,
+      "bytes": 1922957,
+      "sha256": "dcf384f26ea9ad9cdeabda248b1f3e390505ff57330143b665f9636b2bfa42dd",
+      "abi": 5,
+      "imports": 0
+    },
+    "native-macos-arm64.json": {
+      "ok": true,
+      "platform": "darwin",
+      "arch": "arm64",
+      "binary": "glue/rust/agentvm-native-host/target/release/agentvm-native-host",
+      "core": "target/release-input/agentvm-core.wasm",
+      "results": [
+        {
+          "engine": "wasmi",
+          "exit": 43,
+          "stdout": "agentvm-real-elf-pass",
+          "stderr_bytes": 0
+        },
+        {
+          "engine": "wasmtime",
+          "exit": 43,
+          "stdout": "agentvm-real-elf-pass",
+          "stderr_bytes": 0
+        }
+      ]
+    },
+    "package-macos-arm64.json": {
+      "ok": true,
+      "schema": "agentvm.published-package/v1",
+      "platform": "macos-arm64",
+      "asset": "agentvm-host-macos-arm64.tar.gz",
+      "sha256": "37ab3bed976c496f1d28674b3e463778f28a307293d4b6b0ec56e7394cfd8c2a",
+      "bytes": 4302054,
+      "internal_manifest": {
+        "schema": "agentvm.host-artifact/v1",
+        "platform": "macos-arm64",
+        "core": {
+          "file": "agentvm-core.wasm",
+          "abi": 5,
+          "imports": 0,
+          "bytes": 1922957,
+          "sha256": "dcf384f26ea9ad9cdeabda248b1f3e390505ff57330143b665f9636b2bfa42dd"
+        },
+        "native_host": {
+          "file": "agentvm-native-host",
+          "engines": [
+            "wasmi",
+            "wasmtime"
+          ],
+          "bytes": 12471056,
+          "sha256": "cadbafdb078aa193a5820e11c22dc7d34bc52ca72fcdc82f212769cd4c7eb06f"
+        },
+        "public_glue": {
+          "repository": "yxsicd/agentvmrelease",
+          "commit": "409463254c3798a4633b29575ec415f6fb586cde"
+        }
+      },
+      "glue_commit_fence": "explicit manifest commit"
+    },
+    "quality-native-macos-arm64.json": {
+      "ok": true,
+      "schema": "agentvm.native-quality/v1",
+      "platform": "darwin",
+      "arch": "arm64",
+      "core_sha256": "dcf384f26ea9ad9cdeabda248b1f3e390505ff57330143b665f9636b2bfa42dd",
+      "fixture_sha256": "3f26f9e1832b8b63955069d1bba972eee357b47114ec4cf20106fb3370f5b160",
+      "core_bytes": 1922957,
+      "native_host_bytes": 12471056,
+      "native_host_sha256": "cadbafdb078aa193a5820e11c22dc7d34bc52ca72fcdc82f212769cd4c7eb06f",
+      "results": {
+        "wasmi": {
+          "engine": "wasmi",
+          "engine_version": "2.0.0",
+          "wasm_bytes": 1922957,
+          "imports": 0,
+          "abi": 5,
+          "compile_first_ms": 16.872583,
+          "instantiate": {
+            "n": 7,
+            "p50_ms": 0.052917,
+            "p95_ms": 3.796125,
+            "trimmed_mean_ms": 0.5871308571428572,
+            "min_ms": 0.041291,
+            "max_ms": 3.796125
+          },
+          "results": {
+            "alu": {
+              "create": {
+                "n": 9,
+                "p50_ms": 0.049333999999999996,
+                "p95_ms": 0.058625000000000003,
+                "trimmed_mean_ms": 0.05057433333333333,
+                "min_ms": 0.047875,
+                "max_ms": 0.058625000000000003
+              },
+              "run": {
+                "n": 9,
+                "p50_ms": 7.358083,
+                "p95_ms": 10.767958,
+                "trimmed_mean_ms": 8.12049511111111,
+                "min_ms": 6.564166,
+                "max_ms": 10.767958
+              },
+              "total": {
+                "n": 9,
+                "p50_ms": 7.410500000000001,
+                "p95_ms": 10.826583000000001,
+                "trimmed_mean_ms": 8.171069444444445,
+                "min_ms": 6.6126249999999995,
+                "max_ms": 10.826583000000001
+              },
+              "run_calls": [
+                1
+              ],
+              "steps": 30013
+            }
+          }
+        },
+        "wasmtime": {
+          "engine": "wasmtime",
+          "engine_version": "49.0.0-rc.1",
+          "wasm_bytes": 1922957,
+          "imports": 0,
+          "abi": 5,
+          "compile_first_ms": 1445.380333,
+          "instantiate": {
+            "n": 7,
+            "p50_ms": 0.060958,
+            "p95_ms": 0.159333,
+            "trimmed_mean_ms": 0.07375585714285715,
+            "min_ms": 0.051708,
+            "max_ms": 0.159333
+          },
+          "results": {
+            "alu": {
+              "create": {
+                "n": 9,
+                "p50_ms": 0.00675,
+                "p95_ms": 0.011541000000000001,
+                "trimmed_mean_ms": 0.007666555555555555,
+                "min_ms": 0.005,
+                "max_ms": 0.011541000000000001
+              },
+              "run": {
+                "n": 9,
+                "p50_ms": 0.680167,
+                "p95_ms": 0.938875,
+                "trimmed_mean_ms": 0.7128935555555556,
+                "min_ms": 0.643167,
+                "max_ms": 0.938875
+              },
+              "total": {
+                "n": 9,
+                "p50_ms": 0.686917,
+                "p95_ms": 0.949708,
+                "trimmed_mean_ms": 0.7205601111111111,
+                "min_ms": 0.6481669999999999,
+                "max_ms": 0.949708
+              },
+              "run_calls": [
+                1
+              ],
+              "steps": 30013
+            }
+          }
+        }
+      },
+      "failures": [],
+      "scope": "public CLI correctness and resident ALU benchmarks; no native snapshot/peak-RSS claim"
+    },
+    "relocated-macos-arm64.json": {
+      "ok": true,
+      "platform": "darwin",
+      "arch": "arm64",
+      "binary": "target/relocated/agentvm/agentvm-native-host",
+      "core": "target/relocated/agentvm/agentvm-core.wasm",
+      "results": [
+        {
+          "engine": "wasmi",
+          "exit": 43,
+          "stdout": "agentvm-real-elf-pass",
+          "stderr_bytes": 0
+        },
+        {
+          "engine": "wasmtime",
+          "exit": 43,
+          "stdout": "agentvm-real-elf-pass",
+          "stderr_bytes": 0
+        }
+      ]
+    },
+    "manifest-windows-x64.json": {
+      "ok": true,
+      "channel": "main",
+      "generation": 6,
+      "bytes": 1922957,
+      "sha256": "dcf384f26ea9ad9cdeabda248b1f3e390505ff57330143b665f9636b2bfa42dd",
+      "abi": 5,
+      "imports": 0
+    },
+    "native-windows-x64.json": {
+      "ok": true,
+      "platform": "win32",
+      "arch": "x64",
+      "binary": "glue/rust/agentvm-native-host/target/release/agentvm-native-host.exe",
+      "core": "target/release-input/agentvm-core.wasm",
+      "results": [
+        {
+          "engine": "wasmi",
+          "exit": 43,
+          "stdout": "agentvm-real-elf-pass",
+          "stderr_bytes": 0
+        },
+        {
+          "engine": "wasmtime",
+          "exit": 43,
+          "stdout": "agentvm-real-elf-pass",
+          "stderr_bytes": 0
+        }
+      ]
+    },
+    "package-windows-x64.json": {
+      "ok": true,
+      "schema": "agentvm.published-package/v1",
+      "platform": "windows-x64",
+      "asset": "agentvm-host-windows-x64.tar.gz",
+      "sha256": "306c38348f5aa091a0d93276429dfc343217b6392d1681bd99b903247358c5ea",
+      "bytes": 4300169,
+      "internal_manifest": {
+        "schema": "agentvm.host-artifact/v1",
+        "platform": "windows-x64",
+        "core": {
+          "file": "agentvm-core.wasm",
+          "abi": 5,
+          "imports": 0,
+          "bytes": 1922957,
+          "sha256": "dcf384f26ea9ad9cdeabda248b1f3e390505ff57330143b665f9636b2bfa42dd"
+        },
+        "native_host": {
+          "file": "agentvm-native-host.exe",
+          "engines": [
+            "wasmi",
+            "wasmtime"
+          ],
+          "bytes": 10806784,
+          "sha256": "82e4e729b844eb975acad18b32dae2935e17912f4a94a526e600e2c83e9a8db3"
+        },
+        "public_glue": {
+          "repository": "yxsicd/agentvmrelease",
+          "commit": "409463254c3798a4633b29575ec415f6fb586cde"
+        }
+      },
+      "glue_commit_fence": "explicit manifest commit"
+    },
+    "quality-native-windows-x64.json": {
+      "ok": true,
+      "schema": "agentvm.native-quality/v1",
+      "platform": "win32",
+      "arch": "x64",
+      "core_sha256": "dcf384f26ea9ad9cdeabda248b1f3e390505ff57330143b665f9636b2bfa42dd",
+      "fixture_sha256": "3f26f9e1832b8b63955069d1bba972eee357b47114ec4cf20106fb3370f5b160",
+      "core_bytes": 1922957,
+      "native_host_bytes": 10806784,
+      "native_host_sha256": "8c726a8409b3f425a6e0164c126534e81203d7d837b3b917a5ec50ff8df2aaca",
+      "results": {
+        "wasmi": {
+          "engine": "wasmi",
+          "engine_version": "2.0.0",
+          "wasm_bytes": 1922957,
+          "imports": 0,
+          "abi": 5,
+          "compile_first_ms": 17.576,
+          "instantiate": {
+            "n": 7,
+            "p50_ms": 0.32489999999999997,
+            "p95_ms": 0.4157,
+            "trimmed_mean_ms": 0.3425714285714286,
+            "min_ms": 0.3166,
+            "max_ms": 0.4157
+          },
+          "results": {
+            "alu": {
+              "create": {
+                "n": 9,
+                "p50_ms": 0.0699,
+                "p95_ms": 0.102,
+                "trimmed_mean_ms": 0.07358888888888888,
+                "min_ms": 0.0693,
+                "max_ms": 0.102
+              },
+              "run": {
+                "n": 9,
+                "p50_ms": 9.232000000000001,
+                "p95_ms": 9.3716,
+                "trimmed_mean_ms": 9.244522222222223,
+                "min_ms": 9.1234,
+                "max_ms": 9.3716
+              },
+              "total": {
+                "n": 9,
+                "p50_ms": 9.3016,
+                "p95_ms": 9.4413,
+                "trimmed_mean_ms": 9.318111111111111,
+                "min_ms": 9.194700000000001,
+                "max_ms": 9.4413
+              },
+              "run_calls": [
+                1
+              ],
+              "steps": 30013
+            }
+          }
+        },
+        "wasmtime": {
+          "engine": "wasmtime",
+          "engine_version": "49.0.0-rc.1",
+          "wasm_bytes": 1922957,
+          "imports": 0,
+          "abi": 5,
+          "compile_first_ms": 2079.4543,
+          "instantiate": {
+            "n": 7,
+            "p50_ms": 0.087,
+            "p95_ms": 0.1597,
+            "trimmed_mean_ms": 0.10645714285714288,
+            "min_ms": 0.0843,
+            "max_ms": 0.1597
+          },
+          "results": {
+            "alu": {
+              "create": {
+                "n": 9,
+                "p50_ms": 0.0094,
+                "p95_ms": 0.037,
+                "trimmed_mean_ms": 0.013011111111111109,
+                "min_ms": 0.0073,
+                "max_ms": 0.037
+              },
+              "run": {
+                "n": 9,
+                "p50_ms": 1.062,
+                "p95_ms": 1.23,
+                "trimmed_mean_ms": 1.0705777777777779,
+                "min_ms": 0.9100999999999999,
+                "max_ms": 1.23
+              },
+              "total": {
+                "n": 9,
+                "p50_ms": 1.0766,
+                "p95_ms": 1.267,
+                "trimmed_mean_ms": 1.0835888888888887,
+                "min_ms": 0.9186,
+                "max_ms": 1.267
+              },
+              "run_calls": [
+                1
+              ],
+              "steps": 30013
+            }
+          }
+        }
+      },
+      "failures": [],
+      "scope": "public CLI correctness and resident ALU benchmarks; no native snapshot/peak-RSS claim"
+    },
+    "relocated-windows-x64.json": {
+      "ok": true,
+      "platform": "win32",
+      "arch": "x64",
+      "binary": "target/relocated/agentvm/agentvm-native-host.exe",
+      "core": "target/relocated/agentvm/agentvm-core.wasm",
+      "results": [
+        {
+          "engine": "wasmi",
+          "exit": 43,
+          "stdout": "agentvm-real-elf-pass",
+          "stderr_bytes": 0
+        },
+        {
+          "engine": "wasmtime",
+          "exit": 43,
+          "stdout": "agentvm-real-elf-pass",
+          "stderr_bytes": 0
+        }
+      ]
+    }
+  },
+  "receipt_failures": [],
+  "ok": true
+}
