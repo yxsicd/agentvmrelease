@@ -1,0 +1,10 @@
+{
+  "schema": 1,
+  "repository": "yxsicd/agentvmrelease",
+  "revision": "680a4bc43fb7691cba3d54d6f8d99aa6e388b8f7",
+  "started_at": "2026-10-07T21:44:06.395Z",
+  "passed": false,
+  "channels": [],
+  "error": "Error: download failed: 404",
+  "completed_at": "2026-10-07T21:44:08.200Z"
+}

@@ -1,0 +1,62 @@
+{
+  "schema": "agentvm.channel-promotion/v1",
+  "generation": 6,
+  "from": "main",
+  "to": "prod",
+  "release_tag": "prod-20261007-g6",
+  "core_sha256": "dcf384f26ea9ad9cdeabda248b1f3e390505ff57330143b665f9636b2bfa42dd",
+  "assets": [
+    {
+      "asset": "agentvm-core.wasm",
+      "target": "wasm32-unknown-unknown",
+      "abi": 5,
+      "imports": 0,
+      "bytes": 1922957,
+      "sha256": "dcf384f26ea9ad9cdeabda248b1f3e390505ff57330143b665f9636b2bfa42dd",
+      "download": "https://github.com/yxsicd/agentvmrelease/releases/download/prod-20261007-g6/agentvm-core.wasm",
+      "repository_path": "channels/prod/agentvm-core.wasm"
+    },
+    {
+      "asset": "agentvm-host-linux-arm64.tar.gz",
+      "bytes": 4895804,
+      "sha256": "88573361a107907726315d3afd49d752690634edf0ef7499514a84b89ff4f54f",
+      "platform": "linux-arm64"
+    },
+    {
+      "asset": "agentvm-host-linux-x64.tar.gz",
+      "bytes": 5305607,
+      "sha256": "f1049d910abb8f4c775aae2c42229d7b5d2b2a2c326f6c097a4fa2910e40e10d",
+      "platform": "linux-x64"
+    },
+    {
+      "asset": "agentvm-host-macos-arm64.tar.gz",
+      "bytes": 4302054,
+      "sha256": "37ab3bed976c496f1d28674b3e463778f28a307293d4b6b0ec56e7394cfd8c2a",
+      "platform": "macos-arm64"
+    },
+    {
+      "asset": "agentvm-host-windows-x64.tar.gz",
+      "bytes": 4300169,
+      "sha256": "306c38348f5aa091a0d93276429dfc343217b6392d1681bd99b903247358c5ea",
+      "platform": "windows-x64"
+    },
+    {
+      "asset": "agentvm-wasm-skill.tar.gz",
+      "bytes": 3666,
+      "sha256": "7509255e6aaaa179630aff34fb526a9e02dd03e6e69daf5d9853810de87906c0",
+      "download": "https://github.com/yxsicd/agentvmrelease/releases/download/prod-20261007-g6/agentvm-wasm-skill.tar.gz"
+    }
+  ],
+  "byte_for_byte": true,
+  "rebuilt": false,
+  "main_runs": [
+    37689152011,
+    37690454204
+  ],
+  "main_receipts_each": 35,
+  "main_qualification_public_commit": "680a4bcd90428bbeb0c721b33e2c5a7c3a38d933",
+  "prod_post_publication": "pending fresh PROD matrix",
+  "works_plan": "de4983a6d0616f4ced010a092b1cc31b37f5ef3d",
+  "plan_actual_readback_sha256": "d636770c7b3f784187026cff86e898895af4dd6b6d2a2c44ec67d3ea9e895a7d",
+  "rollback": "prod-20261003-g3"
+}
