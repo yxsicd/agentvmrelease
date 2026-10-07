@@ -1,0 +1,184 @@
+{
+  "schema": "agentvm.exact-packages/v1",
+  "ok": true,
+  "run_id": 37686038965,
+  "package_head": "409463254c3798a4633b29575ec415f6fb586cde",
+  "anonymous_assets": [
+    {
+      "asset": "agentvm-core.wasm",
+      "bytes": 1922957,
+      "sha256": "dcf384f26ea9ad9cdeabda248b1f3e390505ff57330143b665f9636b2bfa42dd",
+      "status": 200,
+      "url": "https://github.com/yxsicd/agentvmrelease/releases/download/dev-20261007-g6/agentvm-core.wasm"
+    },
+    {
+      "asset": "agentvm-host-linux-arm64.tar.gz",
+      "bytes": 4895804,
+      "sha256": "88573361a107907726315d3afd49d752690634edf0ef7499514a84b89ff4f54f",
+      "status": 200,
+      "url": "https://github.com/yxsicd/agentvmrelease/releases/download/dev-20261007-g6/agentvm-host-linux-arm64.tar.gz"
+    },
+    {
+      "asset": "agentvm-host-linux-x64.tar.gz",
+      "bytes": 5305607,
+      "sha256": "f1049d910abb8f4c775aae2c42229d7b5d2b2a2c326f6c097a4fa2910e40e10d",
+      "status": 200,
+      "url": "https://github.com/yxsicd/agentvmrelease/releases/download/dev-20261007-g6/agentvm-host-linux-x64.tar.gz"
+    },
+    {
+      "asset": "agentvm-host-macos-arm64.tar.gz",
+      "bytes": 4302054,
+      "sha256": "37ab3bed976c496f1d28674b3e463778f28a307293d4b6b0ec56e7394cfd8c2a",
+      "status": 200,
+      "url": "https://github.com/yxsicd/agentvmrelease/releases/download/dev-20261007-g6/agentvm-host-macos-arm64.tar.gz"
+    },
+    {
+      "asset": "agentvm-host-windows-x64.tar.gz",
+      "bytes": 4300169,
+      "sha256": "306c38348f5aa091a0d93276429dfc343217b6392d1681bd99b903247358c5ea",
+      "status": 200,
+      "url": "https://github.com/yxsicd/agentvmrelease/releases/download/dev-20261007-g6/agentvm-host-windows-x64.tar.gz"
+    },
+    {
+      "asset": "agentvm-wasm-skill.tar.gz",
+      "bytes": 3666,
+      "sha256": "7509255e6aaaa179630aff34fb526a9e02dd03e6e69daf5d9853810de87906c0",
+      "status": 200,
+      "url": "https://github.com/yxsicd/agentvmrelease/releases/download/dev-20261007-g6/agentvm-wasm-skill.tar.gz"
+    }
+  ],
+  "packages": [
+    {
+      "ok": true,
+      "schema": "agentvm.published-package/v1",
+      "platform": "linux-arm64",
+      "asset": "agentvm-host-linux-arm64.tar.gz",
+      "sha256": "88573361a107907726315d3afd49d752690634edf0ef7499514a84b89ff4f54f",
+      "bytes": 4895804,
+      "internal_manifest": {
+        "schema": "agentvm.host-artifact/v1",
+        "platform": "linux-arm64",
+        "core": {
+          "file": "agentvm-core.wasm",
+          "abi": 5,
+          "imports": 0,
+          "bytes": 1922957,
+          "sha256": "dcf384f26ea9ad9cdeabda248b1f3e390505ff57330143b665f9636b2bfa42dd"
+        },
+        "native_host": {
+          "file": "agentvm-native-host",
+          "engines": [
+            "wasmi",
+            "wasmtime"
+          ],
+          "bytes": 14713992,
+          "sha256": "d9dc589d84912ded6643f89b72e5be6e969ff68a6ac16fcf76294c3652b71187"
+        },
+        "public_glue": {
+          "repository": "yxsicd/agentvmrelease",
+          "commit": "409463254c3798a4633b29575ec415f6fb586cde"
+        }
+      },
+      "glue_commit_fence": "explicit manifest commit"
+    },
+    {
+      "ok": true,
+      "schema": "agentvm.published-package/v1",
+      "platform": "linux-x64",
+      "asset": "agentvm-host-linux-x64.tar.gz",
+      "sha256": "f1049d910abb8f4c775aae2c42229d7b5d2b2a2c326f6c097a4fa2910e40e10d",
+      "bytes": 5305607,
+      "internal_manifest": {
+        "schema": "agentvm.host-artifact/v1",
+        "platform": "linux-x64",
+        "core": {
+          "file": "agentvm-core.wasm",
+          "abi": 5,
+          "imports": 0,
+          "bytes": 1922957,
+          "sha256": "dcf384f26ea9ad9cdeabda248b1f3e390505ff57330143b665f9636b2bfa42dd"
+        },
+        "native_host": {
+          "file": "agentvm-native-host",
+          "engines": [
+            "wasmi",
+            "wasmtime"
+          ],
+          "bytes": 17778080,
+          "sha256": "8ffb3f0dba74c6633bcf1ef0c7be7eca0bc36faabef4cb99e1ebbd89d98e9d8b"
+        },
+        "public_glue": {
+          "repository": "yxsicd/agentvmrelease",
+          "commit": "409463254c3798a4633b29575ec415f6fb586cde"
+        }
+      },
+      "glue_commit_fence": "explicit manifest commit"
+    },
+    {
+      "ok": true,
+      "schema": "agentvm.published-package/v1",
+      "platform": "macos-arm64",
+      "asset": "agentvm-host-macos-arm64.tar.gz",
+      "sha256": "37ab3bed976c496f1d28674b3e463778f28a307293d4b6b0ec56e7394cfd8c2a",
+      "bytes": 4302054,
+      "internal_manifest": {
+        "schema": "agentvm.host-artifact/v1",
+        "platform": "macos-arm64",
+        "core": {
+          "file": "agentvm-core.wasm",
+          "abi": 5,
+          "imports": 0,
+          "bytes": 1922957,
+          "sha256": "dcf384f26ea9ad9cdeabda248b1f3e390505ff57330143b665f9636b2bfa42dd"
+        },
+        "native_host": {
+          "file": "agentvm-native-host",
+          "engines": [
+            "wasmi",
+            "wasmtime"
+          ],
+          "bytes": 12471056,
+          "sha256": "cadbafdb078aa193a5820e11c22dc7d34bc52ca72fcdc82f212769cd4c7eb06f"
+        },
+        "public_glue": {
+          "repository": "yxsicd/agentvmrelease",
+          "commit": "409463254c3798a4633b29575ec415f6fb586cde"
+        }
+      },
+      "glue_commit_fence": "explicit manifest commit"
+    },
+    {
+      "ok": true,
+      "schema": "agentvm.published-package/v1",
+      "platform": "windows-x64",
+      "asset": "agentvm-host-windows-x64.tar.gz",
+      "sha256": "306c38348f5aa091a0d93276429dfc343217b6392d1681bd99b903247358c5ea",
+      "bytes": 4300169,
+      "internal_manifest": {
+        "schema": "agentvm.host-artifact/v1",
+        "platform": "windows-x64",
+        "core": {
+          "file": "agentvm-core.wasm",
+          "abi": 5,
+          "imports": 0,
+          "bytes": 1922957,
+          "sha256": "dcf384f26ea9ad9cdeabda248b1f3e390505ff57330143b665f9636b2bfa42dd"
+        },
+        "native_host": {
+          "file": "agentvm-native-host.exe",
+          "engines": [
+            "wasmi",
+            "wasmtime"
+          ],
+          "bytes": 10806784,
+          "sha256": "82e4e729b844eb975acad18b32dae2935e17912f4a94a526e600e2c83e9a8db3"
+        },
+        "public_glue": {
+          "repository": "yxsicd/agentvmrelease",
+          "commit": "409463254c3798a4633b29575ec415f6fb586cde"
+        }
+      },
+      "glue_commit_fence": "explicit manifest commit"
+    }
+  ]
+}

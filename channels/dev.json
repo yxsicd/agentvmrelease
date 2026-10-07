@@ -27,7 +27,32 @@
     "eligible_for_main": false,
     "scope": "Pending fresh G6 package/full-matrix/browser/application admission; bounded static execution and optional explicit in-memory workspace only"
   },
-  "host_packages": [],
+  "host_packages": [
+    {
+      "asset": "agentvm-host-linux-arm64.tar.gz",
+      "bytes": 4895804,
+      "sha256": "88573361a107907726315d3afd49d752690634edf0ef7499514a84b89ff4f54f",
+      "platform": "linux-arm64"
+    },
+    {
+      "asset": "agentvm-host-linux-x64.tar.gz",
+      "bytes": 5305607,
+      "sha256": "f1049d910abb8f4c775aae2c42229d7b5d2b2a2c326f6c097a4fa2910e40e10d",
+      "platform": "linux-x64"
+    },
+    {
+      "asset": "agentvm-host-macos-arm64.tar.gz",
+      "bytes": 4302054,
+      "sha256": "37ab3bed976c496f1d28674b3e463778f28a307293d4b6b0ec56e7394cfd8c2a",
+      "platform": "macos-arm64"
+    },
+    {
+      "asset": "agentvm-host-windows-x64.tar.gz",
+      "bytes": 4300169,
+      "sha256": "306c38348f5aa091a0d93276429dfc343217b6392d1681bd99b903247358c5ea",
+      "platform": "windows-x64"
+    }
+  ],
   "private_qualification": {
     "result": "pass",
     "scope": "Exact source/profile ABI5 imports0; Node/Bun/Deno real ELF/ordinary quality/explicit OFF-ON-denials/composed replay, private pinned Alpine file lifecycle/timestamp refusal recovery/recursive copy cleanup; no full Alpine/asyncio/native product admission"
@@ -35,7 +60,10 @@
   "usage_skill": "skills/agentvm-wasm/SKILL.md",
   "public_qualification": {
     "result": "pending",
-    "scope": "Fresh four-platform G6 packages and exact public full matrix required; no G5 receipt inheritance"
+    "scope": "Fresh four-platform G6 packages and exact public full matrix required; no G5 receipt inheritance",
+    "package_run": 37686038965,
+    "package_head": "409463254c3798a4633b29575ec415f6fb586cde",
+    "package_workflow_result": "pass"
   },
   "distribution": {
     "schema": "agentvm.repository-distribution/v1",
