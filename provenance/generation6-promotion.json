@@ -1,0 +1,30 @@
+{
+  "schema": "agentvm.generation-promotion/v1",
+  "generation": 6,
+  "core_sha256": "dcf384f26ea9ad9cdeabda248b1f3e390505ff57330143b665f9636b2bfa42dd",
+  "baseline_generation": 3,
+  "baseline_core_sha256": "f6da81a808447212f0dd607eca94126b36eb7119055842320a833c5b2045f20b",
+  "controlled_runtimes": [
+    "node-26.5.1",
+    "bun-1.3.14",
+    "deno-2.9.4"
+  ],
+  "paired_evidence": [
+    "provenance/generation6-paired-node.json",
+    "provenance/generation6-paired-bun.json",
+    "provenance/generation6-paired-deno.json"
+  ],
+  "browser_evidence": "provenance/generation6-browser.json",
+  "public_matrix_run": 37686952750,
+  "public_matrix_head": "926fb3c8f6cfa50147349e44c25214b6f6d80e44",
+  "public_matrix_receipts": 35,
+  "aggregate_sha256": "21578e81253056143d41427872d5cead0d4196bf7caae31e33d89dc38ad9c141",
+  "limits": {
+    "median_ratio": 2,
+    "total_ms": 5000,
+    "linear_memory_bytes": 134217728
+  },
+  "core_growth_vs_g3_percent": 12.81,
+  "ok": true,
+  "scope": "Bounded static AArch64 Linux ABI5 execution and explicitly selected in-memory workspace; gross whole-tool gate and actual Chromium/private pinned static Alpine file-task admission only. No full Alpine/asyncio, native product packaging, broad networking, peak RSS or durable Host filesystem claim."
+}

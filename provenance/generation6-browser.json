@@ -1,0 +1,645 @@
+{
+  "schema": "agentvm.browser-release/v1",
+  "revision": "409463254c3798a4633b29575ec415f6fb586cde",
+  "core_sha256": "dcf384f26ea9ad9cdeabda248b1f3e390505ff57330143b665f9636b2bfa42dd",
+  "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+  "acquisition": [
+    {
+      "url": "https://cdn.jsdelivr.net/gh/yxsicd/agentvmrelease@409463254c3798a4633b29575ec415f6fb586cde/channels/dev/agentvm-core.wasm",
+      "status": 200,
+      "bytes": 1922957,
+      "sha256": "dcf384f26ea9ad9cdeabda248b1f3e390505ff57330143b665f9636b2bfa42dd"
+    },
+    {
+      "url": "https://cdn.jsdelivr.net/gh/yxsicd/agentvmrelease@409463254c3798a4633b29575ec415f6fb586cde/glue/js/host.mjs",
+      "status": 200,
+      "bytes": 26262,
+      "sha256": "83d802922a17b4375779cb5412abcda057c33d832d1185c0dd0025a4ccd8e27e"
+    },
+    {
+      "url": "https://cdn.jsdelivr.net/gh/yxsicd/agentvmrelease@409463254c3798a4633b29575ec415f6fb586cde/fixtures/mkdirat-errno.elf",
+      "status": 200,
+      "bytes": 688,
+      "sha256": "eb4bb4dc774c3ae831a3a5e3adb5c47d074aed0d4c1754a4ea66e18777cda4e4"
+    },
+    {
+      "url": "/busybox",
+      "status": 200,
+      "bytes": 1116408,
+      "sha256": "999cb969d09093a71716cfc747bb53cdada3f332c05eb5046c56e0f66a4d6d22"
+    }
+  ],
+  "applications": [
+    {
+      "schema": "agentvm.wasm-workspace-boundary/v1",
+      "runtime": "browser-Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+      "core": {
+        "bytes": 1922957,
+        "sha256": "dcf384f26ea9ad9cdeabda248b1f3e390505ff57330143b665f9636b2bfa42dd"
+      },
+      "guest": {
+        "bytes": 1116408,
+        "sha256": "999cb969d09093a71716cfc747bb53cdada3f332c05eb5046c56e0f66a4d6d22"
+      },
+      "mode": "filetree",
+      "cases": [
+        {
+          "name": "initial-shell-control",
+          "command": "answer=41; echo ready",
+          "exit": 0,
+          "stdout": "ready\n",
+          "stderr": "",
+          "steps": 346844,
+          "command_steps": 346844,
+          "calls": 84832,
+          "wall_ms": 34.30000001192093,
+          "linear_memory_peak_bytes": 7143424
+        },
+        {
+          "name": "external-failure-control",
+          "command": "/workspace/busybox false",
+          "exit": 1,
+          "stdout": "",
+          "stderr": "",
+          "steps": 422162,
+          "command_steps": 75318,
+          "calls": 20160,
+          "wall_ms": 9.199999988079071,
+          "linear_memory_peak_bytes": 10616832
+        },
+        {
+          "name": "persistent-directory",
+          "command": "mkdir -p notes",
+          "exit": 0,
+          "stdout": "",
+          "stderr": "",
+          "steps": 504770,
+          "command_steps": 82608,
+          "calls": 21824,
+          "wall_ms": 8.100000023841858,
+          "linear_memory_peak_bytes": 10616832
+        },
+        {
+          "name": "same-process-flat-file-recovery",
+          "command": "echo hello > notes/note.txt; cat notes/note.txt | wc -c",
+          "exit": 0,
+          "stdout": "6\n",
+          "stderr": "",
+          "steps": 642887,
+          "command_steps": 138117,
+          "calls": 37696,
+          "wall_ms": 12.699999988079071,
+          "linear_memory_peak_bytes": 11730944
+        },
+        {
+          "name": "same-process-subsequent-read",
+          "command": "cat notes/note.txt",
+          "exit": 0,
+          "stdout": "hello\n",
+          "stderr": "",
+          "steps": 725303,
+          "command_steps": 82416,
+          "calls": 21760,
+          "wall_ms": 7.5,
+          "linear_memory_peak_bytes": 11730944
+        },
+        {
+          "name": "duplicate-directory",
+          "command": "mkdir notes",
+          "exit": 1,
+          "stdout": "",
+          "stderr": "mkdir: can't create directory 'notes': File exists\n",
+          "steps": 806787,
+          "command_steps": 81484,
+          "calls": 21632,
+          "wall_ms": 7.300000011920929,
+          "linear_memory_peak_bytes": 11730944
+        },
+        {
+          "name": "rename-and-read",
+          "command": "mv notes/note.txt notes/moved.txt && cat notes/moved.txt",
+          "exit": 0,
+          "stdout": "hello\n",
+          "stderr": "",
+          "steps": 936176,
+          "command_steps": 129389,
+          "calls": 35488,
+          "wall_ms": 11.800000011920929,
+          "linear_memory_peak_bytes": 11730944
+        },
+        {
+          "name": "remove-file-and-directory",
+          "command": "rm notes/moved.txt && rmdir notes && echo lifecycle-clean",
+          "exit": 0,
+          "stdout": "lifecycle-clean\n",
+          "stderr": "",
+          "steps": 1062237,
+          "command_steps": 126061,
+          "calls": 34528,
+          "wall_ms": 11.099999964237213,
+          "linear_memory_peak_bytes": 11730944
+        },
+        {
+          "name": "recreate-after-cleanup",
+          "command": "mkdir notes && echo recovered > notes/recovered.txt && cat notes/recovered.txt",
+          "exit": 0,
+          "stdout": "recovered\n",
+          "stderr": "",
+          "steps": 1195482,
+          "command_steps": 133245,
+          "calls": 36320,
+          "wall_ms": 11.100000023841858,
+          "linear_memory_peak_bytes": 11730944
+        },
+        {
+          "name": "tree-setup",
+          "command": "/workspace/busybox mkdir -p tree/src/sub && echo alpha > tree/src/a.txt && echo beta > tree/src/sub/b.txt && echo tree-ready",
+          "exit": 0,
+          "stdout": "tree-ready\n",
+          "stderr": "",
+          "steps": 1313125,
+          "command_steps": 117643,
+          "calls": 30368,
+          "wall_ms": 9.099999964237213,
+          "linear_memory_peak_bytes": 11730944
+        },
+        {
+          "name": "recursive-copy",
+          "command": "/workspace/busybox cp -R tree/src tree/copied",
+          "exit": 0,
+          "stdout": "",
+          "stderr": "",
+          "steps": 1431245,
+          "command_steps": 118120,
+          "calls": 31584,
+          "wall_ms": 10,
+          "linear_memory_peak_bytes": 11730944
+        },
+        {
+          "name": "copied-tree-enumeration",
+          "command": "/workspace/busybox find tree/copied -type f | sort",
+          "exit": 0,
+          "stdout": "tree/copied/a.txt\ntree/copied/sub/b.txt\n",
+          "stderr": "",
+          "steps": 1573931,
+          "command_steps": 142686,
+          "calls": 39072,
+          "wall_ms": 13.600000023841858,
+          "linear_memory_peak_bytes": 11730944
+        },
+        {
+          "name": "copied-tree-byte-readback",
+          "command": "cat tree/copied/a.txt tree/copied/sub/b.txt",
+          "exit": 0,
+          "stdout": "alpha\nbeta\n",
+          "stderr": "",
+          "steps": 1669071,
+          "command_steps": 95140,
+          "calls": 24960,
+          "wall_ms": 7.600000023841858,
+          "linear_memory_peak_bytes": 11730944
+        },
+        {
+          "name": "recursive-cleanup",
+          "command": "/workspace/busybox rm -r tree/copied && [ ! -d tree/copied ] && echo tree-clean",
+          "exit": 0,
+          "stdout": "tree-clean\n",
+          "stderr": "",
+          "steps": 1790880,
+          "command_steps": 121809,
+          "calls": 31616,
+          "wall_ms": 9.799999952316284,
+          "linear_memory_peak_bytes": 11730944
+        },
+        {
+          "name": "source-tree-after-cleanup",
+          "command": "cat tree/src/a.txt tree/src/sub/b.txt",
+          "exit": 0,
+          "stdout": "alpha\nbeta\n",
+          "stderr": "",
+          "steps": 1883623,
+          "command_steps": 92743,
+          "calls": 24352,
+          "wall_ms": 7.899999976158142,
+          "linear_memory_peak_bytes": 11730944
+        }
+      ],
+      "diagnostic_complete": true,
+      "mkdir_capability_pass": true,
+      "scope": "Exact release diagnostic, not full Shell, browser, native parity, public guest CDN, performance promotion or peak RSS",
+      "explicit_candidate": true,
+      "lifecycle": [
+        {
+          "name": "duplicate-directory",
+          "command": "mkdir notes",
+          "exit": 1,
+          "stdout": "",
+          "stderr": "mkdir: can't create directory 'notes': File exists\n",
+          "steps": 806787,
+          "command_steps": 81484,
+          "calls": 21632,
+          "wall_ms": 7.300000011920929,
+          "linear_memory_peak_bytes": 11730944
+        },
+        {
+          "name": "rename-and-read",
+          "command": "mv notes/note.txt notes/moved.txt && cat notes/moved.txt",
+          "exit": 0,
+          "stdout": "hello\n",
+          "stderr": "",
+          "steps": 936176,
+          "command_steps": 129389,
+          "calls": 35488,
+          "wall_ms": 11.800000011920929,
+          "linear_memory_peak_bytes": 11730944
+        },
+        {
+          "name": "remove-file-and-directory",
+          "command": "rm notes/moved.txt && rmdir notes && echo lifecycle-clean",
+          "exit": 0,
+          "stdout": "lifecycle-clean\n",
+          "stderr": "",
+          "steps": 1062237,
+          "command_steps": 126061,
+          "calls": 34528,
+          "wall_ms": 11.099999964237213,
+          "linear_memory_peak_bytes": 11730944
+        },
+        {
+          "name": "recreate-after-cleanup",
+          "command": "mkdir notes && echo recovered > notes/recovered.txt && cat notes/recovered.txt",
+          "exit": 0,
+          "stdout": "recovered\n",
+          "stderr": "",
+          "steps": 1195482,
+          "command_steps": 133245,
+          "calls": 36320,
+          "wall_ms": 11.100000023841858,
+          "linear_memory_peak_bytes": 11730944
+        }
+      ],
+      "lifecycle_pass": true,
+      "filetree": [
+        {
+          "name": "tree-setup",
+          "command": "/workspace/busybox mkdir -p tree/src/sub && echo alpha > tree/src/a.txt && echo beta > tree/src/sub/b.txt && echo tree-ready",
+          "exit": 0,
+          "stdout": "tree-ready\n",
+          "stderr": "",
+          "steps": 1313125,
+          "command_steps": 117643,
+          "calls": 30368,
+          "wall_ms": 9.099999964237213,
+          "linear_memory_peak_bytes": 11730944
+        },
+        {
+          "name": "recursive-copy",
+          "command": "/workspace/busybox cp -R tree/src tree/copied",
+          "exit": 0,
+          "stdout": "",
+          "stderr": "",
+          "steps": 1431245,
+          "command_steps": 118120,
+          "calls": 31584,
+          "wall_ms": 10,
+          "linear_memory_peak_bytes": 11730944
+        },
+        {
+          "name": "copied-tree-enumeration",
+          "command": "/workspace/busybox find tree/copied -type f | sort",
+          "exit": 0,
+          "stdout": "tree/copied/a.txt\ntree/copied/sub/b.txt\n",
+          "stderr": "",
+          "steps": 1573931,
+          "command_steps": 142686,
+          "calls": 39072,
+          "wall_ms": 13.600000023841858,
+          "linear_memory_peak_bytes": 11730944
+        },
+        {
+          "name": "copied-tree-byte-readback",
+          "command": "cat tree/copied/a.txt tree/copied/sub/b.txt",
+          "exit": 0,
+          "stdout": "alpha\nbeta\n",
+          "stderr": "",
+          "steps": 1669071,
+          "command_steps": 95140,
+          "calls": 24960,
+          "wall_ms": 7.600000023841858,
+          "linear_memory_peak_bytes": 11730944
+        },
+        {
+          "name": "recursive-cleanup",
+          "command": "/workspace/busybox rm -r tree/copied && [ ! -d tree/copied ] && echo tree-clean",
+          "exit": 0,
+          "stdout": "tree-clean\n",
+          "stderr": "",
+          "steps": 1790880,
+          "command_steps": 121809,
+          "calls": 31616,
+          "wall_ms": 9.799999952316284,
+          "linear_memory_peak_bytes": 11730944
+        },
+        {
+          "name": "source-tree-after-cleanup",
+          "command": "cat tree/src/a.txt tree/src/sub/b.txt",
+          "exit": 0,
+          "stdout": "alpha\nbeta\n",
+          "stderr": "",
+          "steps": 1883623,
+          "command_steps": 92743,
+          "calls": 24352,
+          "wall_ms": 7.899999976158142,
+          "linear_memory_peak_bytes": 11730944
+        }
+      ],
+      "filetree_capability_pass": true,
+      "filetree_characterization_complete": true,
+      "known_directory_negative": false,
+      "same_process_recovery_pass": true,
+      "same_process_subsequent_read_pass": true,
+      "cleanup_sessions": 0
+    },
+    {
+      "schema": "agentvm.wasm-workspace-boundary/v1",
+      "runtime": "browser-Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+      "core": {
+        "bytes": 1922957,
+        "sha256": "dcf384f26ea9ad9cdeabda248b1f3e390505ff57330143b665f9636b2bfa42dd"
+      },
+      "guest": {
+        "bytes": 1116408,
+        "sha256": "999cb969d09093a71716cfc747bb53cdada3f332c05eb5046c56e0f66a4d6d22"
+      },
+      "mode": "timestamp-errno",
+      "cases": [
+        {
+          "name": "initial-shell-control",
+          "command": "answer=41; echo ready",
+          "exit": 0,
+          "stdout": "ready\n",
+          "stderr": "",
+          "steps": 346844,
+          "command_steps": 346844,
+          "calls": 84832,
+          "wall_ms": 33,
+          "linear_memory_peak_bytes": 7143424
+        },
+        {
+          "name": "external-failure-control",
+          "command": "/workspace/busybox false",
+          "exit": 1,
+          "stdout": "",
+          "stderr": "",
+          "steps": 422162,
+          "command_steps": 75318,
+          "calls": 20160,
+          "wall_ms": 9.099999964237213,
+          "linear_memory_peak_bytes": 10616832
+        },
+        {
+          "name": "persistent-directory",
+          "command": "mkdir -p notes",
+          "exit": 0,
+          "stdout": "",
+          "stderr": "",
+          "steps": 504770,
+          "command_steps": 82608,
+          "calls": 21824,
+          "wall_ms": 7.300000011920929,
+          "linear_memory_peak_bytes": 10616832
+        },
+        {
+          "name": "same-process-flat-file-recovery",
+          "command": "echo hello > notes/note.txt; cat notes/note.txt | wc -c",
+          "exit": 0,
+          "stdout": "6\n",
+          "stderr": "",
+          "steps": 642887,
+          "command_steps": 138117,
+          "calls": 37696,
+          "wall_ms": 12.800000011920929,
+          "linear_memory_peak_bytes": 11730944
+        },
+        {
+          "name": "same-process-subsequent-read",
+          "command": "cat notes/note.txt",
+          "exit": 0,
+          "stdout": "hello\n",
+          "stderr": "",
+          "steps": 725303,
+          "command_steps": 82416,
+          "calls": 21760,
+          "wall_ms": 7.699999988079071,
+          "linear_memory_peak_bytes": 11730944
+        },
+        {
+          "name": "duplicate-directory",
+          "command": "mkdir notes",
+          "exit": 1,
+          "stdout": "",
+          "stderr": "mkdir: can't create directory 'notes': File exists\n",
+          "steps": 806787,
+          "command_steps": 81484,
+          "calls": 21632,
+          "wall_ms": 7,
+          "linear_memory_peak_bytes": 11730944
+        },
+        {
+          "name": "rename-and-read",
+          "command": "mv notes/note.txt notes/moved.txt && cat notes/moved.txt",
+          "exit": 0,
+          "stdout": "hello\n",
+          "stderr": "",
+          "steps": 936176,
+          "command_steps": 129389,
+          "calls": 35488,
+          "wall_ms": 11.300000011920929,
+          "linear_memory_peak_bytes": 11730944
+        },
+        {
+          "name": "remove-file-and-directory",
+          "command": "rm notes/moved.txt && rmdir notes && echo lifecycle-clean",
+          "exit": 0,
+          "stdout": "lifecycle-clean\n",
+          "stderr": "",
+          "steps": 1062237,
+          "command_steps": 126061,
+          "calls": 34528,
+          "wall_ms": 10.899999976158142,
+          "linear_memory_peak_bytes": 11730944
+        },
+        {
+          "name": "recreate-after-cleanup",
+          "command": "mkdir notes && echo recovered > notes/recovered.txt && cat notes/recovered.txt",
+          "exit": 0,
+          "stdout": "recovered\n",
+          "stderr": "",
+          "steps": 1195482,
+          "command_steps": 133245,
+          "calls": 36320,
+          "wall_ms": 11.199999988079071,
+          "linear_memory_peak_bytes": 11730944
+        },
+        {
+          "name": "timestamp-pathname-refusal",
+          "command": "touch -m notes/recovered.txt",
+          "exit": 1,
+          "stdout": "",
+          "stderr": "touch: notes/recovered.txt: Not supported\n",
+          "steps": 1286384,
+          "command_steps": 90902,
+          "calls": 24032,
+          "wall_ms": 7.600000023841858,
+          "linear_memory_peak_bytes": 11730944
+        },
+        {
+          "name": "after-timestamp-read-write",
+          "command": "cat notes/recovered.txt && echo time-refusal-recovered > notes/after-time.txt && cat notes/after-time.txt",
+          "exit": 0,
+          "stdout": "recovered\ntime-refusal-recovered\n",
+          "stderr": "",
+          "steps": 1429044,
+          "command_steps": 142660,
+          "calls": 38656,
+          "wall_ms": 11.800000011920929,
+          "linear_memory_peak_bytes": 11730944
+        }
+      ],
+      "diagnostic_complete": true,
+      "mkdir_capability_pass": true,
+      "scope": "Exact release diagnostic, not full Shell, browser, native parity, public guest CDN, performance promotion or peak RSS",
+      "explicit_candidate": true,
+      "lifecycle": [
+        {
+          "name": "duplicate-directory",
+          "command": "mkdir notes",
+          "exit": 1,
+          "stdout": "",
+          "stderr": "mkdir: can't create directory 'notes': File exists\n",
+          "steps": 806787,
+          "command_steps": 81484,
+          "calls": 21632,
+          "wall_ms": 7,
+          "linear_memory_peak_bytes": 11730944
+        },
+        {
+          "name": "rename-and-read",
+          "command": "mv notes/note.txt notes/moved.txt && cat notes/moved.txt",
+          "exit": 0,
+          "stdout": "hello\n",
+          "stderr": "",
+          "steps": 936176,
+          "command_steps": 129389,
+          "calls": 35488,
+          "wall_ms": 11.300000011920929,
+          "linear_memory_peak_bytes": 11730944
+        },
+        {
+          "name": "remove-file-and-directory",
+          "command": "rm notes/moved.txt && rmdir notes && echo lifecycle-clean",
+          "exit": 0,
+          "stdout": "lifecycle-clean\n",
+          "stderr": "",
+          "steps": 1062237,
+          "command_steps": 126061,
+          "calls": 34528,
+          "wall_ms": 10.899999976158142,
+          "linear_memory_peak_bytes": 11730944
+        },
+        {
+          "name": "recreate-after-cleanup",
+          "command": "mkdir notes && echo recovered > notes/recovered.txt && cat notes/recovered.txt",
+          "exit": 0,
+          "stdout": "recovered\n",
+          "stderr": "",
+          "steps": 1195482,
+          "command_steps": 133245,
+          "calls": 36320,
+          "wall_ms": 11.199999988079071,
+          "linear_memory_peak_bytes": 11730944
+        }
+      ],
+      "lifecycle_pass": true,
+      "timestamp_capability_pass": false,
+      "timestamp_cases": [
+        {
+          "name": "timestamp-pathname-refusal",
+          "command": "touch -m notes/recovered.txt",
+          "exit": 1,
+          "stdout": "",
+          "stderr": "touch: notes/recovered.txt: Not supported\n",
+          "steps": 1286384,
+          "command_steps": 90902,
+          "calls": 24032,
+          "wall_ms": 7.600000023841858,
+          "linear_memory_peak_bytes": 11730944
+        },
+        {
+          "name": "after-timestamp-read-write",
+          "command": "cat notes/recovered.txt && echo time-refusal-recovered > notes/after-time.txt && cat notes/after-time.txt",
+          "exit": 0,
+          "stdout": "recovered\ntime-refusal-recovered\n",
+          "stderr": "",
+          "steps": 1429044,
+          "command_steps": 142660,
+          "calls": 38656,
+          "wall_ms": 11.800000011920929,
+          "linear_memory_peak_bytes": 11730944
+        }
+      ],
+      "timestamp_errno_recovery_pass": true,
+      "known_directory_negative": false,
+      "same_process_recovery_pass": true,
+      "same_process_subsequent_read_pass": true,
+      "cleanup_sessions": 0
+    }
+  ],
+  "passed": true,
+  "manifest_state": "pending-public-qualification",
+  "mode": "explicit candidate qualification; pending manifest is not consumer admission",
+  "grants": {
+    "passed": true,
+    "cases": [
+      {
+        "name": "default",
+        "return": -1,
+        "exit": 1,
+        "steps": 18
+      },
+      {
+        "name": "off",
+        "return": -1,
+        "exit": 1,
+        "steps": 18
+      },
+      {
+        "name": "on",
+        "return": 0,
+        "exit": 1,
+        "steps": 18,
+        "composed_restore_replay": true
+      },
+      {
+        "name": "parent",
+        "return": -13,
+        "exit": 1,
+        "steps": 18
+      },
+      {
+        "name": "outside",
+        "return": -2,
+        "exit": 1,
+        "steps": 18
+      }
+    ],
+    "cleanup_sessions": 0
+  },
+  "binding": {
+    "original_driver_sha256": "2cae6b9fef2b774c2204f8b1134b575ecc066b64d06ba78612cce5789b6e3952",
+    "browser_adapter_sha256": "cf1297e340acbc83301d6457a06b769f2707dbb54506de45e9cdc484cadfbe4b",
+    "scope": "Existing unchanged application assertions adapted to browser acquisition/receipt APIs only; no Core or private Guest redistributed",
+    "initial_harness_failure": "Identifier mode redeclared during Node->browser adapter setup; fixed before any candidate execution; original console retained. Favicon404 has no release payload impact."
+  },
+  "scope": "Actual Chromium UI candidate admission: exact immutable public acquisition, explicit grants/composed restore and private pinned original static Alpine recursive copy cleanup/timestamp refusal recovery. Private Guest only loopback, not redistributed; not full Alpine/asyncio/native product/RSS."
+}

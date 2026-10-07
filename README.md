@@ -42,17 +42,17 @@ public-Glue commit. Only the release channel pointer/manifest changes during
 promotion.
 
 The newest DEV generation is described in [`channels/dev.json`](channels/dev.json).
-Generation4 is a publicly qualified DEV prerelease: new generic stream
-extension and optional public FetchBridge with JSON POST/BYOB streaming.
-Node/Bun/Deno and four-platform Wasmi/Wasmtime published-package gates pass,
-with 32 exact-digest receipts. DEV automatic consumer resolution is admitted.
-Controlled performance qualification is still required before MAIN promotion.
-Download from the manifest's exact URL (it may name an immutable generation
-tag rather than the moving channel). MAIN and PROD still point to generation3,
-promoted byte-for-byte from DEV; older generation2 tags remain for rollback.
-The stable scope is bounded static AArch64 Linux execution, not unrestricted
-Alpine networking or full Agent compatibility. See RELEASES.md for exact gates
-and retained performance regressions.
+Generation6 is qualified DEV: exact35 public receipts, four newly built platform
+packages, anonymous artifact integrity and actual Chromium explicit-workspace
+application checks. Its optional in-memory workspace grants remain explicit;
+existing constructors keep their grants. The exact same Core/package/consumer
+skill bytes advance to MAIN/PROD only after their separate admission gates.
+MAIN/PROD currently remain generation3. Download the selected manifest's exact
+immutable generation URL and preserve its public commit. Old G5/G3 assets remain
+available for rollback. This release qualifies bounded static AArch64 Linux
+execution and documented optional in-memory workspace tasks; full Alpine,
+_asyncio, native product packaging, unrestricted Guest networking, durable Host
+filesystem and peak RSS remain unqualified. See RELEASES.md for exact receipts.
 
 ## Public Host glue
 

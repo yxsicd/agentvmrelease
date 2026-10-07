@@ -2,7 +2,7 @@
   "schema": "agentvm.release-channel/v1",
   "channel": "dev",
   "mutable": true,
-  "state": "pending-public-qualification",
+  "state": "qualified-dev",
   "generation": 6,
   "release_tag": "dev-20261007-g6",
   "core": {
@@ -22,10 +22,11 @@
     "release_rule": "clean pushed main only"
   },
   "promotion": {
-    "performance_qualified_exact_digest": false,
-    "public_source_free_qualified": false,
-    "eligible_for_main": false,
-    "scope": "Pending fresh G6 package/full-matrix/browser/application admission; bounded static execution and optional explicit in-memory workspace only"
+    "performance_qualified_exact_digest": true,
+    "public_source_free_qualified": true,
+    "eligible_for_main": true,
+    "scope": "Bounded static AArch64 Linux ABI5 execution and explicitly selected in-memory workspace; gross whole-tool gate and actual Chromium/private pinned static Alpine file-task admission only. No full Alpine/asyncio, native product packaging, broad networking, peak RSS or durable Host filesystem claim.",
+    "performance_evidence": "provenance/generation6-promotion.json"
   },
   "host_packages": [
     {
@@ -59,11 +60,17 @@
   },
   "usage_skill": "skills/agentvm-wasm/SKILL.md",
   "public_qualification": {
-    "result": "pending",
-    "scope": "Fresh four-platform G6 packages and exact public full matrix required; no G5 receipt inheritance",
+    "result": "pass",
+    "scope": "Fresh exact35receipts: Node/Bun/Deno default/grants/path denial/composed restore, four-platform Wasmi/Wasmtime quality and exact relocated packages. Actual Chromium explicit grants and private original static Alpine recursive copy/cleanup/timestamp refusal recovery; bounded profile only.",
     "package_run": 37686038965,
     "package_head": "409463254c3798a4633b29575ec415f6fb586cde",
-    "package_workflow_result": "pass"
+    "package_workflow_result": "pass",
+    "source_free_run": 37686952750,
+    "source_free_head": "926fb3c8f6cfa50147349e44c25214b6f6d80e44",
+    "source_free_aggregate_sha256": "21578e81253056143d41427872d5cead0d4196bf7caae31e33d89dc38ad9c141",
+    "aggregate_receipts": 35,
+    "evidence": "provenance/generation6-public-qualification.json",
+    "browser_evidence": "provenance/generation6-browser.json"
   },
   "distribution": {
     "schema": "agentvm.repository-distribution/v1",
