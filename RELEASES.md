@@ -22,7 +22,7 @@ Controlled same-machine static rg1MiB3warmups/7alternating samples pass2x/5s/
 identical3362591Gueststeps. Core+12.81%; small timings are not a speedup claim.
 DEV qualified-manifest58fa1ef6 CDN PASS locally and in Action37688094646.
 MAIN advanced byte-for-byte and passed two fresh35receipt full regressions;
-PROD remainsG3 pending its separate publication/addressed matrix.
+PROD publishes the sameG6bytes; its separate address-specific matrix is running.
 Original native bounded fullasyncioFAIL retained/not rerun. Full Alpine/dynamic
 programs/Guest networking/native product packaging/RSS/Host durability remain
 unqualified. Optional TAR image bindings and diagnostic features not compiled.
@@ -42,10 +42,21 @@ sevenlanes+aggregate35actualreceipts each; independently validated failures0.
 Raw aggregate SHAs0ee40945970f0fa92e5b8d0932bb0053a70af93fb611188dbecf44ac9d039bff
 and641ad09fe05930804e164e8934131d2e80d2d60812dc96912281524456e3024a.
 Anonymous MAIN6assets exact and immutable CDN PASS. This is short-term repeated
-regression admission, not overnight soak. PROD retainsG3 until its separate plan.
+regression admission, not overnight soak. PROD post-publication matrix is separate.
 Scope: bounded static ABI5 Linux execution and explicit in-memory workspace.
 Full Alpine/_asyncio/native product/network/durability remain unqualified.
 Older MAIN/PROD generation3 immutable assets remain for rollback.
+
+## prod — generation6 published (2026-10-07 UTC)
+
+Stable/latest prod-20261007-g6 atpublic70cd2d05f8d54369bff3cd097cbc9147d2a1d3f6,
+exact admitted MAIN6assets, no Core/Host/Skill rebuild. Anonymous6assets SHA/size,
+internalCore/Host/platform/publicGlue40946325 exact; latest routes to release
+406190887. Fresh PROD37691900980 bound immutabletag/70cd2d05 is running;
+35actualreceipt aggregate/independentpolicy and final CDN qualification pending.
+Scope remains bounded static ABI5 Linux execution and explicit in-memory workspace;
+original nativefullasyncioFAIL/fullAlpine/nativeproduct/network/RSS/durability open.
+G3 immutable rollback assets remain available.
 
 ## dev — generation4 qualified preview (2026-10-03)
 
@@ -118,7 +129,7 @@ Public source-free qualification is allowed to prove semantic portability of
 the new `dev` bytes. Promotion to `main` additionally requires controlled
 performance qualification of the exact `dev` digest.
 
-## main
+## main — generation3 historical
 
 Generation3 published at main-20261003-g3, with exact DEV Core, four native
 packages and consumer skill bytes. Controlled same-machine alternating Node,
@@ -141,7 +152,7 @@ representative public Agent journey. Generation2 releases remain untouched.
 Performance and exact reports are in provenance/promotion-performance-20261003.json
 and provenance/main-g3-{first,second}-20261003.json.
 
-## prod
+## prod — generation3 historical
 
 Generation3 published at prod-20261003-g3, byte-for-byte from qualified MAIN;
 no Core/package/skill rebuild. Stable release remains limited to documented

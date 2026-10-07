@@ -58,5 +58,10 @@
   "prod_post_publication": "pending fresh PROD matrix",
   "works_plan": "de4983a6d0616f4ced010a092b1cc31b37f5ef3d",
   "plan_actual_readback_sha256": "d636770c7b3f784187026cff86e898895af4dd6b6d2a2c44ec67d3ea9e895a7d",
-  "rollback": "prod-20261003-g3"
+  "rollback": "prod-20261003-g3",
+  "prod_run": 37691900980,
+  "prod_head": "70cd2d05f8d54369bff3cd097cbc9147d2a1d3f6",
+  "anonymous_readback": "provenance/generation6-prod-anonymous-readback.json",
+  "initial_immutable_cdn": "provenance/generation6-prod-publication-cdn.json",
+  "stable_latest_release_id": 406190887
 }
