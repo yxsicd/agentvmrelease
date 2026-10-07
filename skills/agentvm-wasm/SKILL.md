@@ -5,7 +5,8 @@ description: Consume the public AgentVM Core Wasm release to execute bounded sta
 
 # AgentVM Wasm consumer
 
-Generation6 is the current explicit workspace release candidate. Read the
+Generation6 provides optional explicit in-memory workspace tasks in DEV, MAIN
+and bounded stable PROD. Read the
 selected immutable channel manifest and require its public_qualification PASS
 before use. Existing constructors retain their grants. Feature-detect the optional
 agentvm_wasm_agent_session_create_with_capabilities export, then use
@@ -102,7 +103,7 @@ does not prove representative application compatibility or performance.
 Generation4 DEV adds optional generic stream-bridge v1. Use the same pinned
 public revision for glue/js/fetch-bridge.mjs and Host/Core. Feature-detect
 agentvm_wasm_stream_bridge_version before attaching explicit service FD3/4;
-older MAIN/PROD generation3 do not support this optional extension.
+historical generation3 MAIN/PROD artifacts do not support this optional extension.
 FetchBridge uses ordinary managed/browser fetch, CORS and existing proxy policy;
 it bypasses no security and is NOT transparent Linux curl/socket/TCP/UDP support.
 Its request() helper buffers only small32KiB responses. Large transfers use

@@ -22,7 +22,7 @@ Controlled same-machine static rg1MiB3warmups/7alternating samples pass2x/5s/
 identical3362591Gueststeps. Core+12.81%; small timings are not a speedup claim.
 DEV qualified-manifest58fa1ef6 CDN PASS locally and in Action37688094646.
 MAIN advanced byte-for-byte and passed two fresh35receipt full regressions;
-PROD publishes the sameG6bytes; its separate address-specific matrix is running.
+PROD publishes the sameG6bytes; its separate35receipt full matrix passed.
 Original native bounded fullasyncioFAIL retained/not rerun. Full Alpine/dynamic
 programs/Guest networking/native product packaging/RSS/Host durability remain
 unqualified. Optional TAR image bindings and diagnostic features not compiled.
@@ -47,13 +47,15 @@ Scope: bounded static ABI5 Linux execution and explicit in-memory workspace.
 Full Alpine/_asyncio/native product/network/durability remain unqualified.
 Older MAIN/PROD generation3 immutable assets remain for rollback.
 
-## prod — generation6 published (2026-10-07 UTC)
+## prod — generation6 qualified stable (2026-10-07 UTC)
 
 Stable/latest prod-20261007-g6 atpublic70cd2d05f8d54369bff3cd097cbc9147d2a1d3f6,
 exact admitted MAIN6assets, no Core/Host/Skill rebuild. Anonymous6assets SHA/size,
 internalCore/Host/platform/publicGlue40946325 exact; latest routes to release
-406190887. Fresh PROD37691900980 bound immutabletag/70cd2d05 is running;
-35actualreceipt aggregate/independentpolicy and final CDN qualification pending.
+406190887. Fresh PROD37691900980 bound immutabletag/70cd2d05 PASSsevenlanes+aggregate,
+35actualreceipts/independentpolicy0, rawSHA36439807a4488a3f0c1a19f528658ff39876dac1e83b9c8adc7f152a8890b49d.
+Allchannel70cd2d05 CDN PASS HTTP200/CORS*/SHA/bytes/realELF/cleanup0; final
+qualified-manifest independent CDN receipt will be attached before closure.
 Scope remains bounded static ABI5 Linux execution and explicit in-memory workspace;
 original nativefullasyncioFAIL/fullAlpine/nativeproduct/network/RSS/durability open.
 G3 immutable rollback assets remain available.

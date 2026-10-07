@@ -55,7 +55,7 @@
   ],
   "main_receipts_each": 35,
   "main_qualification_public_commit": "680a4bcd90428bbeb0c721b33e2c5a7c3a38d933",
-  "prod_post_publication": "pending fresh PROD matrix",
+  "prod_post_publication": "pass",
   "works_plan": "de4983a6d0616f4ced010a092b1cc31b37f5ef3d",
   "plan_actual_readback_sha256": "d636770c7b3f784187026cff86e898895af4dd6b6d2a2c44ec67d3ea9e895a7d",
   "rollback": "prod-20261003-g3",
@@ -63,5 +63,8 @@
   "prod_head": "70cd2d05f8d54369bff3cd097cbc9147d2a1d3f6",
   "anonymous_readback": "provenance/generation6-prod-anonymous-readback.json",
   "initial_immutable_cdn": "provenance/generation6-prod-publication-cdn.json",
-  "stable_latest_release_id": 406190887
+  "stable_latest_release_id": 406190887,
+  "prod_receipts": 35,
+  "prod_aggregate_sha256": "36439807a4488a3f0c1a19f528658ff39876dac1e83b9c8adc7f152a8890b49d",
+  "independent_policy_failures": []
 }

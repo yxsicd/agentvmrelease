@@ -1,8 +1,18 @@
 # Public source-free quality gates
 
-Generation3 promotion checkpoint2026-10-03: MAIN37120164805/37120492444 and
+G6 current release checkpoint (2026-10-07 UTC/10-08 MSK): DEV37686952750,
+MAIN37689152011/37690454204 and PROD37691900980 PASS all seven lanes plus
+aggregate,35actualreceipts each and independent policy failures0. Optional
+explicit workspace grants/denials/composed replay are mandatory in this
+profile. All channels promote the same exact Core/four newly built packages/
+consumer Skill bytes, no rebuild. Actual Chromium/private original static
+Alpine tasks and controlled paired whole-tool gross bounds are independent
+qualification. No fullAlpine/asyncio/native-product/network/RSS/durability claim.
+
+
+Historical generation3 promotion checkpoint2026-10-03: MAIN37120164805/37120492444 and
 PROD37120834681 all PASS,32 receipts each, same Core SHA f6da81a8. MAIN/PROD
-now use immutable generation3 download targets; older generation2 tags retained.
+at that checkpoint used immutable generation3 download targets; older generation2 tags retained.
 See RELEASES.md and provenance/{main-g3-first,main-g3-second,prod-g3-final}-20261003.json.
 Controlled whole-tool admission separately records28-52% slower short-line
 ripgrep than generation2, not a shared-runner performance improvement claim.

@@ -38,7 +38,7 @@
       37689152011,
       37690454204
     ],
-    "prod_address_qualified": false
+    "prod_address_qualified": true
   },
   "host_packages": [
     {
@@ -77,14 +77,14 @@
     "package_run": 37686038965,
     "package_head": "409463254c3798a4633b29575ec415f6fb586cde",
     "package_workflow_result": "pass",
-    "source_free_run": 37686952750,
-    "source_free_head": "926fb3c8f6cfa50147349e44c25214b6f6d80e44",
-    "source_free_aggregate_sha256": "21578e81253056143d41427872d5cead0d4196bf7caae31e33d89dc38ad9c141",
+    "source_free_run": 37691900980,
+    "source_free_head": "70cd2d05f8d54369bff3cd097cbc9147d2a1d3f6",
+    "source_free_aggregate_sha256": "36439807a4488a3f0c1a19f528658ff39876dac1e83b9c8adc7f152a8890b49d",
     "aggregate_receipts": 35,
-    "evidence": "provenance/generation6-public-qualification.json",
+    "evidence": "provenance/generation6-prod-final.json",
     "browser_evidence": "provenance/generation6-browser.json",
     "main_post_publication": "Two fresh35receipt MAIN full matrices PASS with independent receipt-policy failures0",
-    "prod_post_publication": "pending fresh PROD-address35receipt full matrix"
+    "prod_post_publication": "Fresh PROD-address full sevenlane+aggregate35actualreceipts PASS, independent receipt-policy failures0"
   },
   "distribution": {
     "schema": "agentvm.repository-distribution/v1",

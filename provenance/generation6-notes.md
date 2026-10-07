@@ -1,28 +1,9 @@
-# G6 DEV qualified — 2026-10-07 UTC
+# G6 PROD stable — qualified
 
-Core1922957B/SHA dcf384f26ea9ad9cdeabda248b1f3e390505ff57330143b665f9636b2bfa42dd,
-clean pushed private source98f566163e883b6239396c0c95e53537b9d052d8,ABI5/imports0.
-Same explicit-workspace profile as G5; default constructors/grants unchanged.
-Package37686038965 at409463254c3798a4633b29575ec415f6fb586cde PASS4platforms
-and attachment. Anonymous sixassets exactSHA/size; each archive internalCore,
-Host/platform/glue identity verified. Source-free37686952750 at926fb3c8f6cfa50147349e44c25214b6f6d80e44
-PASS sevenlanes+aggregate,35actualreceipts; aggregate SHA21578e81253056143d41427872d5cead0d4196bf7caae31e33d89dc38ad9c141.
-Independent receipt-policy admission has zero failures.
-Actual Chromium UI: same-public-revision Core/Host/probe acquisition and hash,
-default/OFF/ON/parent/outside denial, composed restore/replay; private original
-static Alpine recursive copy/readback/cleanup and unsupported timestamp errno
-then same-shell recovery PASS,session0. Private Guest served only on loopback,
-not redistributed. Initial adapter mode redeclaration was INVALID setup before
-candidate execution; retained separately, no Core fix. Temporary server/browser
-closed; no browser durability or peak RSS claim.
-Controlled same-machine static rg1MiB3warmups/7alternating samples pass2x/5s/
-128MiB gross bounds: run ratiosNode0.96380/Bun0.93579/Deno0.98493 vsG3,
-identical3362591Gueststeps. Core+12.81%; small timings are not a speedup claim.
-DEV qualified-manifest58fa1ef6 CDN PASS locally and in Action37688094646.
-MAIN advanced byte-for-byte and passed two fresh35receipt full regressions;
-PROD remainsG3 pending its separate publication/addressed matrix.
-Original native bounded fullasyncioFAIL retained/not rerun. Full Alpine/dynamic
-programs/Guest networking/native product packaging/RSS/Host durability remain
-unqualified. Optional TAR image bindings and diagnostic features not compiled.
-Initial missing custom entropy cfg build101 retained; existing cfg correction
-build22.28s/59warnings PASS. OldG5/G3 immutable rollback releases untouched.
+[Stable release](https://github.com/yxsicd/agentvmrelease/releases/tag/prod-20261007-g6). Core1922957B/SHA256 dcf384f26ea9ad9cdeabda248b1f3e390505ff57330143b665f9636b2bfa42dd, ABI5/imports0, clean pushed source98f566163e883b6239396c0c95e53537b9d052d8. Exact same Core/four-platform Wasm-engine Host/consumer Skill assets promoted from DEV through MAIN to PROD; no rebuild, default grants unchanged.
+
+Fresh package37686038965 built/verified/attached four platforms. DEV37686952750, MAIN37689152011/37690454204, [PROD37691900980](https://github.com/yxsicd/agentvmrelease/actions/runs/37691900980) each PASSsevenlanes+aggregate35actualreceipts and independent policy failures0. PROD aggregate SHA256 36439807a4488a3f0c1a19f528658ff39876dac1e83b9c8adc7f152a8890b49d. Anonymous six assets SHA/bytes and internal Core/Host/platform/glue40946325 exact; latest routes to this stable Release.
+
+Actual Chromium immutable public acquisition, explicit grants/denials/composed restore and private original static Alpine recursive copy/cleanup and timestamp refusal/same-shell recovery pass with session0. Private Guest not redistributed. Controlled same-machine paired rg1MiB gross bounds pass vsG3; small timings are not speedup, linear memory not peakRSS. Allchannel published-commit CDN PASS; final qualified-manifest independent CDN receipt attaches before closure.
+
+Scope: bounded static AArch64 Linux execution and optional explicit in-memory workspace tasks. Full Alpine/_asyncio/native AgentVM product packaging/Guest networking/peak RSS/Host durability remain unqualified; original native fullasyncio failure not rerun or relabeled. Two fresh MAIN runs are short-term regression admission, not overnight soak. Existing immutable G3/G5 rollback assets and all initial build/browser/acquisition/API failure receipts preserved.

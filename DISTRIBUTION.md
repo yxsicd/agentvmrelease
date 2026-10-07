@@ -73,6 +73,18 @@ relocation checks. The independent CDN workflow verifies all three channels
 on push, manually and daily. Old binaries are retained in Git history and
 immutable Release assets, not extra versioned Wasm files in the current tree.
 
+## Current G6 distribution (2026-10-07 UTC/10-08 MSK)
+
+DEV/MAIN/PROD contain the same qualified Core1922957B/SHA
+dcf384f26ea9ad9cdeabda248b1f3e390505ff57330143b665f9636b2bfa42dd,
+ABI5/imports0. Stable/latest Release is prod-20261007-g6, same exact six
+MAIN assets without rebuild; anonymous asset/internal package identities and
+latest routing pass. Allchannel immutable70cd2d05 publication CDN passes;
+final qualified-manifest receipts are in provenance/generation6-prod-cdn-
+qualified.json and generation6-prod-cdn-action.json after their independent
+admission. Resolve a full public Git commit and keep all payloads on it.
+Historical G3/G5 immutable rollback assets remain available.
+
 ## Verified initial repository publication (2026-10-03)
 
 Immutable asset/manifest commit: 7203d65fa688964ba40585e464ceb3fbf508f9cf.
