@@ -54,8 +54,10 @@ exact admitted MAIN6assets, no Core/Host/Skill rebuild. Anonymous6assets SHA/siz
 internalCore/Host/platform/publicGlue40946325 exact; latest routes to release
 406190887. Fresh PROD37691900980 bound immutabletag/70cd2d05 PASSsevenlanes+aggregate,
 35actualreceipts/independentpolicy0, rawSHA36439807a4488a3f0c1a19f528658ff39876dac1e83b9c8adc7f152a8890b49d.
-Allchannel70cd2d05 CDN PASS HTTP200/CORS*/SHA/bytes/realELF/cleanup0; final
-qualified-manifest independent CDN receipt will be attached before closure.
+Final qualified-publiccommit94ca685b3dffd5f56ca45f42003dd63b1eb79f35 allchannel CDN PASS locally
+and independently in Action37692824051: HTTP200/CORS*/SHA/bytes/realELF/cleanup0.
+Raw receiptSHA8108c4fbc7fb0cc253b2c66251a8fdbd31ab7f0027bc00a67c7674f24a67df98; closure evidence
+provenance/generation6-prod-closure.json.
 Scope remains bounded static ABI5 Linux execution and explicit in-memory workspace;
 original nativefullasyncioFAIL/fullAlpine/nativeproduct/network/RSS/durability open.
 G3 immutable rollback assets remain available.

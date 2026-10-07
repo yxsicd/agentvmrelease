@@ -80,9 +80,9 @@ dcf384f26ea9ad9cdeabda248b1f3e390505ff57330143b665f9636b2bfa42dd,
 ABI5/imports0. Stable/latest Release is prod-20261007-g6, same exact six
 MAIN assets without rebuild; anonymous asset/internal package identities and
 latest routing pass. Allchannel immutable70cd2d05 publication CDN passes;
-final qualified-manifest receipts are in provenance/generation6-prod-cdn-
-qualified.json and generation6-prod-cdn-action.json after their independent
-admission. Resolve a full public Git commit and keep all payloads on it.
+final qualified-manifest94ca685b3dffd5f56ca45f42003dd63b1eb79f35 receipts independently
+PASS in provenance/generation6-prod-cdn-qualified.json and generation6-prod-
+cdn-action.json (Action37692824051). Resolve a full public Git commit and keep all payloads on it.
 Historical G3/G5 immutable rollback assets remain available.
 
 ## Verified initial repository publication (2026-10-03)

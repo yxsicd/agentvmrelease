@@ -1,0 +1,54 @@
+{
+  "schema": "agentvm.release-closure/v1",
+  "generation": 6,
+  "closed": true,
+  "release_tag": "prod-20261007-g6",
+  "release_url": "https://github.com/yxsicd/agentvmrelease/releases/tag/prod-20261007-g6",
+  "core_sha256": "dcf384f26ea9ad9cdeabda248b1f3e390505ff57330143b665f9636b2bfa42dd",
+  "core_bytes": 1922957,
+  "qualified_public_commit": "94ca685b3dffd5f56ca45f42003dd63b1eb79f35",
+  "main_runs": [
+    37689152011,
+    37690454204
+  ],
+  "main_receipts_each": 35,
+  "prod_matrix": {
+    "run_id": 37691900980,
+    "head": "70cd2d05f8d54369bff3cd097cbc9147d2a1d3f6",
+    "result": "pass",
+    "receipts": 35,
+    "aggregate_sha256": "36439807a4488a3f0c1a19f528658ff39876dac1e83b9c8adc7f152a8890b49d",
+    "independent_policy_failures": []
+  },
+  "anonymous_assets": {
+    "passed": true,
+    "assets": 6,
+    "release_id": 406190887,
+    "latest_routes_to_prod": true,
+    "evidence": "provenance/generation6-prod-anonymous-readback.json"
+  },
+  "cdn_action": {
+    "run_id": 37692824051,
+    "head": "94ca685b3dffd5f56ca45f42003dd63b1eb79f35",
+    "result": "pass",
+    "receipt_sha256": "8108c4fbc7fb0cc253b2c66251a8fdbd31ab7f0027bc00a67c7674f24a67df98",
+    "evidence": "provenance/generation6-prod-cdn-action.json"
+  },
+  "cdn_local": "provenance/generation6-prod-cdn-qualified.json",
+  "rebuilt": false,
+  "all_six_assets_byte_identical": true,
+  "default_constructor_grants": "unchanged",
+  "scope": "Bounded static AArch64 Linux execution and explicit in-memory workspace; originalnativefullasyncioFAIL/fullAlpine/native-product/network/RSS/Host durability remain separate",
+  "rollback_tags": [
+    "prod-20261003-g3",
+    "main-20261003-g3",
+    "dev-20261004-g5"
+  ],
+  "works_plan": "de4983a6d0616f4ced010a092b1cc31b37f5ef3d",
+  "release_notes_actual_readback": {
+    "latest_tag": "prod-20261007-g6",
+    "body_sha256": "028c0473c202b1f2e29c0647ff74459e073dabd3c435692f16a11088ce117ae4",
+    "target_commitish": "70cd2d05f8d54369bff3cd097cbc9147d2a1d3f6",
+    "passed": true
+  }
+}

@@ -50,7 +50,7 @@
   "rebuilt": false,
   "qualification_source_public_commit": "a54395fde0c9d923d3387816ebd7e4926b9e9976",
   "main_regression": "pass",
-  "prod": "generation3 until separately persisted promotion plan",
+  "prod": "G6 stable/latest qualified by fresh PROD35receipts and independentCDN",
   "first_main_run": 37689152011,
   "first_main_head": "e714a739036eaac35607b1c80357654d3273778b",
   "anonymous_readback": "provenance/generation6-main-anonymous-readback.json",
