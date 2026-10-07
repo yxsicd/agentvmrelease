@@ -32,10 +32,11 @@
     "byte_for_byte_core": true,
     "byte_for_byte_host_packages": true,
     "byte_for_byte_skill": true,
-    "eligible_for_prod": false,
-    "prod_gate": "Two fresh MAIN35receipt regressions required",
+    "eligible_for_prod": true,
+    "prod_gate": "Two fresh MAIN35receipt full regressions independently PASS; short-term repeated admission, not overnight soak",
     "regression_runs": [
-      37689152011
+      37689152011,
+      37690454204
     ]
   },
   "host_packages": [
@@ -81,7 +82,7 @@
     "aggregate_receipts": 35,
     "evidence": "provenance/generation6-public-qualification.json",
     "browser_evidence": "provenance/generation6-browser.json",
-    "main_post_publication": "First MAIN35receipt matrix PASS; second fresh independent regression pending"
+    "main_post_publication": "Two fresh35receipt MAIN full matrices PASS with independent receipt-policy failures0"
   },
   "distribution": {
     "schema": "agentvm.repository-distribution/v1",

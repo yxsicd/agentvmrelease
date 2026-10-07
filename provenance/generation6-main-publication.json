@@ -49,10 +49,14 @@
   "byte_for_byte": true,
   "rebuilt": false,
   "qualification_source_public_commit": "a54395fde0c9d923d3387816ebd7e4926b9e9976",
-  "main_regression": "pending",
-  "prod": "generation3 retained",
+  "main_regression": "pass",
+  "prod": "generation3 until separately persisted promotion plan",
   "first_main_run": 37689152011,
   "first_main_head": "e714a739036eaac35607b1c80357654d3273778b",
   "anonymous_readback": "provenance/generation6-main-anonymous-readback.json",
-  "immutable_cdn": "provenance/generation6-main-cdn.json"
+  "immutable_cdn": "provenance/generation6-main-cdn.json",
+  "second_main_run": 37690454204,
+  "second_main_head": "e714a739036eaac35607b1c80357654d3273778b",
+  "main_receipts_each": 35,
+  "second_aggregate_sha256": "641ad09fe05930804e164e8934131d2e80d2d60812dc96912281524456e3024a"
 }
