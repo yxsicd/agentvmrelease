@@ -1,0 +1,9 @@
+{
+  "run_id": 37688094646,
+  "head": "58fa1ef6ca99aa4127bab9bdfeb457919fe1d44d",
+  "conclusion": "success",
+  "receipt_sha256": "86ccec2c1f4533c83bbfab5b3005b884f3d05a17c3489ec0fcbb7c66d7717877",
+  "local_evidence": "provenance/generation6-cdn-qualified.json",
+  "action_evidence": "provenance/generation6-cdn-action.json",
+  "mode": "fresh immutable exact qualified DEV cohort; MAIN/PROD G3 preserved"
+}
